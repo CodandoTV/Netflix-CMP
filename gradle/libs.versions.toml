@@ -37,6 +37,11 @@ material = "1.12.0"
 accompanist = "0.31.3-beta"
 activity-compose = "1.8.2"
 
+#Firebase
+google-services = "4.4.2"
+firebase-bom = "33.13.0"
+firebase-analytics = "22.4.0"
+
 [libraries]
 kotlin_gradle_plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 android_gradle_plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "android_gradle_plugin" }
@@ -100,6 +105,10 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity-compose = { module = "androidx.activity:activity-compose", version = "activity-compose" }
 
+#Firebase
+firebase-bom = {group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
+firebase-analytics = {group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebase-analytics" }
+
 #Test
 kotlin_test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
 kotlin_test_common = { group = "org.jetbrains.kotlin", name = "kotlin-test-common", version.ref = "kotlin" }
@@ -133,5 +142,6 @@ room = { id = "androidx.room", version.ref = "room" }
 
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 
 buildkonfig_plugin = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }

@@ -1,0 +1,18 @@
+{
+  "" : {
+    "diagnostics" : "/Users/pedroalvarez/Projects/KMP/Netflix-KMP/build/ios/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/_LottieStub-master.dia",
+    "emit-module-dependencies" : "/Users/pedroalvarez/Projects/KMP/Netflix-KMP/build/ios/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/_LottieStub-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/pedroalvarez/Projects/KMP/Netflix-KMP/build/ios/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/_LottieStub-master-emit-module.dia",
+    "swift-dependencies" : "/Users/pedroalvarez/Projects/KMP/Netflix-KMP/build/ios/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/_LottieStub-master.swiftdeps"
+  },
+  "/Users/pedroalvarez/Library/Developer/Xcode/DerivedData/iosApp-hefcdfrczfycrmbixgghbukyzzva/SourcePackages/checkouts/lottie-spm/Sources/_LottieStub/Stub.swift" : {
+    "const-values" : "/Users/pedroalvarez/Projects/KMP/Netflix-KMP/build/ios/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/Stub.swiftconstvalues",
+    "dependencies" : "/Users/pedroalvarez/Projects/KMP/Netflix-KMP/build/ios/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/Stub.d",
+    "diagnostics" : "/Users/pedroalvarez/Projects/KMP/Netflix-KMP/build/ios/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/Stub.dia",
+    "index-unit-output-path" : "/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/Stub.o",
+    "llvm-bc" : "/Users/pedroalvarez/Projects/KMP/Netflix-KMP/build/ios/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/Stub.bc",
+    "object" : "/Users/pedroalvarez/Projects/KMP/Netflix-KMP/build/ios/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/Stub.o",
+    "swift-dependencies" : "/Users/pedroalvarez/Projects/KMP/Netflix-KMP/build/ios/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/Stub.swiftdeps",
+    "swiftmodule" : "/Users/pedroalvarez/Projects/KMP/Netflix-KMP/build/ios/Lottie.build/Debug-iphonesimulator/_LottieStub.build/Objects-normal/arm64/Stub~partial.swiftmodule"
+  }
+}

@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+Target 'iosApp' in project 'iosApp'
+➜ Explicit dependency on target 'Lottie' in project 'Lottie'
+Target 'Lottie' in project 'Lottie'
+➜ Explicit dependency on target '_LottieStub' in project 'Lottie'
+Target '_LottieStub' in project 'Lottie' (no dependencies)
