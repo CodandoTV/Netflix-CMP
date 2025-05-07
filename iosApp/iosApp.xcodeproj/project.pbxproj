@@ -10,6 +10,11 @@
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		3FD32FD52DC8DC9200633ECC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FD32FD42DC8DC9200633ECC /* GoogleService-Info.plist */; };
+		3FD32FD82DCB813C00633ECC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3FD32FD72DCB813C00633ECC /* FirebaseAnalytics */; };
+		3FD32FDA2DCB813C00633ECC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3FD32FD92DCB813C00633ECC /* FirebaseAuth */; };
+		3FD32FDC2DCB813C00633ECC /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3FD32FDB2DCB813C00633ECC /* FirebaseCore */; };
+		3FD32FDE2DCB813C00633ECC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3FD32FDD2DCB813C00633ECC /* FirebaseCrashlytics */; };
 		5BA9B5142DA889A300EF12ED /* iosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA9B5132DA889A300EF12ED /* iosAppTests.swift */; };
 		5BAD97872D7CCDDA00D93987 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD97862D7CCDDA00D93987 /* Lottie.swift */; };
 		5BAD97892D7CCEA700D93987 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5BAD97882D7CCEA700D93987 /* Lottie */; };
@@ -30,8 +35,9 @@
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		3FD32FD42DC8DC9200633ECC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5BA9B50A2DA8871200EF12ED /* iosApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = iosApp.xctestplan; sourceTree = SOURCE_ROOT; };
-		5BA9B50C2DA887EE00EF12ED /* iosApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; name = iosApp.xctestplan; path = iosAppTests/iosApp.xctestplan; sourceTree = SOURCE_ROOT; };
+		5BA9B50C2DA887EE00EF12ED /* iosApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = iosApp.xctestplan; path = iosAppTests/iosApp.xctestplan; sourceTree = SOURCE_ROOT; };
 		5BA9B5112DA889A300EF12ED /* iosAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BA9B5132DA889A300EF12ED /* iosAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosAppTests.swift; sourceTree = "<group>"; };
 		5BAD97862D7CCDDA00D93987 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
@@ -53,6 +59,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD32FD82DCB813C00633ECC /* FirebaseAnalytics in Frameworks */,
+				3FD32FDA2DCB813C00633ECC /* FirebaseAuth in Frameworks */,
+				3FD32FDE2DCB813C00633ECC /* FirebaseCrashlytics in Frameworks */,
+				3FD32FDC2DCB813C00633ECC /* FirebaseCore in Frameworks */,
 				5BAD97892D7CCEA700D93987 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +124,7 @@
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				3FD32FD42DC8DC9200633ECC /* GoogleService-Info.plist */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -163,6 +174,10 @@
 			name = iosApp;
 			packageProductDependencies = (
 				5BAD97882D7CCEA700D93987 /* Lottie */,
+				3FD32FD72DCB813C00633ECC /* FirebaseAnalytics */,
+				3FD32FD92DCB813C00633ECC /* FirebaseAuth */,
+				3FD32FDB2DCB813C00633ECC /* FirebaseCore */,
+				3FD32FDD2DCB813C00633ECC /* FirebaseCrashlytics */,
 			);
 			productName = iosApp;
 			productReference = 7555FF7B242A565900829871 /* KotlinProject.app */;
@@ -199,6 +214,7 @@
 			mainGroup = 7555FF72242A565900829871;
 			packageReferences = (
 				5BAD97852D7CCDB400D93987 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				3FD32FD62DCB7E8900633ECC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
@@ -224,6 +240,7 @@
 			files = (
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
+				3FD32FD52DC8DC9200633ECC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,9 +303,11 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ABCDE12345;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -301,9 +320,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				CODE_SIGN_IDENTITY = "Apple Development";
-                CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = ABCDE12345;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KotlinProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KotlinProject";
 			};
 			name = Debug;
@@ -314,8 +330,10 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ABCDE12345;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -327,9 +345,6 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				CODE_SIGN_IDENTITY = "Apple Development";
-                CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = ABCDE12345;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KotlinProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/KotlinProject";
 			};
 			name = Release;
@@ -475,6 +490,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${BUNDLE_ID}${TEAM_ID}";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.codandotv.streamplayerapp;
 				PRODUCT_NAME = "${APP_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -503,6 +519,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${BUNDLE_ID}${TEAM_ID}";
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = com.codandotv.streamplayerapp;
 				PRODUCT_NAME = "${APP_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -543,6 +560,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3FD32FD62DCB7E8900633ECC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
+			};
+		};
 		5BAD97852D7CCDB400D93987 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -554,6 +579,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3FD32FD72DCB813C00633ECC /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FD32FD62DCB7E8900633ECC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3FD32FD92DCB813C00633ECC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FD32FD62DCB7E8900633ECC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		3FD32FDB2DCB813C00633ECC /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FD32FD62DCB7E8900633ECC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		3FD32FDD2DCB813C00633ECC /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FD32FD62DCB7E8900633ECC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		5BAD97882D7CCEA700D93987 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5BAD97852D7CCDB400D93987 /* XCRemoteSwiftPackageReference "lottie-spm" */;

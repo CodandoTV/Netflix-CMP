@@ -39,8 +39,10 @@ activity-compose = "1.8.2"
 
 #Firebase
 google-services = "4.4.2"
-firebase-bom = "33.13.0"
-firebase-analytics = "22.4.0"
+firebase-bom-android = "33.13.0"
+firebase-analytics-android = "22.4.0"
+#firebase-core-ios = "1.12.0"
+jetbrainsKotlinJvm = "1.9.24"
 
 [libraries]
 kotlin_gradle_plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -106,8 +108,9 @@ material = { group = "com.google.android.material", name = "material", version.r
 activity-compose = { module = "androidx.activity:activity-compose", version = "activity-compose" }
 
 #Firebase
-firebase-bom = {group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
-firebase-analytics = {group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebase-analytics" }
+firebase-bom = {group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom-android" }
+firebase-analytics = {group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebase-analytics-android" }
+#firebase-core-ios = {group = "dev.gitlive", name = "firebase-core-ios", version.ref = "firebase-core-ios"}
 
 #Test
 kotlin_test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
@@ -145,3 +148,4 @@ dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 
 buildkonfig_plugin = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }

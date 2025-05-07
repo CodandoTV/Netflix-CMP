@@ -64,3 +64,4 @@ kover {
         }
     }
 }
+include(":core-analytics")

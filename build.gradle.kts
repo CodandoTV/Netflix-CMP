@@ -13,6 +13,7 @@ plugins {
     alias(libs.plugins.dokka) apply false
     alias(libs.plugins.buildkonfig.plugin) apply false
     alias(libs.plugins.google.services) apply false
+    alias(libs.plugins.jetbrains.kotlin.jvm) apply false
 }
 
 tasks.register("clean", Delete::class) {
