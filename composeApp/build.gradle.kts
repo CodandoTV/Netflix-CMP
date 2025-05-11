@@ -13,6 +13,7 @@ kotlin {
             implementation(libs.lottie)
             implementation(compose.preview)
             implementation(libs.firebase.analytics)
+            implementation(project.dependencies.platform(libs.firebase.bom))
         }
         commonMain.dependencies {
             implementation(projects.featureListStreams)
@@ -34,7 +35,6 @@ kotlin {
             implementation(compose.components.resources)
 
             implementation(libs.koin.core)
-            implementation(libs.firebase.bom)
         }
     }
 }
