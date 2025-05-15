@@ -1,22 +1,28 @@
 **1. Faça um fork do repositório**
 
 **2. Clone o repositório**
+
 ```git
 git clone https://github.com/CodandoTV/StreamPlayerApp.wiki.git
 ```
+
 **3. Acessa a pasta wiki**
+
 ```
 cd StreamPlayerApp.wiki
 ```
+
 **4. Faça as alterações desejadas nos arquivos da wiki;**
 
 **5. Commit e push das alterações para o seu repositório forked:**
+
 ```git
 git checkout -b "nome do seu branch"
 git add .
 git commit -m "Descrição das alterações"
 git push
 ```
+
 **6. Crie um novo Pull Request, escolhendo o repositório original como base e a branch com as suas alterações.**
 
 **7. Preencha os detalhes do PR, fornecendo um título e uma descrição clara.**

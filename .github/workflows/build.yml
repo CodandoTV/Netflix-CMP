@@ -2,9 +2,9 @@ name: Build KMP (Android + iOS)
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
   workflow_dispatch:
     inputs:
       run_ios:
@@ -29,7 +29,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
+          distribution: "temurin"
           java-version: 17
 
       - name: Grant permission to gradlew

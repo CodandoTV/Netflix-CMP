@@ -20,4 +20,5 @@
 ## Issues Relacionadas
 
 [Adicione as issues relacionadas a esse PR, se houver.]
+
 - [link da issue 1]
