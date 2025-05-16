@@ -106,8 +106,9 @@ activity-compose = { module = "androidx.activity:activity-compose", version = "a
 
 #Firebase
 
-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom"}
-firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics"}
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 
 #Test
 kotlin_test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
@@ -145,3 +146,4 @@ dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 
 buildkonfig_plugin = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }
 google-services = { id = "com.google.gms.google-services", version.ref = "google-services"}
+firebase-crashlytics-plugin = { id = "com.google.firebase.crashlytics" }
