@@ -40,7 +40,8 @@ popcorngp = "3.1.2"
 
 #Firebase
 google-services = "4.4.2"
-firebase-bom = "33.13.0"
+firebase-bom = "33.14.0"
+firebase-crashlytics = "3.0.3"
 
 [libraries]
 kotlin_gradle_plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -109,6 +110,7 @@ activity-compose = { module = "androidx.activity:activity-compose", version = "a
 
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom"}
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics"}
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics"}
 
 #Test
 kotlin_test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
@@ -148,3 +150,5 @@ dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 
 buildkonfig_plugin = { id = "com.codingfeline.buildkonfig", version.ref = "buildkonfig" }
 google-services = { id = "com.google.gms.google-services", version.ref = "google-services"}
+
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics"}
