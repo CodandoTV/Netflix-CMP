@@ -27,6 +27,7 @@ kotlin {
             implementation(projects.coreNavigation)
             implementation(projects.coreNetworking)
             implementation(projects.coreLocalStorage)
+            implementation(projects.coreBackgroundWork)
 
             implementation(libs.navigation.compose)
 
@@ -35,6 +36,7 @@ kotlin {
             implementation(compose.components.resources)
 
             implementation(libs.koin.core)
+            api(libs.kmpnotifier)
         }
     }
 }

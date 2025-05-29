@@ -38,6 +38,7 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":feature-news")
 include(":core-camera-gallery")
 include(":core-permission")
+include(":core-background-work")
 
 kover {
     enableCoverage()

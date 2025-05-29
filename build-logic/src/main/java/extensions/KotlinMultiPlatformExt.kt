@@ -12,6 +12,8 @@ fun KotlinMultiplatformExtension.iosTarget() {
         iosTarget.binaries.framework {
             baseName = Config.appName
             isStatic = true
+
+            export("io.github.mirzemehdi:kmpnotifier:1.5.1")
         }
     }
 }
