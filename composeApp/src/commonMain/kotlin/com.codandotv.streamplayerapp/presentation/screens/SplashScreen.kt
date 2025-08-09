@@ -15,6 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.codandotv.streamplayerapp.presentation.components.LottieComponent
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import streamplayerapp_kmp.composeapp.generated.resources.Res
 
@@ -41,14 +42,13 @@ fun SplashScreen(
                 .background(Color.Black)
         ) {
             lottieAnimationString?.let {
-                onAnimationFinished.invoke()
-//                LottieComponent(
-//                    jsonString = it,
-//                    modifier = Modifier
-//                        .fillMaxWidth()
-//                        .fillMaxHeight(),
-//                    onAnimationFinished = onAnimationFinished
-//                )
+                LottieComponent(
+                    jsonString = it,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight(),
+                    onAnimationFinished = onAnimationFinished
+                )
             }
         }
     }
