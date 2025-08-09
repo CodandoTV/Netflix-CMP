@@ -5,7 +5,7 @@ import streamplayerapp
 struct iOSApp: App {
     
     init() {
-        KoinIosHelper().doInitKoin(lottieViewProvider: LottieViewProviderImpl())
+        KoinIosHelper().doInitKoin()
     }
     
     var body: some Scene {
