@@ -6,15 +6,12 @@ import extensions.iosTarget
 import extensions.setupAndroidDefaultConfig
 import extensions.setupCompileOptions
 import extensions.setupPackingOptions
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 val libs: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.multiplatform")
-    id("kotlin-kapt")
     id("kotlin-parcelize")
     id("com.streamplayer.dokka")
     id("com.streamplayer.detekt")
@@ -24,7 +21,7 @@ val catalog: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().n
 kotlin {
     androidTarget {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_17)
+            jvmTarget.set(Config.jvmTarget)
         }
     }
 

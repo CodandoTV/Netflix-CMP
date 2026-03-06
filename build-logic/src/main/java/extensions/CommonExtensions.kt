@@ -1,10 +1,7 @@
-@file:Suppress("UnstableApiUsage")
-
 package extensions
 
 import Config
 import com.android.build.api.dsl.CommonExtension
-import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog
 import org.gradle.api.artifacts.VersionCatalogsExtension
@@ -38,8 +35,8 @@ internal fun CommonExtension<*, *, *, *, *, *>.setupAndroidDefaultConfig() {
 
 internal fun CommonExtension<*, *, *, *, *, *>.setupCompileOptions() {
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = Config.javaVersion
+        targetCompatibility = Config.javaVersion
     }
 }
 

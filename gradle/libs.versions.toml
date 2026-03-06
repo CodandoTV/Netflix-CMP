@@ -1,8 +1,8 @@
 [versions]
-kotlin = "2.1.10"
-android_gradle_plugin = "8.7.2"
+kotlin = "2.3.10"
+android_gradle_plugin = "8.7.3"
 koin = "4.0.1"
-ksp = "2.1.10-1.0.29"
+ksp = "2.3.5"
 
 dokka = "1.9.10"
 detekt = "1.23.6"
