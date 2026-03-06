@@ -19,6 +19,8 @@ plugins {
 val catalog: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 kotlin {
+    jvmToolchain(21)
+
     androidTarget {
         compilerOptions {
             jvmTarget.set(Config.jvmTarget)
