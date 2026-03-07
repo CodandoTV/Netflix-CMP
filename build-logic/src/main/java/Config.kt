@@ -1,6 +1,11 @@
+import org.gradle.api.JavaVersion
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 object Config {
     const val appName = "streamplayerapp"
     const val applicationId = "com.codandotv.$appName"
+    val jvmTarget = JvmTarget.JVM_21
+    val javaVersion = JavaVersion.VERSION_21
     const val compileSdkVersion = 35
     const val minSdkVersion = 28
     const val targetSdkVersion = 35
