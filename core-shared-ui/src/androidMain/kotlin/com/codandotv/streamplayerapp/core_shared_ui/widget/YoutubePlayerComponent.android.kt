@@ -42,7 +42,7 @@ actual fun YoutubePlayerComponentPlatform(videoId: String, modifier: Modifier) {
     AndroidView(
         modifier = modifier,
         factory = { webView },
-        update = { it.loadDataWithBaseURL(null, embedHTML, "text/html", "UTF-8", null) },
+        update = { it.loadDataWithBaseURL(CODANDOTV_DOMAIN, embedHTML, "text/html", "UTF-8", null) },
         onReset = { it.destroy() }
     )
 }

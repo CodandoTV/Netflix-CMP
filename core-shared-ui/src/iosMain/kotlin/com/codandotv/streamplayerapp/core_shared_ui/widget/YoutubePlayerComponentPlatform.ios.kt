@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.UIKitView
+import platform.Foundation.NSURL
 import platform.WebKit.WKWebView
 import platform.WebKit.WKWebViewConfiguration
 import platform.WebKit.WKWebsiteDataStore
@@ -23,7 +24,7 @@ actual fun YoutubePlayerComponentPlatform(videoId: String, modifier: Modifier){
             configuration.limitsNavigationsToAppBoundDomains = false
             loadHTMLString(
                 string = embedHTML,
-                baseURL = null
+                baseURL = NSURL(string = CODANDOTV_DOMAIN),
             )
         }
     }
