@@ -17,4 +17,4 @@ internal fun String.videoIdToEmbedHTML(): String {
     """.trimIndent()
 }
 
-internal const val CODANDOTV_DOMAIN = "https://com.codandotv.com/streamplayerapp"
+internal const val CODANDOTV_DOMAIN = "https://www.youtube.com/@CodandoTV"
