@@ -14,6 +14,7 @@ plugins {
     alias(libs.plugins.buildkonfig.plugin) apply false
     id("popcorngp-setup-plugin")
     alias(libs.plugins.google.services) apply false
+    alias(libs.plugins.firebase.crashlytics) apply false
 }
 
 tasks.register("clean", Delete::class) {
