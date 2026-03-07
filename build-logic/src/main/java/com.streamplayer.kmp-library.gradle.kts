@@ -16,16 +16,17 @@ plugins {
     id("org.jetbrains.kotlin.multiplatform")
     id("com.android.library")
     id("org.jetbrains.kotlin.plugin.serialization")
-    id("kotlin-kapt")
     id("kotlin-parcelize")
     id("com.streamplayer.dokka")
     id("com.streamplayer.detekt")
 }
 
 kotlin {
+    jvmToolchain(21)
+
     androidTarget {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_17)
+            jvmTarget.set(Config.jvmTarget)
             freeCompilerArgs.add("-Xstring-concat=inline")
         }
     }
