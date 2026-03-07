@@ -33,7 +33,7 @@ fun NavGraphBuilder.listStreamsNavGraph(navController: NavHostController) {
             onNavigateSearchScreen = {
                 navController.navigate(Routes.SEARCH)
             },
-            profilePicture = nav.arguments?.getString(PROFILE_ID) ?: DEFAULT_ID
+            profilePicture = nav.savedStateHandle.get<String>(PROFILE_ID) ?: DEFAULT_ID
         )
     }
 }

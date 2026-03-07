@@ -8,14 +8,10 @@ plugins {
 kotlin {
     sourceSets {
         androidMain.dependencies {
-            implementation(compose.preview)
             implementation(libs.ktor.client.okhttp)
         }
         commonMain.dependencies {
-            implementation(compose.material3)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
-            implementation(libs.navigation.compose)
+            implementation(libs.bundles.compose)
             implementation(libs.coil)
             implementation(libs.coil.network.ktor3)
             implementation(libs.paging.compose)

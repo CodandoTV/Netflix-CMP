@@ -1,13 +1,22 @@
 [versions]
 kotlin = "2.3.10"
 android_gradle_plugin = "8.7.3"
-koin = "4.0.1"
+koin = "4.1.1"
 ksp = "2.3.5"
+kotzilla = "2.0.8"
+lifecycle-viewmodel-compose-version = "2.9.6"
 
 dokka = "1.9.10"
 detekt = "1.23.6"
-compose_plugin_multiplataform = "1.7.3"
-navigation-compose-version = "2.7.0-alpha07"
+compose_plugin_multiplataform = "1.10.0"
+compose_material3 = "1.9.0"
+compose_animation = "1.10.0"
+compose_resources = "1.10.0"
+compose_foundation = "1.10.0"
+compose_material_icons_extended = "1.7.3"
+compose_ui = "1.10.0"
+
+navigation-compose-version = "2.9.2"
 paging-compose = "3.3.0-alpha02-0.5.1"
 buildkonfig = "0.15.2"
 cameraCore = "1.4.2"
@@ -47,6 +56,7 @@ firebase-bom = "33.14.0"
 firebase-crashlytics = "3.0.3"
 
 [libraries]
+kotzilla-sdk-compose = { group = "io.kotzilla", name = "kotzilla-sdk-compose", version.ref = "kotzilla" }
 kotlin_gradle_plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 android_gradle_plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "android_gradle_plugin" }
 detekt-gradle-plugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
@@ -129,6 +139,16 @@ popcorn_guineapig = { group = "io.github.codandotv", name = "popcornguineapig", 
 work-runtime = { module = "androidx.work:work-runtime-ktx", version.ref = "work-runtime" }
 kmpnotifier = { module = "io.github.mirzemehdi:kmpnotifier", version.ref = "kmpnotifier" }
 
+# Compose
+compose_animation = { module = "org.jetbrains.compose.animation:animation", version.ref = "compose_animation" }
+compose_resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose_resources" }
+compose_foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose_foundation" }
+lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle-viewmodel-compose-version" }
+material-icons-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "compose_material_icons_extended" }
+material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "compose_material3" }
+compose_ui_tooling-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "compose_ui" }
+compose_ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose_ui" }
+compose_ui-util = { module = "org.jetbrains.compose.ui:ui-util", version.ref = "compose_ui" }
 
 [bundles]
 test = ["junit", "mockk", "mockk_android", "viewmodel_test", "koin_test", "coroutines_test"]
@@ -139,8 +159,10 @@ camera = [
     "androidx-camera-lifecycle",
     "androidx-camera-view"
 ]
+compose = ["navigation-compose", "compose_animation", "compose_resources", "lifecycle-viewmodel-compose", "material-icons-extended", "compose_foundation", "material3", "compose_ui_tooling-preview", "compose_ui", "compose_ui-util"]
 
 [plugins]
+kotzilla = { id = "io.kotzilla.kotzilla-plugin", version.ref = "kotzilla" }
 android_application = { id = "com.android.application", version.ref = "android_gradle_plugin" }
 android_library = { id = "com.android.library", version.ref = "android_gradle_plugin" }
 

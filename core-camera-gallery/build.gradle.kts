@@ -10,16 +10,13 @@ kotlin {
     sourceSets {
         sourceSets {
             androidMain.dependencies {
-                implementation(compose.preview)
                 implementation(libs.activity.compose)
                 implementation(libs.bundles.camera)
             }
             commonMain.dependencies {
                 implementation(projects.coreShared)
                 implementation(projects.coreSharedUi)
-                implementation(compose.material3)
-                implementation(compose.ui)
-                implementation(compose.components.resources)
+                implementation(libs.bundles.compose)
             }
         }
     }
