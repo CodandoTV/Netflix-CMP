@@ -40,6 +40,8 @@ kotlin {
 
             implementation(libs.koin.core)
             api(libs.kmpnotifier)
+
+            implementation(libs.kotzilla.sdk.compose)
         }
     }
 }
