@@ -24,7 +24,7 @@ fun NavGraphBuilder.detailStreamNavGraph(navController: NavHostController) {
         }
         DetailStreamScreen(
             viewModel = koinViewModel {
-                parametersOf(nav.arguments?.getString(ID) ?: DEFAULT_ID)
+                parametersOf(nav.savedStateHandle.get<String>(ID)?: DEFAULT_ID)
             },
             navController = navController,
             sharedHandlerPlatform = getKoin().get(),

@@ -8,9 +8,6 @@ plugins {
 
 kotlin {
     sourceSets {
-        androidMain.dependencies {
-            implementation(compose.preview)
-        }
         commonMain.dependencies {
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
@@ -22,12 +19,9 @@ kotlin {
             implementation(projects.coreCameraGallery)
             implementation(projects.coreSharedUi)
             implementation(projects.corePermission)
-            implementation(compose.material3)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
+            implementation(libs.bundles.compose)
 
             implementation(libs.kotlinx.coroutines.core)
-            implementation(libs.navigation.compose)
         }
         androidUnitTest.dependencies {
             implementation(libs.bundles.test)

@@ -6,6 +6,7 @@ import com.codandotv.streamplayerapp.core_background_work.worker.WorkScheduler
 import com.codandotv.streamplayerapp.di.AppModule
 import com.mmk.kmpnotifier.notification.NotifierManager
 import com.mmk.kmpnotifier.notification.configuration.NotificationPlatformConfiguration
+import io.kotzilla.generated.monitoring
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -13,10 +14,12 @@ class CustomApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-       startKoin{
+        startKoin {
             androidContext(this@CustomApplication.applicationContext)
             modules(AppModule.list)
-       }
+
+            monitoring()
+        }
         WorkScheduler.scheduleSync(this)
         initializeNotification()
     }

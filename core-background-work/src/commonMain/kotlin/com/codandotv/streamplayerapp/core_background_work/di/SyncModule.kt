@@ -4,7 +4,7 @@ import com.codandotv.streamplayerapp.core_background_work.SyncManager
 import org.koin.dsl.module
 
 object SyncModule {
-    val module = module {
+    val module = module(createdAtStart = true) {
         single { SyncManager(get()) }
     }
 }

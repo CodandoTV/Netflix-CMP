@@ -9,17 +9,12 @@ plugins {
 kotlin {
     sourceSets {
         sourceSets {
-            androidMain.dependencies {
-                implementation(compose.preview)
-            }
             commonMain.dependencies {
-                implementation(compose.material3)
-                implementation(compose.ui)
+                implementation(libs.bundles.compose)
                 implementation(libs.moko.permissions.core)
                 api(libs.moko.permissions.compose)
                 implementation(libs.moko.permissions.camera)
                 implementation(libs.moko.permissions.gallery)
-                implementation(compose.components.resources)
                 implementation(libs.koin.core)
             }
         }

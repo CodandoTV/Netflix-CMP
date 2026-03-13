@@ -8,10 +8,6 @@ plugins {
 
 kotlin {
     sourceSets {
-        androidMain.dependencies {
-            implementation(compose.preview)
-        }
-
         commonMain.dependencies {
             implementation(libs.paging.compose)
 
@@ -21,12 +17,7 @@ kotlin {
             implementation(projects.coreSharedUi)
             implementation(projects.coreLocalStorage)
 
-            implementation(compose.components.resources)
-            implementation(compose.material3)
-            implementation(compose.ui)
-
-
-            implementation(libs.navigation.compose)
+            implementation(libs.bundles.compose)
 
             implementation(libs.ktor.client.content.serialization.json)
             implementation(libs.ktor.client.content.negotiation)
