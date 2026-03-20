@@ -7,6 +7,7 @@ import io.ktor.client.HttpClient
 import io.ktor.client.request.parameter
 import io.ktor.client.request.url
 import org.koin.core.annotation.Factory
+import org.koin.core.annotation.Provided
 import org.koin.meta.annotations.ExternalDefinition
 
 interface SearchStreamService {
@@ -15,7 +16,7 @@ interface SearchStreamService {
 
 @Factory(binds = [SearchStreamService::class])
 class SearchStreamServiceImpl(
-    @ExternalDefinition("com.codandotv.streamplayerapp.core_networking.di.NetworkModule") private val client: HttpClient
+    @Provided private val client: HttpClient
 ) : SearchStreamService {
     override suspend fun getSearch(query: String): NetworkResponse<ListSearchStreamResponse> =
         client.safeRequest {

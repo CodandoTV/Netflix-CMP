@@ -8,6 +8,7 @@ import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.url
 import org.koin.core.annotation.Factory
+import org.koin.core.annotation.Provided
 
 interface MostPopularMoviesService {
     suspend fun getPopular(): NetworkResponse<ListSearchStreamResponse>
@@ -15,7 +16,7 @@ interface MostPopularMoviesService {
 
 @Factory(binds = [MostPopularMoviesService::class])
 class MostPopularMoviesServiceImpl(
-    private val client: HttpClient
+    @Provided private val client: HttpClient
 ) : MostPopularMoviesService {
     override suspend fun getPopular(): NetworkResponse<ListSearchStreamResponse> =
         client.safeRequest {
