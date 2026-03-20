@@ -1,7 +1,8 @@
 [versions]
 kotlin = "2.3.10"
-android_gradle_plugin = "8.7.3"
-koin = "4.1.1"
+android_gradle_plugin = "8.9.1"
+koin = "4.2.0"
+koin-annotations = "2.3.1"
 ksp = "2.3.5"
 kotzilla = "2.0.8"
 lifecycle-viewmodel-compose-version = "2.9.6"
@@ -85,6 +86,8 @@ androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "
 koin_test = { group = "io.insert-koin", name = "koin-test-junit4", version.ref = "koin" }
 koin_android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 koin_core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin-annotations" }
+koin-ksp-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koin-annotations" }
 koin_compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
 koin_compose_viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
 

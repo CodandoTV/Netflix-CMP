@@ -4,6 +4,7 @@ plugins {
     id("com.streamplayer.kmp-library")
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
+    id("com.streamplayer.koin-annotations-setup")
 }
 
 kotlin {

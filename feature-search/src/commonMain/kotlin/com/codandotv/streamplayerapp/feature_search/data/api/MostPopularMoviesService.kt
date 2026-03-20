@@ -7,11 +7,13 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.url
+import org.koin.core.annotation.Factory
 
 interface MostPopularMoviesService {
     suspend fun getPopular(): NetworkResponse<ListSearchStreamResponse>
 }
 
+@Factory(binds = [MostPopularMoviesService::class])
 class MostPopularMoviesServiceImpl(
     private val client: HttpClient
 ) : MostPopularMoviesService {
