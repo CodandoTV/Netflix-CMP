@@ -12,5 +12,5 @@ internal fun VersionCatalog.koinAnnotationsDependency() = findLibrary("koin_anno
 
 internal fun VersionCatalog.koinComposeDependency() = findLibrary("koin_compose").get()
 
-internal fun VersionCatalog.koinCompiler() = findLibrary("koin_ksp_compiler").get()
+internal fun VersionCatalog.koinCompiler() = findLibrary("koin-ksp-compiler").get()
 

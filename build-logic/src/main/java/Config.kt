@@ -6,9 +6,9 @@ object Config {
     const val applicationId = "com.codandotv.$appName"
     val jvmTarget = JvmTarget.JVM_21
     val javaVersion = JavaVersion.VERSION_21
-    const val compileSdkVersion = 35
+    const val compileSdkVersion = 36
     const val minSdkVersion = 28
-    const val targetSdkVersion = 35
+    const val targetSdkVersion = 36
     const val versionName = "1.2"
     const val versionCode = 1
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
