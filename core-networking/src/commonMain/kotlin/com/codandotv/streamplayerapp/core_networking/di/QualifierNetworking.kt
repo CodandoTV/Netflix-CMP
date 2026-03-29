@@ -18,13 +18,3 @@ object QualifierProfileHttpClient : Qualifier {
         get() = "QualifierProfileRetrofit"
 }
 
-object QualifierLoggerInterceptor : Qualifier {
-    override val value: QualifierValue
-        get() = "QualifierLoggerInterceptor"
-}
-
-object QualifierAuthInterceptor : Qualifier {
-    override val value: QualifierValue
-        get() = "QualifierAuthInterceptor"
-}
-
