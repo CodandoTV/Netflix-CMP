@@ -2,21 +2,27 @@ package com.codandotv.streamplayerapp.core_networking.di
 
 import com.codandotv.streamplayerapp.core_networking.HttpClientBuilder
 import core.networking.BuildKonfig
-import org.koin.dsl.module
+import io.ktor.client.HttpClient
+import org.koin.core.annotation.Module
+import org.koin.core.annotation.Qualifier
+import org.koin.core.annotation.Single
 
-object NetworkModule {
-    val module = module {
-        single {
-            HttpClientBuilder.build(
-                baseUrl = BuildKonfig.HOST,
-            )
-        }
+@Module
+class NetworkModule {
 
-        single(QualifierProfileHttpClient) {
-            HttpClientBuilder.build(
-                baseUrl = BuildKonfig.PROFILE,
-            )
-        }
+    @Single
+    fun provideHttpClient() : HttpClient {
+        return HttpClientBuilder.build(
+            baseUrl = BuildKonfig.HOST,
+        )
+    }
+
+    @Single
+    @Qualifier(QualifierProfileHttpClient::class)
+    fun provideProfileHttpClient(): HttpClient {
+        return HttpClientBuilder.build(
+            baseUrl = BuildKonfig.PROFILE,
+        )
     }
 }
 
