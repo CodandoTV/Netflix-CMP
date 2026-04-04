@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.buildkonfig.plugin)
+    id("com.streamplayer.koin-annotations-setup")
 }
 
 buildkonfig {

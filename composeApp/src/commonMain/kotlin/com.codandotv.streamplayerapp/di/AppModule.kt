@@ -8,10 +8,11 @@ import com.codandotv.streamplayerapp.feature_list_streams.list.di.ListStreamModu
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import org.koin.dsl.module
+import org.koin.ksp.generated.module
 
 object AppModule {
     private val module = module {
         single(QualifierDispatcherIO) { Dispatchers.IO }
     }
-    val list  = module + NetworkModule.module + LocalStorageModule.module + SyncModule.module + ListStreamModule.module
+    val list  = module + NetworkModule().module + LocalStorageModule.module + SyncModule.module + ListStreamModule.module
 }
