@@ -49,7 +49,6 @@ fun DetailStreamScreen(
     viewModel: DetailStreamViewModel = koinViewModel(),
     navController: NavController,
     sharedHandlerPlatform: SharedHandlerPlatform,
-    onNavigateSearchScreen: () -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
