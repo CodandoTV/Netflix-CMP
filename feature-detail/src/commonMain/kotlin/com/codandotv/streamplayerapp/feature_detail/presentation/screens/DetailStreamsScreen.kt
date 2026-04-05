@@ -59,7 +59,6 @@ fun DetailStreamScreen(
                 onToggleToMyList = { detailStream -> viewModel.toggleItemInFavorites(detailStream) },
                 uiState = uiState as DetailStreamsUIState.DetailStreamsLoadedUIState,
                 navController = navController,
-                onNavigateSearchScreen = onNavigateSearchScreen,
                 sharedHandlerPlatform = sharedHandlerPlatform
             )
         }
