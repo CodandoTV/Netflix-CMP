@@ -320,7 +320,7 @@ exceptions:
   ObjectExtendsThrowable:
     active: false
   PrintStackTrace:
-    active: false
+    active: true
   RethrowCaughtException:
     active: true
   ReturnFromFinally:
@@ -462,7 +462,7 @@ naming:
     propertyPattern: "[A-Za-z][_A-Za-z0-9]*"
     privatePropertyPattern: "(_)?[A-Za-z][_A-Za-z0-9]*"
   PackageNaming:
-    active: false
+    active: true
     packagePattern: '[a-z]+(\.[a-z][A-Za-z0-9]*)*'
   TopLevelPropertyNaming:
     active: true
@@ -741,7 +741,7 @@ style:
     ignoreOverridden: false
     ignoreUsageInGenerics: false
   FunctionOnlyReturningConstant:
-    active: false
+    active: true
     ignoreOverridableFunction: true
     ignoreActualFunction: true
     excludedFunctions: []
@@ -749,34 +749,7 @@ style:
     active: true
     maxJumpCount: 1
   MagicNumber:
-    active: true
-    excludes:
-      [
-        "**/test/**",
-        "**/androidTest/**",
-        "**/commonTest/**",
-        "**/jvmTest/**",
-        "**/androidUnitTest/**",
-        "**/androidInstrumentedTest/**",
-        "**/jsTest/**",
-        "**/iosTest/**",
-        "**/*.kts",
-      ]
-    ignoreNumbers:
-      - "-1"
-      - "0"
-      - "1"
-      - "2"
-    ignoreHashCodeFunction: true
-    ignorePropertyDeclaration: false
-    ignoreLocalVariableDeclaration: false
-    ignoreConstantDeclaration: true
-    ignoreCompanionObjectPropertyDeclaration: true
-    ignoreAnnotation: false
-    ignoreNamedArgument: true
-    ignoreEnums: false
-    ignoreRanges: false
-    ignoreExtensionFunctions: true
+    active: false
   MandatoryBracesLoops:
     active: false
   MaxChainedCallsOnSameLine:
@@ -804,7 +777,7 @@ style:
   NestedClassesVisibility:
     active: true
   NewLineAtEndOfFile:
-    active: false
+    active: true
   NoTabs:
     active: false
   NullableBooleanCheck:
