@@ -14,6 +14,7 @@ import streamplayerapp_kmp.feature_list_streams.generated.resources.list_highlig
 import streamplayerapp_kmp.feature_list_streams.generated.resources.list_highlight_banner_info
 import streamplayerapp_kmp.feature_list_streams.generated.resources.list_highlight_banner_watch
 
+typealias ContentType = com.codandotv.streamplayerapp.feature_list_streams.core.ContentType
 @ThemePreviews
 @Composable
 fun HighlightBannerPreview() {
@@ -21,16 +22,16 @@ fun HighlightBannerPreview() {
         data = com.codandotv.streamplayerapp.feature_list_streams.list.domain.model.HighlightBanner(
             name = stringResource(Res.string.app_name),
             imageUrl = String(),
-            contentType = com.codandotv.streamplayerapp.feature_list_streams.core.ContentType.getContentName(
-                com.codandotv.streamplayerapp.feature_list_streams.core.ContentType.SHOW
+            contentType = ContentType.getContentName(
+                ContentType.SHOW
             ),
-            contentTypeAsPlural = com.codandotv.streamplayerapp.feature_list_streams.core.ContentType.getContentNameAsPlural(
-                com.codandotv.streamplayerapp.feature_list_streams.core.ContentType.SHOW
+            contentTypeAsPlural = ContentType.getContentNameAsPlural(
+                ContentType.SHOW
             ),
             extraInfo = IconAndTextInfo(
                 streamplayerapp_kmp.feature_list_streams.generated.resources.Res.drawable.ic_top_10,
-                com.codandotv.streamplayerapp.feature_list_streams.core.ContentType.getContentName(
-                    com.codandotv.streamplayerapp.feature_list_streams.core.ContentType.SHOW
+                ContentType.getContentName(
+                    ContentType.SHOW
                 )
             ),
             leftButton = IconAndTextInfo(

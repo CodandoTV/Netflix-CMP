@@ -14,5 +14,9 @@ object AppModule {
     private val module = module {
         single(QualifierDispatcherIO) { Dispatchers.IO }
     }
-    val list  = module + NetworkModule().module + LocalStorageModule.module + SyncModule.module + ListStreamModule.module
+    val list = module +
+            NetworkModule().module +
+            LocalStorageModule.module +
+            SyncModule.module +
+            ListStreamModule.module
 }

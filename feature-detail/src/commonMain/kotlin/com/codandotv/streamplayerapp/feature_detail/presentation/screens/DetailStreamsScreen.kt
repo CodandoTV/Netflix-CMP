@@ -83,8 +83,7 @@ private fun SetupDetailScreen(
     onToggleToMyList: (DetailStream) -> Unit,
     uiState: DetailStreamsUIState.DetailStreamsLoadedUIState,
     navController: NavController,
-    sharedHandlerPlatform : SharedHandlerPlatform,
-    onNavigateSearchScreen: () -> Unit = {},
+    sharedHandlerPlatform: SharedHandlerPlatform,
 ) {
     val showDialog = remember { mutableStateOf(false) }
 

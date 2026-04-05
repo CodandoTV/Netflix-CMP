@@ -402,11 +402,6 @@ naming:
   ClassNaming:
     active: true
     classPattern: "[A-Z][a-zA-Z0-9]*"
-  ConstructorParameterNaming:
-    active: true
-    parameterPattern: "[a-z][A-Za-z0-9]*"
-    privateParameterPattern: "[a-z][A-Za-z0-9]*"
-    excludeClassPattern: "$^"
   EnumNaming:
     active: true
     enumEntryPattern: "[A-Z][_a-zA-Z0-9]*"
@@ -440,15 +435,10 @@ naming:
     parameterPattern: "[a-z][A-Za-z0-9]*"
     excludeClassPattern: "$^"
   InvalidPackageDeclaration:
-    active: true
-    rootPackage: ""
-    requireRootInDeclaration: false
+    active: false
   LambdaParameterNaming:
     active: false
     parameterPattern: "[a-z][A-Za-z0-9]*|_"
-  MatchingDeclarationName:
-    active: true
-    mustBeFirst: true
   MemberNameEqualsClassName:
     active: true
     ignoreOverridden: true
@@ -462,8 +452,7 @@ naming:
     propertyPattern: "[A-Za-z][_A-Za-z0-9]*"
     privatePropertyPattern: "(_)?[A-Za-z][_A-Za-z0-9]*"
   PackageNaming:
-    active: true
-    packagePattern: '[a-z]+(\.[a-z][A-Za-z0-9]*)*'
+    active: false
   TopLevelPropertyNaming:
     active: true
     constantPattern: "[A-Z][_A-Z0-9]*"

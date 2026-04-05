@@ -62,7 +62,6 @@ internal object HttpClientBuilder {
                 level = LogLevel.ALL
                 logger = object : Logger {
                     override fun log(message: String) {
-                        //TODO: Migrar Logs para Utilizar Kermit
                         println("HttpClient${message}")
                     }
                 }
