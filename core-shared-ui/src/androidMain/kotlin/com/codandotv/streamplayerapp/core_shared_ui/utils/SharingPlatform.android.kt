@@ -1,6 +1,5 @@
 package com.codandotv.streamplayerapp.core_shared_ui.utils
 
-import android.content.pm.PackageManager
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import com.codandotv.streamplayerapp.core_shared_ui.extension.getPackageInfoCompat
@@ -8,10 +7,8 @@ import com.codandotv.streamplayerapp.core_shared_ui.extension.getPackageInfoComp
 @Composable
 actual fun isPackageInstalled(packageName: String): Boolean {
     val pm = LocalContext.current.packageManager
-    return try {
+    return runCatching {
         pm.getPackageInfoCompat(packageName)
         true
-    } catch (e: PackageManager.NameNotFoundException) {
-        false
-    }
+    }.getOrDefault(false)
 }

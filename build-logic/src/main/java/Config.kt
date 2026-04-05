@@ -9,7 +9,7 @@ object Config {
     const val compileSdkVersion = 36
     const val minSdkVersion = 28
     const val targetSdkVersion = 36
-    const val versionName = "1.3"
+    const val versionName = "1.4"
     const val versionCode = 1
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -22,10 +22,14 @@ object Config {
         private const val tmdb_token_name_debug = "TMDB_BEARER_TOKEN_DEBUG"
         private const val tmdb_token_name_release = "TMDB_BEARER_TOKEN_RELEASE"
 
-        private const val bearear_without_environment = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNDg2NWM4YTAzNzhmM2I4NjI0OWU1ZjNiYWFiMjU2NyIsInN1YiI6IjY0Mjk4YTg5YTNlNGJhMWM0NDgzM2U4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9cIxv29vkaZ2yW88DIFRUFK_nXbK2b6KS8t96kA8WAE"
-
+        private const val bearear_without_environment = """
+            eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNDg2NWM4YTAzNzhmM2I4NjI0OWU1ZjNiYWFiMjU2NyIsInN1YiI6I
+            jY0Mjk4YTg5YTNlNGJhMWM0NDgzM2U4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9cIx
+            v29vkaZ2yW88DIFRUFK_nXbK2b6KS8t96kA8WAE"
+        """
         val api_bearer = System.getenv(tmdb_token_name_debug) ?: bearear_without_environment
         val api_bearer_debug = System.getenv(tmdb_token_name_debug) ?: bearear_without_environment
-        val api_bearer_release = System.getenv(tmdb_token_name_release) ?: bearear_without_environment
+        val api_bearer_release =
+            System.getenv(tmdb_token_name_release) ?: bearear_without_environment
     }
 }

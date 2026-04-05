@@ -24,7 +24,7 @@ private fun documentDirectory(): String {
 }
 
 actual fun databaseInstance(): AppDatabase {
-    val dbFile = "${documentDirectory()}/$dbFileName"
+    val dbFile = "${documentDirectory()}/$DB_FILE_NAME"
     return Room.databaseBuilder<AppDatabase>(
         name = dbFile,
         factory = { findDatabaseConstructorAndInitDatabaseImpl(AppDatabase::class) }

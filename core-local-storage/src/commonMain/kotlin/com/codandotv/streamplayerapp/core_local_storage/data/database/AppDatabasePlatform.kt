@@ -22,4 +22,4 @@ expect object AppDatabaseConstructor : RoomDatabaseConstructor<AppDatabase> {
 
 expect fun databaseInstance(): AppDatabase
 
-internal const val dbFileName = "app-database.db"
+internal const val DB_FILE_NAME = "app-database.db"
