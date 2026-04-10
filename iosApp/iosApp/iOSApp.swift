@@ -8,6 +8,7 @@ struct iOSApp: App {
 
     init() {
         KoinIosHelper().doInitKoin(lottieViewProvider: LottieViewProviderImpl())
+        KoinIosHelper().doInitKoin()
         FirebaseApp.configure()
     }
 
