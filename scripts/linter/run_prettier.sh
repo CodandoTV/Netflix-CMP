@@ -2,7 +2,7 @@
 
 # Default configuration path
 PRETTIER_CLI="prettier"
-INPUT_PATH="../../.github"
+INPUT_PATH="../.."
 
 # Check if detekt is installed
 if ! command -v $PRETTIER_CLI &> /dev/null
