@@ -14,7 +14,6 @@ APPLY_FIXES: none
 # default
 ENABLE_LINTERS:
   - YAML_PRETTIER
-  - MARKDOWN_MARKDOWNLINT
   - KOTLIN_DETEKT
 
 DISABLE:
@@ -25,10 +24,5 @@ SHOW_ELAPSED_TIME: true
 
 FILEIO_REPORTER: false
 
-# Uncomment if you want MegaLinter to detect errors but not block CI to pass
-# DISABLE_ERRORS: true
-MARKDOWN_MARKDOWNLINT_CONFIG_FILE: .markdownlint.json
-MARKDOWN_MARKDOWNLINT_DISABLE_ERRORS: false
 KOTLIN_DETEKT_ARGUMENTS: -c config/detekt/detekt.yml -ex "**/build/**"
-
-DISABLE_ERRORS: true
+JAVASCRIPT_PRETTIER_FILTER_REGEX_INCLUDE: .github/
