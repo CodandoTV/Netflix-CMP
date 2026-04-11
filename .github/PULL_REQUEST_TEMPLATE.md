@@ -1,4 +1,4 @@
-## Descrição
+# Descrição
 
 [Descrição das alterações feitas no código ou nas funcionalidades.]
 
