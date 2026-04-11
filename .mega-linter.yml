@@ -25,4 +25,3 @@ SHOW_ELAPSED_TIME: true
 FILEIO_REPORTER: false
 
 KOTLIN_DETEKT_ARGUMENTS: -c config/detekt/detekt.yml -ex "**/build/**"
-JAVASCRIPT_PRETTIER_FILTER_REGEX_INCLUDE: .github/
