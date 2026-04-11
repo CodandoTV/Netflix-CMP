@@ -3,7 +3,6 @@ package com.codandotv.streamplayerapp.feature_detail.presentation.navigation
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
-import com.codandotv.streamplayerapp.core_navigation.routes.Routes
 import com.codandotv.streamplayerapp.core_navigation.routes.Routes.DETAIL_COMPLETE
 import com.codandotv.streamplayerapp.core_navigation.routes.Routes.PARAM.ID
 import com.codandotv.streamplayerapp.feature_detail.di.DetailStreamModule
@@ -28,9 +27,6 @@ fun NavGraphBuilder.detailStreamNavGraph(navController: NavHostController) {
             },
             navController = navController,
             sharedHandlerPlatform = getKoin().get(),
-            onNavigateSearchScreen = {
-                navController.navigate(Routes.SEARCH)
-            },
         )
     }
 }

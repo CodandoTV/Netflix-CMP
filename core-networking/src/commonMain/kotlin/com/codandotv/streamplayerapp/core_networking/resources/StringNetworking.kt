@@ -7,7 +7,9 @@ import streamplayerapp_kmp.core_networking.generated.resources.core_networking_n
 import streamplayerapp_kmp.core_networking.generated.resources.core_networking_no_data_content
 import streamplayerapp_kmp.core_networking.generated.resources.core_networking_no_server_error
 
-//Note: done this to search for strings in the innermost layers because you can't use them because they are not composable
+// Note: done this to search for strings in the innermost
+// layers because you can't use them because they are not
+// composable
 object StringNetworking {
     internal fun msgDefaultErrorKey(): String = Res.string.core_networking_msg_default_error.key
     internal fun msgNoDataContentKey(): String = Res.string.core_networking_no_data_content.key

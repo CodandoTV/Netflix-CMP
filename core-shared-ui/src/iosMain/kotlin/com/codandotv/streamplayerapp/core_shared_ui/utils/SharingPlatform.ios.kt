@@ -4,6 +4,5 @@ import androidx.compose.runtime.Composable
 
 @Composable
 actual fun isPackageInstalled(packageName: String): Boolean {
-    //TODO:
     return false
 }

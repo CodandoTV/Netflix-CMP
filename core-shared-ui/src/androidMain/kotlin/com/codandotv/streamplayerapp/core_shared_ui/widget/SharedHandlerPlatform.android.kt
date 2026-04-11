@@ -20,9 +20,9 @@ actual class SharedHandlerPlatform : KoinComponent {
             `package` = "com.whatsapp"
             putExtra(Intent.EXTRA_TEXT, message)
         }
-        try {
+        runCatching {
             context.startActivity(intent)
-        } catch (e: Exception) {
+        }.onFailure {
             Toast.makeText(context, "WhatsApp não está instalado.", Toast.LENGTH_SHORT).show()
         }
     }
@@ -33,9 +33,9 @@ actual class SharedHandlerPlatform : KoinComponent {
             data = Uri.parse("sms:")
             putExtra("sms_body", message)
         }
-        try {
+        runCatching {
             context.startActivity(intent)
-        } catch (e: Exception) {
+        }.onFailure {
             Toast.makeText(context, "Nenhum aplicativo de SMS encontrado.", Toast.LENGTH_SHORT).show()
         }
     }
@@ -46,9 +46,9 @@ actual class SharedHandlerPlatform : KoinComponent {
             `package` = "com.instagram.android"
             putExtra(Intent.EXTRA_TEXT, url)
         }
-        try {
+        runCatching {
             context.startActivity(intent)
-        } catch (e: Exception) {
+        }.onFailure {
             Toast.makeText(context, "Instagram não está instalado.", Toast.LENGTH_SHORT).show()
         }
     }

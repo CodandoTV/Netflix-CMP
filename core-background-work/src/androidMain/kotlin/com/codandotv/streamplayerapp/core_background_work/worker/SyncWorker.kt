@@ -15,12 +15,9 @@ class SyncWorker(
     private val syncManager: SyncManager by inject()
 
     override suspend fun doWork(): Result {
-        return try {
+        return runCatching {
             syncManager.syncData()
             Result.success()
-        } catch (e: Exception) {
-            println("Erro no SyncWorker ${e.message}")
-            Result.retry()
-        }
+        }.getOrDefault(Result.retry())
     }
 }

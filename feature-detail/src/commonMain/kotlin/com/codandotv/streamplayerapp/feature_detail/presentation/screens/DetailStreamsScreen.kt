@@ -49,7 +49,6 @@ fun DetailStreamScreen(
     viewModel: DetailStreamViewModel = koinViewModel(),
     navController: NavController,
     sharedHandlerPlatform: SharedHandlerPlatform,
-    onNavigateSearchScreen: () -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
@@ -59,7 +58,6 @@ fun DetailStreamScreen(
                 onToggleToMyList = { detailStream -> viewModel.toggleItemInFavorites(detailStream) },
                 uiState = uiState as DetailStreamsUIState.DetailStreamsLoadedUIState,
                 navController = navController,
-                onNavigateSearchScreen = onNavigateSearchScreen,
                 sharedHandlerPlatform = sharedHandlerPlatform
             )
         }
@@ -83,8 +81,7 @@ private fun SetupDetailScreen(
     onToggleToMyList: (DetailStream) -> Unit,
     uiState: DetailStreamsUIState.DetailStreamsLoadedUIState,
     navController: NavController,
-    sharedHandlerPlatform : SharedHandlerPlatform,
-    onNavigateSearchScreen: () -> Unit = {},
+    sharedHandlerPlatform: SharedHandlerPlatform,
 ) {
     val showDialog = remember { mutableStateOf(false) }
 

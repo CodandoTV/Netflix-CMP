@@ -7,7 +7,6 @@ import androidx.room.RoomDatabaseConstructor
 import com.codandotv.streamplayerapp.core_local_storage.data.dao.FavoriteDao
 import com.codandotv.streamplayerapp.core_local_storage.domain.model.MovieEntity
 
-
 @Database(entities = [MovieEntity::class], version = 1, exportSchema = false)
 @ConstructedBy(AppDatabaseConstructor::class)
 abstract class AppDatabase : RoomDatabase() {
@@ -22,4 +21,4 @@ expect object AppDatabaseConstructor : RoomDatabaseConstructor<AppDatabase> {
 
 expect fun databaseInstance(): AppDatabase
 
-internal const val dbFileName = "app-database.db"
+internal const val DB_FILE_NAME = "app-database.db"

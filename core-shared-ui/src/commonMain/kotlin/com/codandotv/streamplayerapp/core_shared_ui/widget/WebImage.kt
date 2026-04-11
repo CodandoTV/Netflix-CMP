@@ -16,6 +16,7 @@ import coil3.compose.SubcomposeAsyncImage
 import coil3.network.ktor3.KtorNetworkFetcherFactory
 import coil3.request.ImageRequest
 
+@Suppress("LongParameterList")
 @Composable
 fun WebImage(
     imageUrl: String,

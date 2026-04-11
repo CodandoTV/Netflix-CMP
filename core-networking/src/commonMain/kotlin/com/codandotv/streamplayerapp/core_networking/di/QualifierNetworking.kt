@@ -7,4 +7,3 @@ object QualifierProfileHttpClient : Qualifier {
     override val value: QualifierValue
         get() = "QualifierProfileRetrofit"
 }
-
