@@ -28,7 +28,7 @@ class ListStreamRepositoryImpl(
     }
 
     override suspend fun topRatedStream() = service.getTopRatedMovies().toFlow().map {
-        it.results.first { it.poster_path != null }.toStream()
+        it.results.last() { it.poster_path != null }.toStream()
     }
 
     override fun loadMovies(genre: Genre): Flow<PagingData<Stream>> {
