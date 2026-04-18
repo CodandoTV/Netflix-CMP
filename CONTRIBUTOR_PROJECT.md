@@ -1,3 +1,5 @@
+# Contribuindo para o projeto
+
 **1. Abra a parte de ISSUES do GitHub e escolha uma issue que você se identifica ou gostaria de explorá-la.**
 
 - 1.1. Caso você queira aprender algo ou quer explorar o processo de mentoria ou está na dúvida sobre o que pegar.

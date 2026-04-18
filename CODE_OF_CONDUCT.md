@@ -33,4 +33,4 @@ This Code of Conduct is based on the [JetBrains Code of Conduct](https://github.
 
 ---
 
-*Version 1.0 — This document may evolve as the project grows.*
+_Version 1.0 — This document may evolve as the project grows._
