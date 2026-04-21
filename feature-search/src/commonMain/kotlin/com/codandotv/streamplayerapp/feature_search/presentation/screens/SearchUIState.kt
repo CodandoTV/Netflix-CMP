@@ -4,7 +4,7 @@ import com.codandotv.streamplayerapp.feature_search.data.model.ListSearchStreamR
 
 sealed class SearchUIState {
     data class Success(val listCharacters: ListSearchStreamResponse) : SearchUIState()
-    data class Error(val messageError: String = String()) : SearchUIState()
+    data class Error(val messageError: String = "") : SearchUIState()
     object Loading : SearchUIState()
     object Empty : SearchUIState()
 }
