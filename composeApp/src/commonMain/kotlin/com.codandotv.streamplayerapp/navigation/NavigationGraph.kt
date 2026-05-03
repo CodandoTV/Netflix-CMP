@@ -1,8 +1,13 @@
 package com.codandotv.streamplayerapp.navigation
 
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -14,7 +19,6 @@ import com.codandotv.streamplayerapp.core_navigation.routes.BottomNavRoutes
 import com.codandotv.streamplayerapp.core_navigation.routes.Routes
 import com.codandotv.streamplayerapp.feature_list_streams.list.presentation.navigation.listStreamsNavGraph
 import com.codandotv.streamplayerapp.profile.presentation.navigation.profilePickerStreamNavGraph
-
 import com.codandotv.streamplayerapp.presentation.navigation.splashNavGraph
 import com.codandotv.streamplayerapp.feature_detail.presentation.navigation.detailStreamNavGraph
 import com.codandotv.streamplayerapp.feature_news.presentation.navigation.newsStreamNavGraph
@@ -22,7 +26,12 @@ import com.codandotv.streamplayerapp.feature_search.presentation.navigation.sear
 
 @Composable
 fun NavigationGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = Routes.Splash) {
+    NavHost(
+        navController = navController,
+        startDestination = Routes.Splash,
+        enterTransition = { fadeIn(animationSpec = tween(300)) },
+        exitTransition = { fadeOut(animationSpec = tween(300)) },
+    ) {
         splashNavGraph(navController = navController)
         listStreamsNavGraph(navController = navController)
         searchStreamsNavGraph(navController = navController)
@@ -46,7 +55,11 @@ fun example(navController: NavController, route: String) {
         bottomBar = {
             StreamPlayerBottomNavigation(navController = navController)
         }
-    ) { _ ->
-        Text(text = route, color = Color.White)
+    ) { innerPadding ->
+        Text(
+            modifier = Modifier.padding(top = innerPadding.calculateTopPadding()),
+            text = route,
+            color = Color.White
+        )
     }
 }

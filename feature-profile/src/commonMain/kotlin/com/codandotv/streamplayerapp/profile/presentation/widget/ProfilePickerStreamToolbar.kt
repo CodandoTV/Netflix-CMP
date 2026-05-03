@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.Icon
@@ -25,6 +26,7 @@ fun ProfilePickerStreamToolbar(modifier: Modifier = Modifier) {
     Box(
         modifier
             .fillMaxWidth()
+            .statusBarsPadding()
             .height(56.dp),
         contentAlignment = Alignment.CenterEnd
     ) {
