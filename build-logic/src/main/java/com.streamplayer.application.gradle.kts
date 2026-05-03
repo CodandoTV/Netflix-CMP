@@ -1,13 +1,12 @@
 @file:Suppress("UnstableApiUsage")
 
-import extensions.dokkaPlugin
-import extensions.getLibrary
 import extensions.iosTarget
 import extensions.setupAndroidDefaultConfig
 import extensions.setupCompileOptions
 import extensions.setupPackingOptions
+import org.gradle.accessors.dm.LibrariesForLibs
 
-val libs: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
+val libs = the<LibrariesForLibs>()
 
 plugins {
     id("com.android.application")
@@ -16,7 +15,6 @@ plugins {
     id("com.streamplayer.dokka")
     id("com.streamplayer.detekt")
 }
-val catalog: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 kotlin {
     jvmToolchain(21)
@@ -48,7 +46,7 @@ android {
 }
 
 dependencies {
-    dokkaPlugin(libs.getLibrary("dokka"))
+    add("dokkaPlugin", libs.dokka)
 }
 
 tasks.register("coverageReport") {

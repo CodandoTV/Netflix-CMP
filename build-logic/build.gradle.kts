@@ -13,6 +13,9 @@ repositories {
 }
 
 dependencies {
+    // this allow us to access libs.anylibrary using type-safe accessors
+    implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
+
     implementation(libs.android.gradle.plugin)
     implementation(libs.kotlin.gradle.plugin)
     implementation(libs.detekt.gradle.plugin)

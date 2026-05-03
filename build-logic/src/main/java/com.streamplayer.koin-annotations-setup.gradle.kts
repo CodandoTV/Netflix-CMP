@@ -1,12 +1,8 @@
-import extensions.koinAnnotationsDependency
-import extensions.koinCompiler
-import extensions.koinCoreDependency
-import org.gradle.api.artifacts.VersionCatalog
-import org.gradle.api.artifacts.VersionCatalogsExtension
-import org.gradle.kotlin.dsl.getByType
+import org.gradle.accessors.dm.LibrariesForLibs
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val libs: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
+val libs = the<LibrariesForLibs>()
+
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
     id("com.google.devtools.ksp")
@@ -15,8 +11,8 @@ plugins {
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.koinCoreDependency())
-            api(libs.koinAnnotationsDependency())
+            implementation(libs.koin.core)
+            api(libs.koin.annotations)
         }
     }
 
@@ -28,7 +24,7 @@ kotlin {
 
 // KSP Tasks
 dependencies {
-    add("kspCommonMainMetadata", libs.koinCompiler())
+    add("kspCommonMainMetadata", libs.koin.ksp.compiler)
 }
 
 

@@ -1,17 +1,15 @@
 @file:Suppress("UnstableApiUsage")
 
-import extensions.dokkaPlugin
-import extensions.getLibrary
 import extensions.iosTarget
 import extensions.setupAndroidDefaultConfig
 import extensions.setupCompileOptions
 import extensions.setupNameSpace
 import extensions.setupPackingOptions
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.gradle.accessors.dm.LibrariesForLibs
+import org.gradle.kotlin.dsl.the
 
+val libs = the<LibrariesForLibs>()
 
-val libs: VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
     id("com.android.library")
@@ -61,5 +59,5 @@ android {
 }
 
 dependencies {
-    dokkaPlugin(libs.getLibrary("dokka"))
+    add("dokkaPlugin", libs.dokka)
 }
