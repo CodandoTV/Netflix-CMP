@@ -48,7 +48,6 @@ fun ListStreamsScreen(
 
     Scaffold(
         modifier = Modifier
-            .statusBarsPadding()
             .nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             StreamPlayerTopBar(

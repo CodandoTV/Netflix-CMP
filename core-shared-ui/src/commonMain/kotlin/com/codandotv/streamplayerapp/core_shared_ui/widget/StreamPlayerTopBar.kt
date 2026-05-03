@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -46,7 +47,10 @@ fun StreamPlayerTopBar(
     onNavigateSearchScreen: () -> Unit = {},
     onSelectedProfilePicture: String
 ) {
-    Box(modifier = Modifier.background(color = Colors.Dark10)) {
+    Box(
+        modifier = Modifier.background(color = Colors.Dark10)
+            .statusBarsPadding()
+    ) {
         StreamPlayerTopBar(
             onNavigateProfilePicker = { onNavigateProfilePicker() },
             onNavigateSearchScreen = { onNavigateSearchScreen() },

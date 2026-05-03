@@ -1,6 +1,7 @@
 package com.codandotv.streamplayerapp.core_shared_ui.widget
 
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -21,7 +22,7 @@ fun BasicToolbar(
 ) {
     TopAppBar(
         title = { Text(text = title) },
-        modifier = Modifier.height(56.dp),
+        modifier = Modifier.height(56.dp).statusBarsPadding(),
         navigationIcon = {
             IconButton(onClick = navController::navigateUp) {
                 Icon(
