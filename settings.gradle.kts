@@ -23,7 +23,7 @@ dependencyResolutionManagement {
     }
 }
 
-
+include(":androidApp")
 include(":composeApp")
 include(":feature-list-streams")
 include(":core-shared")

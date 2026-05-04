@@ -7,7 +7,7 @@ import org.gradle.api.artifacts.VersionCatalog
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.getByType
 
-internal fun CommonExtension<*, *, *, *, *, *>.setupPackingOptions() {
+fun CommonExtension<*, *, *, *, *, *>.setupPackingOptions() {
     packaging {
         resources {
             with(pickFirsts) {
@@ -23,7 +23,7 @@ internal fun CommonExtension<*, *, *, *, *, *>.setupPackingOptions() {
     }
 }
 
-internal fun CommonExtension<*, *, *, *, *, *>.setupAndroidDefaultConfig() {
+fun CommonExtension<*, *, *, *, *, *>.setupAndroidDefaultConfig() {
     defaultConfig {
         compileSdk = Config.compileSdkVersion
         minSdk = Config.minSdkVersion
@@ -33,14 +33,14 @@ internal fun CommonExtension<*, *, *, *, *, *>.setupAndroidDefaultConfig() {
     }
 }
 
-internal fun CommonExtension<*, *, *, *, *, *>.setupCompileOptions() {
+fun CommonExtension<*, *, *, *, *, *>.setupCompileOptions() {
     compileOptions {
         sourceCompatibility = Config.javaVersion
         targetCompatibility = Config.javaVersion
     }
 }
 
-internal fun CommonExtension<*, *, *, *, *, *>.setupNameSpace(project: Project) {
+fun CommonExtension<*, *, *, *, *, *>.setupNameSpace(project: Project) {
     val moduleName = project.displayName
         .removePrefix("project ")
         .replace(":", ".")

@@ -1,16 +1,9 @@
 @file:Suppress("UnstableApiUsage")
 
 plugins {
-    id("com.streamplayer.application")
+    id("com.streamplayer.kmp-library")
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.google.services)
-    alias(libs.plugins.firebase.crashlytics)
-    alias(libs.plugins.kotzilla)
-}
-
-kotzilla {
-    versionName = Config.versionName
 }
 
 kotlin {
@@ -29,12 +22,13 @@ kotlin {
             implementation(projects.featureProfile)
             implementation(projects.featureNews)
             implementation(projects.coreShared)
-            implementation(projects.coreSharedUi)
+            api(projects.coreSharedUi)
+            api(projects.coreCameraGallery)
+            api(projects.coreBackgroundWork)
             implementation(projects.corePermission)
             implementation(projects.coreNavigation)
             implementation(projects.coreNetworking)
             implementation(projects.coreLocalStorage)
-            implementation(projects.coreBackgroundWork)
 
             implementation(libs.bundles.compose)
 
