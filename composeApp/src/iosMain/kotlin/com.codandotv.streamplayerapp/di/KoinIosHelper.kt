@@ -1,7 +1,6 @@
 package com.codandotv.streamplayerapp.di
 
 import com.codandotv.streamplayerapp.presentation.components.LottieViewProvider
-import io.kotzilla.generated.monitoring
 import org.koin.dsl.module
 
 class KoinIosHelper {
@@ -12,11 +11,6 @@ class KoinIosHelper {
                     single<LottieViewProvider> {
                         lottieViewProvider
                     }
-                }
-            )
-            monitoring(
-                onConfig = {
-                    onConfig { useIosCrashReport = false }
                 }
             )
         }

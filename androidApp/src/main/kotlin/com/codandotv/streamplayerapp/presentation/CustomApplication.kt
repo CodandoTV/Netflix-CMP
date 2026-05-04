@@ -6,7 +6,6 @@ import com.codandotv.streamplayerapp.core_background_work.worker.WorkScheduler
 import com.codandotv.streamplayerapp.di.streamPlayerApplication
 import com.mmk.kmpnotifier.notification.NotifierManager
 import com.mmk.kmpnotifier.notification.configuration.NotificationPlatformConfiguration
-import io.kotzilla.generated.monitoring
 import org.koin.android.ext.koin.androidContext
 
 class CustomApplication : Application() {
@@ -16,7 +15,6 @@ class CustomApplication : Application() {
 
         streamPlayerApplication {
             androidContext(this@CustomApplication.applicationContext)
-            monitoring()
         }
 
         WorkScheduler.scheduleSync(this)

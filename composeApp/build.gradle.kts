@@ -4,11 +4,6 @@ plugins {
     id("com.streamplayer.kmp-library")
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.kotzilla)
-}
-
-kotzilla {
-    versionName = Config.versionName
 }
 
 kotlin {

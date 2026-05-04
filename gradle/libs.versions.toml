@@ -1,6 +1,6 @@
 [versions]
-kotlin = "2.3.10"
-android_gradle_plugin = "8.13.2"
+kotlin = "2.3.20"
+android_gradle_plugin = "9.1.0"
 koin = "4.2.0"
 koin-annotations = "2.3.1"
 ksp = "2.3.5"
@@ -169,7 +169,6 @@ kotzilla = { id = "io.kotzilla.kotzilla-plugin", version.ref = "kotzilla" }
 android_application = { id = "com.android.application", version.ref = "android_gradle_plugin" }
 android_library = { id = "com.android.library", version.ref = "android_gradle_plugin" }
 
-kotlin_android = { id = "org.jetbrains.kotlin.android", version = "2.2.20" }
 serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose_plugin_multiplataform" }
