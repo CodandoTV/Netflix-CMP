@@ -44,8 +44,8 @@ jobs:
           key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-${{ runner.os }}-
 
-      - name: Build Android (composeApp)
-        run: ./gradlew :composeApp:assembleDebug
+      - name: Build Android (androidApp)
+        run: ./gradlew :androidApp:assembleDebug
 
       - name: Run Android/CommonMain unit tests
         run: ./gradlew testDebugUnitTest
