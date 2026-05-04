@@ -15,7 +15,6 @@ import org.koin.ksp.generated.module
 fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinApplication {
     return startKoin {
         platformBlock()
-
         modules(
             module { single(QualifierDispatcherIO) { Dispatchers.IO } },
             NetworkModule().module,
