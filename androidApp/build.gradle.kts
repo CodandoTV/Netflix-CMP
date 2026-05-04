@@ -12,10 +12,6 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
-kotzilla {
-    versionName = Config.versionName
-}
-
 android {
     namespace = Config.applicationId
 
