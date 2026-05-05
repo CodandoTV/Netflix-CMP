@@ -3,7 +3,6 @@ package com.codandotv.streamplayerapp.presentation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.core.view.WindowCompat
 import com.codandotv.streamplayerapp.StreamPlayerApp
 import com.google.firebase.Firebase
 import com.google.firebase.initialize

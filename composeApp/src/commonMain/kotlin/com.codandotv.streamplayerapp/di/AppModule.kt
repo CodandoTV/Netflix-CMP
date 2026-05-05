@@ -7,16 +7,21 @@ import com.codandotv.streamplayerapp.core_shared.qualifier.QualifierDispatcherIO
 import com.codandotv.streamplayerapp.feature_list_streams.list.di.ListStreamModule
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
+import org.koin.core.KoinApplication
+import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import org.koin.ksp.generated.module
 
-object AppModule {
-    private val module = module {
-        single(QualifierDispatcherIO) { Dispatchers.IO }
+fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinApplication {
+    return startKoin {
+        platformBlock()
+        modules(
+            module { single(QualifierDispatcherIO) { Dispatchers.IO } },
+            NetworkModule().module,
+            LocalStorageModule.module,
+            SyncModule.module,
+            ListStreamModule.module,
+        )
     }
-    val list = module +
-            NetworkModule().module +
-            LocalStorageModule.module +
-            SyncModule.module +
-            ListStreamModule.module
 }
+
