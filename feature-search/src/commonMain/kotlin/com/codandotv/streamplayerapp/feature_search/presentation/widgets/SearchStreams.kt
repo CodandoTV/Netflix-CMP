@@ -49,9 +49,10 @@ fun SearchableTopBar(
     onSearchDispatched: () -> Unit,
     onSearchIconPressed: () -> Unit,
     onBackPressed: () -> Unit,
-    onCleanTextPressed: () -> Unit
+    onCleanTextPressed: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
-    Column {
+    Column(modifier = modifier) {
         StreamPlayerTopBar(
             onBackPressed = onBackPressed
         )
