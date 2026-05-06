@@ -33,6 +33,7 @@ kotlin {
             implementation(libs.bundles.compose)
 
             implementation(libs.koin.core)
+            implementation(libs.koin.core.coroutines)
             api(libs.kmpnotifier)
 
             implementation(libs.kotzilla.sdk.compose)

@@ -13,12 +13,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
+import org.koin.core.lazyModules
 import org.koin.dsl.module
 import org.koin.ksp.generated.module
 
 fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinApplication {
     return startKoin {
         platformBlock()
+        lazyModules(PermissionsModule.module)
+
         modules(
             module {
                 single(QualifierDispatcherIO) {
@@ -28,7 +31,6 @@ fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinAppl
             NetworkModule().module,
             LocalStorageModule.module,
             SyncModule.module,
-            PermissionsModule.module,
 
             // region feature_modules
             ListStreamModule.module,

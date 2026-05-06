@@ -16,6 +16,7 @@ kotlin {
                 implementation(libs.moko.permissions.camera)
                 implementation(libs.moko.permissions.gallery)
                 implementation(libs.koin.core)
+                implementation(libs.koin.core.coroutines)
             }
         }
     }
