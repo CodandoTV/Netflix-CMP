@@ -5,6 +5,7 @@ import com.codandotv.streamplayerapp.core_local_storage.di.LocalStorageModule
 import com.codandotv.streamplayerapp.core_networking.di.NetworkModule
 import com.codandotv.streamplayerapp.core_shared.qualifier.QualifierDispatcherIO
 import com.codandotv.streamplayerapp.feature_list_streams.list.di.ListStreamModule
+import com.codandotv.streamplayerapp.feature_news.di.NewsScreenModule
 import com.codandotv.streamplayerapp.feature_search.di.SearchModule
 import com.codandotv.streamplayerapp.feature_search.presentation.widgets.StreamsError
 import com.codandotv.streamplayerapp.profile.di.ProfilePickerStreamModule
@@ -19,13 +20,22 @@ fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinAppl
     return startKoin {
         platformBlock()
         modules(
-            module { single(QualifierDispatcherIO) { Dispatchers.IO } },
+            module {
+                single(QualifierDispatcherIO) {
+                    Dispatchers.IO
+                }
+            },
             NetworkModule().module,
             LocalStorageModule.module,
             SyncModule.module,
+            PermissionsModule.module,
+
+            // region feature_modules
             ListStreamModule.module,
             SearchModule().module,
+            NewsScreenModule().module,
             ProfilePickerStreamModule().module
+            // endregion
         )
     }
 }
