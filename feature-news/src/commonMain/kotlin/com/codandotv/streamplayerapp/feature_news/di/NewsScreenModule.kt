@@ -1,13 +1,8 @@
 package com.codandotv.streamplayerapp.feature_news.di
 
-import com.codandotv.streamplayerapp.feature_news.presentation.NewsScreenViewModel
-import org.koin.core.module.dsl.viewModel
-import org.koin.dsl.module
+import org.koin.core.annotation.ComponentScan
+import org.koin.core.annotation.Module
 
-object NewsScreenModule {
-    val module = module {
-        viewModel {
-            NewsScreenViewModel( permissionsManager = get())
-        }
-    }
-}
+@Module
+@ComponentScan("com.codandotv.streamplayerapp.feature_news")
+class NewsScreenModule

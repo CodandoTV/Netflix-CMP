@@ -3,6 +3,7 @@ package com.codandotv.streamplayerapp.profile.domain
 
 import com.codandotv.streamplayerapp.profile.data.ProfilePickerStreamRepository
 import kotlinx.coroutines.flow.Flow
+import org.koin.core.annotation.Factory
 
 interface ProfilePickerStreamUseCase {
     suspend fun getProfile(): Flow<List<ProfileStream>>
@@ -21,6 +22,7 @@ interface ProfilePickerStreamUseCase {
     ): Pair<Int, Int>
 }
 
+@Factory
 class ProfilePickerStreamUseCaseImpl(
     private val profilePickerStreamRepository: ProfilePickerStreamRepository
 ) : ProfilePickerStreamUseCase {

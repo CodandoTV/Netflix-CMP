@@ -4,6 +4,7 @@ plugins {
     id("com.streamplayer.kmp-library")
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotzilla)
 }
 
 kotlin {
@@ -16,6 +17,7 @@ kotlin {
             implementation(libs.firebase.crashlytics)
         }
         commonMain.dependencies {
+            implementation(libs.kotzilla.sdk.compose)
             implementation(projects.featureListStreams)
             implementation(projects.featureDetail)
             implementation(projects.featureSearch)
@@ -33,9 +35,8 @@ kotlin {
             implementation(libs.bundles.compose)
 
             implementation(libs.koin.core)
+            implementation(libs.koin.core.coroutines)
             api(libs.kmpnotifier)
-
-            implementation(libs.kotzilla.sdk.compose)
         }
     }
 }

@@ -7,11 +7,13 @@ import com.codandotv.streamplayerapp.profile.domain.toProfiles
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
+import org.koin.core.annotation.Factory
 
 interface ProfilePickerStreamRepository {
     suspend fun getProfiles(): Flow<List<ProfileStream>>
 }
 
+@Factory
 class ProfilePickerStreamRepositoryImpl(
     private val service: ProfilePickerStreamService
 ) : ProfilePickerStreamRepository {
