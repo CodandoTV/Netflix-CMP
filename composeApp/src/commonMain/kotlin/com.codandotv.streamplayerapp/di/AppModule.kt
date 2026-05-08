@@ -15,7 +15,6 @@ import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 import org.koin.core.lazyModules
 import org.koin.dsl.module
-import org.koin.ksp.generated.module
 import org.koin.plugin.module.dsl.modules
 
 fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinApplication {
@@ -29,17 +28,17 @@ fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinAppl
                     Dispatchers.IO
                 }
             },
-            NetworkModule().module,
             LocalStorageModule.module,
             SyncModule.module,
 
             // region feature_modules
             ListStreamModule.module,
-            SearchModule().module,
-            NewsScreenModule().module,
             // endregion
         )
+        modules<NetworkModule>()
         modules<ProfilePickerStreamModule>()
+        modules<SearchModule>()
+        modules<NewsScreenModule>()
 
         monitoring {
             onConfig {
