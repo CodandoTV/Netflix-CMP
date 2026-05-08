@@ -7,7 +7,6 @@ import com.codandotv.streamplayerapp.core_shared.qualifier.QualifierDispatcherIO
 import com.codandotv.streamplayerapp.feature_list_streams.list.di.ListStreamModule
 import com.codandotv.streamplayerapp.feature_news.di.NewsScreenModule
 import com.codandotv.streamplayerapp.feature_search.di.SearchModule
-import com.codandotv.streamplayerapp.feature_search.presentation.widgets.StreamsError
 import com.codandotv.streamplayerapp.profile.di.ProfilePickerStreamModule
 import io.kotzilla.generated.monitoring
 import kotlinx.coroutines.Dispatchers
@@ -17,6 +16,7 @@ import org.koin.core.context.startKoin
 import org.koin.core.lazyModules
 import org.koin.dsl.module
 import org.koin.ksp.generated.module
+import org.koin.plugin.module.dsl.modules
 
 fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinApplication {
     return startKoin {
@@ -37,9 +37,9 @@ fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinAppl
             ListStreamModule.module,
             SearchModule().module,
             NewsScreenModule().module,
-            ProfilePickerStreamModule().module
             // endregion
         )
+        modules<ProfilePickerStreamModule>()
 
         monitoring {
             onConfig {

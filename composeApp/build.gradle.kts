@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotzilla)
+    id("com.streamplayer.koin-compiler-setup")
 }
 
 kotlin {
