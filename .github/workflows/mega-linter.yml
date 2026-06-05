@@ -32,6 +32,15 @@ jobs:
 
           fetch-depth: 0
 
+      # Java setup to run Gradle command
+      - uses: actions/checkout@v4
+      - name: Setup Java
+        uses: ./.github/actions/java
+
+      # Gradle permission to run detekt
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       # MegaLinter
       - name: MegaLinter
         uses: oxsecurity/megalinter/flavors/java@v8
