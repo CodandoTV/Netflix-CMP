@@ -1,3 +1,5 @@
+@file:Suppress("MatchingDeclarationName")
+
 package com.codandotv.streamplayerapp.core.permission
 
 import dev.icerock.moko.permissions.compose.PermissionsControllerFactory

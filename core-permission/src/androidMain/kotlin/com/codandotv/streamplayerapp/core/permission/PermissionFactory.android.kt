@@ -1,3 +1,5 @@
+@file:Suppress("MatchingDeclarationName")
+
 package com.codandotv.streamplayerapp.core.permission
 
 import android.content.Context
