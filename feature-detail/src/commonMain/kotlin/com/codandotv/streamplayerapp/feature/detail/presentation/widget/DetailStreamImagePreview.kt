@@ -16,8 +16,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
-import com.codandotv.streamplayerapp.core.shared.ui.widget.YoutubePlayerComponentPlatform
 import com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage
+import com.codandotv.streamplayerapp.core.shared.ui.widget.YoutubePlayerComponentPlatform
+import com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState
 import org.jetbrains.compose.resources.painterResource
 import streamplayerapp_kmp.feature_detail.generated.resources.Res
 import streamplayerapp_kmp.feature_detail.generated.resources.play_circle
@@ -25,7 +26,7 @@ import streamplayerapp_kmp.feature_detail.generated.resources.play_circle
 @Suppress("MagicNumber")
 @Composable
 fun DetailStreamImagePreview(
-    uiState: com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState.DetailStreamsLoadedUIState,
+    uiState: DetailStreamsUIState.DetailStreamsLoadedUIState,
     modifier: Modifier = Modifier,
     showPlayer: Boolean = false,
     onPlayEvent: (() -> Unit)
@@ -37,14 +38,14 @@ fun DetailStreamImagePreview(
         contentAlignment = Alignment.Center
     ) {
         if (showPlayer) {
-            _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.YoutubePlayerComponentPlatform(
+            YoutubePlayerComponentPlatform(
                 videoId = uiState.videoId.orEmpty(),
                 modifier = Modifier
                     .align(Alignment.TopCenter)
                     .fillMaxSize()
             )
         } else {
-            _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage(
+            WebImage(
                 imageUrl = uiState.detailStream.url,
                 contentScale = ContentScale.Fit,
                 contentDescription = uiState.detailStream.tagline,

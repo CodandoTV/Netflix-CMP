@@ -29,12 +29,11 @@ class DetailStreamViewModelTest {
         detailUseCase = FakeDetailStreamUseCase()
         videoUseCase = FakeVideoStreamsUseCase()
 
-        detailStreamViewModel =
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamViewModel(
-                detailStreamUseCase = detailUseCase,
-                videoStreamsUseCase = videoUseCase,
-                dispatcher = StandardTestDispatcher()
-            )
+        detailStreamViewModel = DetailStreamViewModel(
+            detailStreamUseCase = detailUseCase,
+            videoStreamsUseCase = videoUseCase,
+            dispatcher = StandardTestDispatcher()
+        )
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)

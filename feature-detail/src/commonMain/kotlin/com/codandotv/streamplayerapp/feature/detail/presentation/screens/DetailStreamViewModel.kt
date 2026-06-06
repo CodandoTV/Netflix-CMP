@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.codandotv.streamplayerapp.core.networking.handleError.catchFailure
 import com.codandotv.streamplayerapp.core.networking.resources.StringNetworking
+import com.codandotv.streamplayerapp.feature.detail.domain.DetailStreamUseCase
+import com.codandotv.streamplayerapp.feature.detail.domain.VideoStreamsUseCase
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -15,9 +17,9 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.flow.zip
 import kotlinx.coroutines.launch
 
-class  DetailStreamViewModel(
-    private val detailStreamUseCase: com.codandotv.streamplayerapp.feature.detail.domain.DetailStreamUseCase,
-    private val videoStreamsUseCase: com.codandotv.streamplayerapp.feature.detail.domain.VideoStreamsUseCase,
+class DetailStreamViewModel(
+    private val detailStreamUseCase: DetailStreamUseCase,
+    private val videoStreamsUseCase: VideoStreamsUseCase,
     private val dispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
@@ -25,10 +27,10 @@ class  DetailStreamViewModel(
         loadDetail()
     }
 
-    private val _uiState = MutableStateFlow<com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState>(
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState.LoadingStreamUIState
+    private val _uiState = MutableStateFlow<DetailStreamsUIState>(
+        DetailStreamsUIState.LoadingStreamUIState
     )
-    val uiState: StateFlow<com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState> = _uiState.stateIn(
+    val uiState: StateFlow<DetailStreamsUIState> = _uiState.stateIn(
         viewModelScope,
         SharingStarted.Eagerly,
         initialValue = _uiState.value
@@ -57,7 +59,7 @@ class  DetailStreamViewModel(
     }
 
     private fun onLoading() {
-        _uiState.update { _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState.LoadingStreamUIState }
+        _uiState.update { DetailStreamsUIState.LoadingStreamUIState }
     }
 
     fun toggleItemInFavorites(detailStream: com.codandotv.streamplayerapp.feature.detail.domain.DetailStream) {

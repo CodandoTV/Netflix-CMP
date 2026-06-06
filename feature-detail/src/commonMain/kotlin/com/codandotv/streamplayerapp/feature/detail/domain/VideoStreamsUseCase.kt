@@ -4,13 +4,13 @@ import com.codandotv.streamplayerapp.feature.detail.data.DetailStreamRepository
 import kotlinx.coroutines.flow.Flow
 
 interface VideoStreamsUseCase {
-    suspend fun getVideoStreams(): Flow<List<com.codandotv.streamplayerapp.feature.detail.domain.VideoStream>>
+    suspend fun getVideoStreams(): Flow<List<VideoStream>>
 }
 
 class VideoStreamsUseCaseImpl(
-    private val detailStreamRepository: com.codandotv.streamplayerapp.feature.detail.data.DetailStreamRepository
-) : com.codandotv.streamplayerapp.feature.detail.domain.VideoStreamsUseCase {
-    override suspend fun getVideoStreams(): Flow<List<com.codandotv.streamplayerapp.feature.detail.domain.VideoStream>> {
+    private val detailStreamRepository: DetailStreamRepository
+) : VideoStreamsUseCase {
+    override suspend fun getVideoStreams(): Flow<List<VideoStream>> {
         return detailStreamRepository.getVideoStreams()
     }
 }

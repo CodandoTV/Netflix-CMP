@@ -25,8 +25,8 @@ val expectedDetailStream =
         title = "Fake Movie",
         overview = "This is a fake overview.",
         tagline = "Fake Tagline",
-        backdrop_path = "aaaa",
-        release_date = "2025"
+        backdropPath = "aaaa",
+        releaseDate = "2025"
     )
 val expectedDetailStreamLoadedUI = DetailStreamsUIState.DetailStreamsLoadedUIState(
     detailStream = fakeStream,

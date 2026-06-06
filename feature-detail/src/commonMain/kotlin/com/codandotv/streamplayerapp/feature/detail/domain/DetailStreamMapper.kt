@@ -1,20 +1,24 @@
+@file:Suppress("MagicNumber")
+
 package com.codandotv.streamplayerapp.feature.detail.domain
 
 import com.codandotv.streamplayerapp.core.local.storage.domain.model.MovieEntity
 import com.codandotv.streamplayerapp.core.shared.Url.IMAGE_URL_SIZE_500
+import com.codandotv.streamplayerapp.feature.detail.data.model.DetailStreamResponse
+import com.codandotv.streamplayerapp.feature.detail.data.model.VideoStreamsResponse
 
-fun com.codandotv.streamplayerapp.feature.detail.data.model.DetailStreamResponse.toDetailStream(isFavorite: Boolean = false): com.codandotv.streamplayerapp.feature.detail.domain.DetailStream =
-    _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.domain.DetailStream(
+fun DetailStreamResponse.toDetailStream(isFavorite: Boolean = false): DetailStream =
+    DetailStream(
         id = this.id.toString(),
         title = this.title,
         overview = this.overview,
         tagline = this.tagline,
-        url = "$IMAGE_URL_SIZE_500${this.backdrop_path}",
-        releaseYear = this.release_date.substring(0, 4),
+        url = "$IMAGE_URL_SIZE_500${this.backdropPath}",
+        releaseYear = this.releaseDate.substring(0, 4),
         isFavorite = isFavorite
     )
 
-fun com.codandotv.streamplayerapp.feature.detail.domain.DetailStream.toDetailStreamLocal(): MovieEntity =
+fun DetailStream.toDetailStreamLocal(): MovieEntity =
     MovieEntity(
         id = this.id,
         title = this.title,
@@ -24,9 +28,9 @@ fun com.codandotv.streamplayerapp.feature.detail.domain.DetailStream.toDetailStr
         releaseYear = this.releaseYear,
     )
 
-fun com.codandotv.streamplayerapp.feature.detail.data.model.VideoStreamsResponse.toVideoStreams(): List<com.codandotv.streamplayerapp.feature.detail.domain.VideoStream> =
+fun VideoStreamsResponse.toVideoStreams(): List<VideoStream> =
     results.map {
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.domain.VideoStream(
+        VideoStream(
             videoId = it.key,
             movieId = this.id
         )

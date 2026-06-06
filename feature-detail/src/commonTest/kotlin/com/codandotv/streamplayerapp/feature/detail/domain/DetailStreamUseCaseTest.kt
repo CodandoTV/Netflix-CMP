@@ -15,10 +15,9 @@ class DetailStreamUseCaseTest {
     @BeforeTest
     fun setUp() {
         detailStreamRepository = FakeDetailStreamRepository(movie = fakeStream)
-        detailStreamUseCase =
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.domain.DetailStreamUseCaseImpl(
-                detailStreamRepository = detailStreamRepository
-            )
+        detailStreamUseCase = DetailStreamUseCaseImpl(
+            detailStreamRepository = detailStreamRepository
+        )
     }
 
     @Test

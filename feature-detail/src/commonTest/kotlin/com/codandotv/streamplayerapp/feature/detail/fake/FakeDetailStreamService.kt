@@ -16,8 +16,8 @@ class FakeDetailStreamService :
             title = "Fake Movie",
             overview = "This is a fake overview.",
             tagline = "Fake Tagline",
-            backdrop_path = "/fake_backdrop.jpg",
-            release_date = "2025-01-01"
+            backdropPath = "/fake_backdrop.jpg",
+            releaseDate = "2025-01-01"
         )
     )
 

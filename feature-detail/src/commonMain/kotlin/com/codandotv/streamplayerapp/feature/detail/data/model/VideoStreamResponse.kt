@@ -16,5 +16,5 @@ data class VideoStreamResponse(
 @Serializable
 data class VideoStreamsResponse(
     val id: Long,
-    val results: List<com.codandotv.streamplayerapp.feature.detail.data.model.VideoStreamResponse>
+    val results: List<VideoStreamResponse>
 )

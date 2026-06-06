@@ -22,7 +22,7 @@ class DetailStreamRepositoryTest {
         service = FakeDetailStreamService()
         favoriteDao = FakeFavoriteDao()
         repository =
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.data.DetailStreamRepositoryImpl(
+            DetailStreamRepositoryImpl(
                 movieId = movieId,
                 service = service,
                 favoriteDao = favoriteDao

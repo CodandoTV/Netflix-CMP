@@ -33,6 +33,10 @@ import androidx.navigation.NavController
 import com.codandotv.streamplayerapp.core.shared.ui.widget.BasicToolbar
 import com.codandotv.streamplayerapp.core.shared.ui.widget.SharedHandlerPlatform
 import com.codandotv.streamplayerapp.core.shared.ui.widget.SharingStreamPlatform
+import com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamActionOption
+import com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamButtonAction
+import com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamImagePreview
+import com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamRowHeader
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 import streamplayerapp_kmp.feature_detail.generated.resources.Res
@@ -41,17 +45,17 @@ import streamplayerapp_kmp.feature_detail.generated.resources.detail_watch_prima
 
 @Composable
 fun DetailStreamScreen(
-    viewModel: com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamViewModel = koinViewModel(),
+    viewModel: DetailStreamViewModel = koinViewModel(),
     navController: NavController,
-    sharedHandlerPlatform: com.codandotv.streamplayerapp.core.shared.ui.widget.SharedHandlerPlatform,
+    sharedHandlerPlatform: SharedHandlerPlatform,
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
     when (uiState) {
-        is com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState.DetailStreamsLoadedUIState -> {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.presentation.screens.SetupDetailScreen(
+        is DetailStreamsUIState.DetailStreamsLoadedUIState -> {
+            SetupDetailScreen(
                 onToggleToMyList = { detailStream -> viewModel.toggleItemInFavorites(detailStream) },
-                uiState = uiState as com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState.DetailStreamsLoadedUIState,
+                uiState = uiState as DetailStreamsUIState.DetailStreamsLoadedUIState,
                 navController = navController,
                 sharedHandlerPlatform = sharedHandlerPlatform
             )
@@ -66,7 +70,6 @@ fun DetailStreamScreen(
                 )
             }
         }
-
     }
 }
 
@@ -74,9 +77,9 @@ fun DetailStreamScreen(
 @Composable
 private fun SetupDetailScreen(
     onToggleToMyList: (com.codandotv.streamplayerapp.feature.detail.domain.DetailStream) -> Unit,
-    uiState: com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState.DetailStreamsLoadedUIState,
+    uiState: DetailStreamsUIState.DetailStreamsLoadedUIState,
     navController: NavController,
-    sharedHandlerPlatform: com.codandotv.streamplayerapp.core.shared.ui.widget.SharedHandlerPlatform,
+    sharedHandlerPlatform: SharedHandlerPlatform,
 ) {
     val showDialog = remember { mutableStateOf(false) }
 
@@ -84,7 +87,7 @@ private fun SetupDetailScreen(
 
     Scaffold(
         topBar = {
-            _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.BasicToolbar(
+            BasicToolbar(
                 navController = navController,
             )
         },
@@ -95,7 +98,7 @@ private fun SetupDetailScreen(
                     .verticalScroll(rememberScrollState())
                     .padding(innerPadding)
             ) {
-                _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamImagePreview(
+                DetailStreamImagePreview(
                     uiState = uiState,
                     onPlayEvent = {
                         showPlayer = true
@@ -107,11 +110,12 @@ private fun SetupDetailScreen(
                         .fillMaxWidth()
                         .padding(start = 16.dp, end = 16.dp, top = 8.dp)
                 ) {
-                    _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamRowHeader()
+                    DetailStreamRowHeader()
                     Text(
                         text = uiState.detailStream.title,
                         style = MaterialTheme.typography.headlineMedium.copy(
-                            fontWeight = FontWeight.Bold, fontSize = 28.sp
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 28.sp
                         )
                     )
                     Spacer(modifier = Modifier.height(8.dp))
@@ -119,11 +123,12 @@ private fun SetupDetailScreen(
                         text = uiState.detailStream.releaseYear,
                         style = MaterialTheme.typography.headlineMedium.copy(
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            fontSize = 14.sp, fontWeight = FontWeight.Bold
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Bold
                         )
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamButtonAction(
+                    DetailStreamButtonAction(
                         buttonsColors = ButtonDefaults.buttonColors(
                             containerColor = MaterialTheme.colorScheme.surface
                         ),
@@ -133,7 +138,7 @@ private fun SetupDetailScreen(
                         textColor = MaterialTheme.colorScheme.onSurface
                     )
                     Spacer(modifier = Modifier.height(4.dp))
-                    _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamButtonAction(
+                    DetailStreamButtonAction(
                         buttonsColors = ButtonDefaults.buttonColors(
                             containerColor = MaterialTheme.colorScheme.onSurfaceVariant
                         ),
@@ -152,21 +157,24 @@ private fun SetupDetailScreen(
                         modifier = Modifier.padding(top = 8.dp, bottom = 16.dp)
                     )
                     Spacer(modifier = Modifier.height(8.dp))
-                    _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamActionOption(
+                    DetailStreamActionOption(
                         uiState.detailStream,
                         onToggleToMyList,
-                        { showDialog.value = true })
+                        { showDialog.value = true }
+                    )
                     Spacer(modifier = Modifier.height(16.dp))
                 }
             }
             if (showDialog.value) {
-                _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.SharingStreamPlatform(
+                SharingStreamPlatform(
                     contentTitle = uiState.detailStream.title,
                     contentUrl = uiState.detailStream.url,
                     shareHandler = sharedHandlerPlatform,
                     setShowDialog = {
                         showDialog.value = it
-                    })
+                    }
+                )
             }
-        })
+        }
+    )
 }

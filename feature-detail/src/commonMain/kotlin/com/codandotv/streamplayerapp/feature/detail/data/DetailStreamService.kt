@@ -14,7 +14,7 @@ interface DetailStreamService {
 
 class DetailStreamServiceImpl(
     private val client: HttpClient
-) : com.codandotv.streamplayerapp.feature.detail.data.DetailStreamService {
+) : DetailStreamService {
 
     override suspend fun getMovie(movieId: String): NetworkResponse<DetailStreamResponse> =
         client.safeRequest {
