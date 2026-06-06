@@ -1,3 +1,5 @@
+@file:Suppress("MagicNumber")
+
 package com.codandotv.streamplayerapp.core.camera.gallery
 
 import android.graphics.Bitmap
@@ -9,7 +11,11 @@ actual class SharedImage(private val bitmap: Bitmap?) {
     actual fun toByteArray(): ByteArray? {
         return bitmap?.let {
             val stream = ByteArrayOutputStream()
-            it.compress(Bitmap.CompressFormat.PNG, 100, stream)
+            it.compress(
+                Bitmap.CompressFormat.PNG,
+                100,
+                stream
+            )
             stream.toByteArray()
         }
     }

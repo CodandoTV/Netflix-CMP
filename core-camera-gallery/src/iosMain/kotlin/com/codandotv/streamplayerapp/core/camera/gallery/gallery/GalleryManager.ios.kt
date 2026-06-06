@@ -3,7 +3,6 @@ package com.codandotv.streamplayerapp.core.camera.gallery.gallery
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import com.codandotv.streamplayerapp.core.camera.gallery.SharedImage
-import com.codandotv.streamplayerapp.core.camera.gallery.gallery.GalleryManager
 import platform.UIKit.UIApplication
 import platform.UIKit.UIImage
 import platform.UIKit.UIImagePickerController
@@ -18,10 +17,13 @@ import platform.darwin.NSObject
 actual fun rememberGalleryManager(onImageSelected: (SharedImage?) -> Unit): GalleryManager {
     val imagePicker = UIImagePickerController()
     val galleryDelegate = remember {
-        object : NSObject(), UIImagePickerControllerDelegateProtocol,
+        object :
+            NSObject(),
+            UIImagePickerControllerDelegateProtocol,
             UINavigationControllerDelegateProtocol {
             override fun imagePickerController(
-                picker: UIImagePickerController, didFinishPickingMediaWithInfo: Map<Any?, *>
+                picker: UIImagePickerController,
+                didFinishPickingMediaWithInfo: Map<Any?, *>
             ) {
                 val image = didFinishPickingMediaWithInfo.getValue(
                     UIImagePickerControllerEditedImage
@@ -40,7 +42,9 @@ actual fun rememberGalleryManager(onImageSelected: (SharedImage?) -> Unit): Gall
             imagePicker.setAllowsEditing(true)
             imagePicker.setDelegate(galleryDelegate)
             UIApplication.sharedApplication.keyWindow?.rootViewController?.presentViewController(
-                imagePicker, true, null
+                imagePicker,
+                true,
+                null
             )
         }
     }

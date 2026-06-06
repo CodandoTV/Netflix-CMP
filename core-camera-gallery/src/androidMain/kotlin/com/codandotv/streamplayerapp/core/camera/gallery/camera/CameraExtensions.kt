@@ -1,3 +1,5 @@
+@file:Suppress("MagicNumber", "ImportOrdering")
+
 package com.codandotv.streamplayerapp.core.camera.gallery.camera
 
 import android.content.ContentResolver
@@ -8,7 +10,6 @@ import android.graphics.Matrix
 import android.media.ExifInterface
 import android.net.Uri
 import java.io.InputStream
-
 
 internal fun Uri.getBitmapFromUri(contentResolver: ContentResolver): Bitmap? {
     return runCatching {

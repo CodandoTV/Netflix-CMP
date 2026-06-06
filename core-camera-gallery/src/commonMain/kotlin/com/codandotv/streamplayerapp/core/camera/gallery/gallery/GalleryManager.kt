@@ -8,5 +8,6 @@ expect class GalleryManager(
 ) {
     fun launch()
 }
+
 @Composable
 expect fun rememberGalleryManager(onImageSelected: (SharedImage?) -> Unit): GalleryManager
