@@ -1,6 +1,6 @@
 package com.codandotv.streamplayerapp.di
 
-import com.codandotv.streamplayerapp.core_background_work.di.SyncModule
+import com.codandotv.streamplayerapp.core.background.work.di.SyncModule
 import com.codandotv.streamplayerapp.core.local.storage.di.LocalStorageModule
 import com.codandotv.streamplayerapp.core.networking.di.NetworkModule
 import com.codandotv.streamplayerapp.core.shared.qualifier.QualifierDispatcherIO

@@ -1,6 +1,6 @@
-package com.codandotv.streamplayerapp.core_background_work.di
+package com.codandotv.streamplayerapp.core.background.work.di
 
-import com.codandotv.streamplayerapp.core_background_work.SyncManager
+import com.codandotv.streamplayerapp.core.background.work.SyncManager
 import org.koin.dsl.module
 
 object SyncModule {

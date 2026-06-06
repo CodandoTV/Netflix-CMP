@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.core_background_work
+package com.codandotv.streamplayerapp.core.background.work
 
 import com.mmk.kmpnotifier.notification.NotificationImage
 import com.mmk.kmpnotifier.notification.Notifier

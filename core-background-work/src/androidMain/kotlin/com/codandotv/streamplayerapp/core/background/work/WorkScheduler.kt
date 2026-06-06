@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.core_background_work.worker
+package com.codandotv.streamplayerapp.core.background.work
 
 import android.content.Context
 import androidx.work.ExistingPeriodicWorkPolicy
