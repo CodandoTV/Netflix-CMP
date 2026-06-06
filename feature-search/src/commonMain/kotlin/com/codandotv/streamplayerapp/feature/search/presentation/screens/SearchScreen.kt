@@ -23,6 +23,8 @@ import androidx.navigation.NavController
 import com.codandotv.streamplayerapp.core.navigation.extensions.goBack
 import com.codandotv.streamplayerapp.feature.search.domain.mapper.toSearchStreamCardModel
 import com.codandotv.streamplayerapp.feature.search.presentation.widgets.SearchStreamCard
+import com.codandotv.streamplayerapp.feature.search.presentation.widgets.SearchableTopBar
+import com.codandotv.streamplayerapp.feature.search.presentation.widgets.StreamsEmpty
 import com.codandotv.streamplayerapp.feature.search.presentation.widgets.StreamsError
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
@@ -84,7 +86,7 @@ private fun SetupSearchScreen(
     Scaffold(
         topBar = {
             val currentText by viewModel.currentSearchText.collectAsState()
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.widgets.SearchableTopBar(
+            SearchableTopBar(
                 modifier = Modifier.statusBarsPadding(),
                 currentSearchText = currentText,
                 onSearchTextChanged = { value ->
@@ -132,7 +134,7 @@ private fun SetupSearchScreen(
             }
         } else {
             Box(modifier = Modifier.padding(paddingValues)) {
-                _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.widgets.StreamsEmpty()
+                StreamsEmpty()
             }
         }
     }

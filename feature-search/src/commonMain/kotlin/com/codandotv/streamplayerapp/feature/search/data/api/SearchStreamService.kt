@@ -13,10 +13,10 @@ interface SearchStreamService {
     suspend fun getSearch(query: String): NetworkResponse<ListSearchStreamResponse>
 }
 
-@Factory(binds = [_root_ide_package_.com.codandotv.streamplayerapp.feature.search.data.api.SearchStreamService::class])
+@Factory(binds = [SearchStreamService::class])
 class SearchStreamServiceImpl(
     @Provided private val client: HttpClient
-) : com.codandotv.streamplayerapp.feature.search.data.api.SearchStreamService {
+) : SearchStreamService {
     override suspend fun getSearch(query: String): NetworkResponse<ListSearchStreamResponse> =
         client.safeRequest {
             url("search/movie")

@@ -41,7 +41,7 @@ fun ProfilePickerSelectedProfileContainer(
                         .offset { offsetSelectedProfileImage }
                 ) {
                     selectedItem?.imageUrl?.let { imageUrl ->
-                        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage(
+                        WebImage(
                             imageUrl = imageUrl,
                             contentScale = ContentScale.Fit,
                             contentDescription = stringResource(

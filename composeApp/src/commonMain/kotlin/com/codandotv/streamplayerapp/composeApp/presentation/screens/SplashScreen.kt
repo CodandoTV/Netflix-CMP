@@ -15,7 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.codandotv.streamplayerapp.composeApp.components.LottieComponent
+import com.codandotv.streamplayerapp.composeApp.presentation.components.LottieComponent
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import streamplayerapp_kmp.composeapp.generated.resources.Res
 

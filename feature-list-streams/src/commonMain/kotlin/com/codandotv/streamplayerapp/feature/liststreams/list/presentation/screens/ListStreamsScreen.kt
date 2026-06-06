@@ -24,6 +24,8 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.codandotv.streamplayerapp.core.navigation.bottomnavigation.StreamPlayerBottomNavigation
+import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamPlayerTopBar
+import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarousel
 import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.HighlightBanner
 import com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.HighlightBanner
 import org.koin.compose.viewmodel.koinViewModel
@@ -48,7 +50,7 @@ fun ListStreamsScreen(
         modifier = Modifier
             .nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamPlayerTopBar(
+            StreamPlayerTopBar(
                 scrollBehavior = scrollBehavior,
                 onNavigateProfilePicker = onNavigateProfilePicker,
                 onNavigateSearchScreen = onNavigateSearchScreen,
@@ -83,7 +85,7 @@ fun ListStreamsScreen(
                     )
 
                     uiState.streamsCarouselContent.forEach { streamCarouselContent ->
-                        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarousel(
+                        StreamsCarousel(
                             content = streamCarouselContent,
                             onNavigateDetailList = onNavigateDetailList,
                         )

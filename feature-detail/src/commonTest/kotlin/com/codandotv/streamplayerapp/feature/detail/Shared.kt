@@ -1,15 +1,17 @@
 package com.codandotv.streamplayerapp.feature.detail
 
+import com.codandotv.streamplayerapp.feature.detail.data.model.DetailStreamResponse
+import com.codandotv.streamplayerapp.feature.detail.domain.DetailStream
+import com.codandotv.streamplayerapp.feature.detail.domain.VideoStream
 import com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState
 
-val videoStream =
-    _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.domain.VideoStream(
-        movieId = 123,
-        videoId = "123"
-    )
+val videoStream = VideoStream(
+    movieId = 123,
+    videoId = "123"
+)
 
 val fakeStream =
-    _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.domain.DetailStream(
+    DetailStream(
         id = "1",
         title = "Fake Movie",
         overview = "Overview of the fake movie",
@@ -20,7 +22,7 @@ val fakeStream =
     )
 
 val expectedDetailStream =
-    _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.data.model.DetailStreamResponse(
+    DetailStreamResponse(
         id = 1L,
         title = "Fake Movie",
         overview = "This is a fake overview.",

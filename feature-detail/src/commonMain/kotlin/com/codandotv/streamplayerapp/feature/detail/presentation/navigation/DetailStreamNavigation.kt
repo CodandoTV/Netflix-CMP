@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import com.codandotv.streamplayerapp.core.navigation.routes.Routes.DETAIL_COMPLETE
 import com.codandotv.streamplayerapp.core.navigation.routes.Routes.PARAM.ID
 import com.codandotv.streamplayerapp.feature.detail.di.DetailStreamModule
+import com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamScreen
 import org.koin.compose.getKoin
 import org.koin.compose.module.rememberKoinModules
 import org.koin.compose.viewmodel.koinViewModel
@@ -20,7 +21,7 @@ fun NavGraphBuilder.detailStreamNavGraph(navController: NavHostController) {
         rememberKoinModules {
             listOf(DetailStreamModule.module)
         }
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamScreen(
+        DetailStreamScreen(
             viewModel = koinViewModel {
                 parametersOf(
                     nav.savedStateHandle.get<String>(ID)
