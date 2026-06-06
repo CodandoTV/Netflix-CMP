@@ -48,15 +48,15 @@ fun StreamPlayerTopBar(
     onSelectedProfilePicture: String
 ) {
     Box(
-        modifier = Modifier.background(color = _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.resources.Colors.Dark10)
+        modifier = Modifier.background(color = Colors.Dark10)
             .statusBarsPadding()
     ) {
-        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamPlayerTopBar(
+        StreamPlayerTopBar(
             onNavigateProfilePicker = { onNavigateProfilePicker() },
             onNavigateSearchScreen = { onNavigateSearchScreen() },
             profilePicture = onSelectedProfilePicture
         )
-        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamPlayerOptionsTopBar(
+        StreamPlayerOptionsTopBar(
             modifier = Modifier.padding(top = 50.dp),
             scrollBehavior
         )
@@ -146,6 +146,7 @@ private fun StreamPlayerOptionsTopBar(modifier: Modifier, scrollBehavior: TopApp
                     color = Color.White
                 )
             }
-        }, colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent)
+        },
+        colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Transparent)
     )
 }

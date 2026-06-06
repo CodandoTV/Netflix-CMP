@@ -8,7 +8,6 @@ import androidx.compose.ui.Modifier
 @Composable
 expect fun YoutubePlayerComponentPlatform(videoId: String, modifier: Modifier = Modifier)
 
-
 internal fun String.videoIdToEmbedHTML(): String {
     return """
         <iframe width="100%" height="100%"

@@ -29,7 +29,7 @@ fun SharingStreamPlatform(
     contentTitle: String,
     contentUrl: String,
     setShowDialog: (Boolean) -> Unit,
-    shareHandler: com.codandotv.streamplayerapp.core.shared.ui.widget.SharedHandlerPlatform
+    shareHandler: SharedHandlerPlatform
 ) {
     val coroutineScope = rememberCoroutineScope()
     val bottomSheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)

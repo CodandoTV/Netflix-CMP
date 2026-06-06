@@ -6,14 +6,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.UIKitView
-import com.codandotv.streamplayerapp.core.shared.ui.widget.videoIdToEmbedHTML
 import platform.Foundation.NSURL
 import platform.WebKit.WKWebView
 import platform.WebKit.WKWebViewConfiguration
 import platform.WebKit.WKWebsiteDataStore
 
 @Composable
-actual fun YoutubePlayerComponentPlatform(videoId: String, modifier: Modifier){
+actual fun YoutubePlayerComponentPlatform(videoId: String, modifier: Modifier) {
     val webView = remember {
         val embedHTML = videoId.videoIdToEmbedHTML()
         WKWebView().apply {

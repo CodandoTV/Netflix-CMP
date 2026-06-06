@@ -1,3 +1,5 @@
+@file:Suppress("MatchingDeclarationName")
+
 package com.codandotv.streamplayerapp.core.shared.ui.widget
 
 import android.content.ClipData
@@ -35,7 +37,8 @@ actual class SharedHandlerPlatform : KoinComponent {
         runCatching {
             context.startActivity(intent)
         }.onFailure {
-            Toast.makeText(context, "Nenhum aplicativo de SMS encontrado.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Nenhum aplicativo de SMS encontrado.", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 

@@ -26,10 +26,12 @@ fun IconWithText(
     textColor: Color,
     modifier: Modifier = Modifier
 ) {
-
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier.clickable { onClick() } ) {
+        modifier = modifier.clickable {
+            onClick()
+        }
+    ) {
         Icon(
             imageVector = imageVector,
             contentDescription = null,

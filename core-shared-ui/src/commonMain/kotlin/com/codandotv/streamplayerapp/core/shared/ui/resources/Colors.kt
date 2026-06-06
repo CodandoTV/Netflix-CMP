@@ -1,3 +1,5 @@
+@file:Suppress("MagicNumber")
+
 package com.codandotv.streamplayerapp.core.shared.ui.resources
 
 import androidx.compose.material3.darkColorScheme
@@ -12,9 +14,9 @@ object Colors {
     val Gray100 = Color(0xFF2C2C2C)
 
     val LightColors = lightColorScheme(
-        primary = _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.resources.COLOR_PRIMARY,
+        primary = COLOR_PRIMARY,
         secondary = Color(0xFFF5F5F1),
-        background = _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.resources.COLOR_BACKGROUND,
+        background = COLOR_BACKGROUND,
         onBackground = Color(0xFFFFFFFF),
         surface = Color(0xFF121212),
         onSurface = Color(0xFFF5F5F1),
@@ -22,9 +24,9 @@ object Colors {
     )
 
     val DarkColors = darkColorScheme(
-        primary = _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.resources.COLOR_PRIMARY,
+        primary = COLOR_PRIMARY,
         secondary = Color(0xFFF5F5F1),
-        background = _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.resources.COLOR_BACKGROUND,
+        background = COLOR_BACKGROUND,
         onBackground = Color(0xFFFFFFFF),
         surface = Color(0xFF121212),
         onSurface = Color(0xFFF5F5F1),

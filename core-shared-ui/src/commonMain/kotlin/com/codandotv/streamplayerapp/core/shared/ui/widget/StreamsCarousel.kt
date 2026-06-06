@@ -22,7 +22,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Composable
 fun StreamsCarousel(
-    content: com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarouselContent,
+    content: StreamsCarouselContent,
     modifier: Modifier = Modifier,
     onNavigateDetailList: (String) -> Unit = {},
 ) {
@@ -53,7 +53,7 @@ fun StreamsCarousel(
             ) { index ->
                 val item = lazyPagingItems[index]
                 item?.let {
-                    _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCard(
+                    StreamsCard(
                         content = it,
                         onNavigateDetailList
                     )
@@ -65,5 +65,5 @@ fun StreamsCarousel(
 
 data class StreamsCarouselContent(
     val genreTitle: String,
-    val contentList: Flow<PagingData<com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCardContent>>
+    val contentList: Flow<PagingData<StreamsCardContent>>
 )

@@ -10,7 +10,7 @@ import streamplayerapp_kmp.core_shared_ui.generated.resources.icon_search
 
 @Composable
 fun SearchIcon(action: () -> Unit = {}) {
-    _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.DefaultIcon(
+    DefaultIcon(
         searchIcon = Icons.Filled.Search,
         contentDescription = stringResource(Res.string.icon_search),
         onIconClickAction = action,

@@ -10,7 +10,7 @@ import streamplayerapp_kmp.core_shared_ui.generated.resources.icon_mic
 
 @Composable
 fun MicButton(action: () -> Unit = {}) {
-    _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.DefaultIcon(
+    DefaultIcon(
         searchIcon = Icons.Default.Check,
         contentDescription = stringResource(Res.string.icon_mic),
         onIconClickAction = action,

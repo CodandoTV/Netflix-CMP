@@ -11,7 +11,6 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import com.codandotv.streamplayerapp.core.shared.ui.resources.COLOR_BACKGROUND
-import com.codandotv.streamplayerapp.core.shared.ui.widget.videoIdToEmbedHTML
 
 @SuppressLint("SetJavaScriptEnabled")
 @Composable

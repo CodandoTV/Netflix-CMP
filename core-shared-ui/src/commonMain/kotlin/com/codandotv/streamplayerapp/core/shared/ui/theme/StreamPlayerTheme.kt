@@ -10,9 +10,8 @@ fun StreamPlayerTheme(
     isDarkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-
     MaterialTheme(
-        colorScheme = _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.theme.getColorScheme(
+        colorScheme = getColorScheme(
             isDarkTheme
         ),
         content = content,
@@ -21,7 +20,7 @@ fun StreamPlayerTheme(
 
 private fun getColorScheme(isDarkTheme: Boolean) =
     if (isDarkTheme) {
-        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.resources.Colors.DarkColors
+        Colors.DarkColors
     } else {
-        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.resources.Colors.LightColors
+        Colors.LightColors
     }

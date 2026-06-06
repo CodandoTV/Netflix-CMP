@@ -14,7 +14,7 @@ import coil3.compose.AsyncImage
 
 @Composable
 fun StreamsCard(
-    content: com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCardContent,
+    content: StreamsCardContent,
     onNavigateDetailList: (String) -> Unit = {},
 ) {
     Card(

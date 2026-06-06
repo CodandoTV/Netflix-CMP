@@ -1,3 +1,5 @@
+@file:Suppress("MatchingDeclarationName")
+
 package com.codandotv.streamplayerapp.core.shared.ui.widget
 import platform.Foundation.NSURL
 import platform.UIKit.UIAlertAction
@@ -53,5 +55,4 @@ actual class SharedHandlerPlatform {
     }
 }
 
-actual fun getSharedHandlerPlatform(): SharedHandlerPlatform =
-    _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.SharedHandlerPlatform()
+actual fun getSharedHandlerPlatform(): SharedHandlerPlatform = SharedHandlerPlatform()
