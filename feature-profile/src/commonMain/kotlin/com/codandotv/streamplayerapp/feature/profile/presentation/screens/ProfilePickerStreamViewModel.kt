@@ -16,7 +16,7 @@ class ProfilePickerStreamViewModel(
     private val useCase: com.codandotv.streamplayerapp.feature.profile.domain.ProfilePickerStreamUseCase,
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(_root_ide_package_.com.codandotv.streamplayerapp.feature.profile.presentation.screens.ProfilePickerStreamsUIState())
+    private val _uiState = MutableStateFlow(ProfilePickerStreamsUIState())
     val uiState = _uiState.stateIn(
         viewModelScope,
         SharingStarted.Eagerly,
@@ -135,5 +135,4 @@ class ProfilePickerStreamViewModel(
             }
         }
     }
-
 }

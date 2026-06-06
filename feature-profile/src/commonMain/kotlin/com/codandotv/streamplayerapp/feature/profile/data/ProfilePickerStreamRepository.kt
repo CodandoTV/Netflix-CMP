@@ -14,22 +14,19 @@ interface ProfilePickerStreamRepository {
 
 @Factory
 class ProfilePickerStreamRepositoryImpl(
-    private val service: com.codandotv.streamplayerapp.feature.profile.data.ProfilePickerStreamService
-) : com.codandotv.streamplayerapp.feature.profile.data.ProfilePickerStreamRepository {
+    private val service: ProfilePickerStreamService
+) : ProfilePickerStreamRepository {
 
     override suspend fun getProfiles(): Flow<List<com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream>> {
-
         with(service.getProfiles()) {
             if (this.toResult().isFailure || this.toResult().getOrNull() == null) {
-                // Log.i("ProfilePickerStreamRepositoryImpl", "versão off carregada")
-                return flowOf(_root_ide_package_.com.codandotv.streamplayerapp.feature.profile.data.mockProfiles)
+                return flowOf(mockProfiles)
             } else {
                 return this.toFlow().map { it.toProfiles() }
             }
         }
     }
 }
-
 
 private val mockProfiles = listOf(
     _root_ide_package_.com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream(

@@ -22,7 +22,6 @@ import streamplayerapp_kmp.feature_profile.generated.resources.netflix_horizonta
 
 @Composable
 fun ProfilePickerStreamToolbar(modifier: Modifier = Modifier) {
-
     Box(
         modifier
             .fillMaxWidth()

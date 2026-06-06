@@ -15,7 +15,7 @@ interface ProfilePickerStreamService {
 @Factory
 class ProfilePickerStreamServiceImpl(
     @Provided private val client: HttpClient
-) : com.codandotv.streamplayerapp.feature.profile.data.ProfilePickerStreamService {
+) : ProfilePickerStreamService {
     override suspend fun getProfiles(): NetworkResponse<ProfilesResponse> =
         client.safeRequest {
             url("profiles")

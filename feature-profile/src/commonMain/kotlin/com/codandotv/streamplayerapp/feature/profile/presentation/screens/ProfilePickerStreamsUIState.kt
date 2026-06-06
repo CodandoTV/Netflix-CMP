@@ -2,10 +2,9 @@ package com.codandotv.streamplayerapp.feature.profile.presentation.screens
 
 import com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream
 
-
 data class ProfilePickerStreamsUIState(
-    val profilesStream: List<com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream> = emptyList(),
-    val selectedItem: com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream? = null,
+    val profilesStream: List<ProfileStream> = emptyList(),
+    val selectedItem: ProfileStream? = null,
     val isLoading: Boolean = true,
     val showCenterImage: Boolean = false,
     val centerImageAlpha: Float = 1f,
@@ -26,4 +25,3 @@ data class ProfilePickerStreamsUIState(
     val selectedImageAlpha: Float = 1f,
     val centerScreen: Pair<Int, Int> = Pair(0, 0),
 )
-

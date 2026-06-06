@@ -50,7 +50,6 @@ fun ProfilePickerProfilesGrid(
         )
 
         with(uiState) {
-
             profilesStream.forEach { profile ->
                 val profileItemPosition = if (offsetProfiles.isNotEmpty()) {
                     with(offsetProfiles[profilesStream.indexOf(profile)]) {
@@ -63,9 +62,11 @@ fun ProfilePickerProfilesGrid(
                     IntOffset(0, 0)
                 }
 
-                _root_ide_package_.com.codandotv.streamplayerapp.feature.profile.presentation.widget.ProfileItem(
+                ProfileItem(
                     state = uiState,
-                    profileItemPosition, profile, onClickSelectedProfile
+                    profileItemPosition,
+                    profile,
+                    onClickSelectedProfile
                 )
 
                 if (profilesStream.indexOf(profile) == profilesStream.size - 1) {
@@ -94,7 +95,6 @@ private fun ProfileItem(
         ) {
             WebImage(
                 imageUrl = profile.imageUrl,
-                //placeholder = painterResource(Res.drawable.image_placeholder),
                 contentDescription = stringResource(
                     Res.string.profile_current_profile_name,
                     profile.name

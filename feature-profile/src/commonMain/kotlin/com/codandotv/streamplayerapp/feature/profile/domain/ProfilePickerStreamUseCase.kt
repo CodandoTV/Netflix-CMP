@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 import org.koin.core.annotation.Factory
 
 interface ProfilePickerStreamUseCase {
-    suspend fun getProfile(): Flow<List<com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream>>
+    suspend fun getProfile(): Flow<List<ProfileStream>>
     fun getListOffsetProfiles(
         haltSizeImage: Int,
         oneThirdOfWidthScreen: Int,
@@ -25,10 +25,10 @@ interface ProfilePickerStreamUseCase {
 
 @Factory
 class ProfilePickerStreamUseCaseImpl(
-    private val profilePickerStreamRepository: com.codandotv.streamplayerapp.feature.profile.data.ProfilePickerStreamRepository
-) : com.codandotv.streamplayerapp.feature.profile.domain.ProfilePickerStreamUseCase {
+    private val profilePickerStreamRepository: ProfilePickerStreamRepository
+) : ProfilePickerStreamUseCase {
 
-    override suspend fun getProfile(): Flow<List<com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream>> =
+    override suspend fun getProfile(): Flow<List<ProfileStream>> =
         profilePickerStreamRepository.getProfiles()
 
     override fun getListOffsetProfiles(
@@ -36,7 +36,6 @@ class ProfilePickerStreamUseCaseImpl(
         oneThirdOfWidthScreen: Int,
         oneQuarterOfHeightScreen: Int
     ): List<Pair<Int, Int>> {
-
         return listOf(
             Pair(oneThirdOfWidthScreen - haltSizeImage, 0),
             Pair(oneThirdOfWidthScreen * 2 - haltSizeImage, 0),
