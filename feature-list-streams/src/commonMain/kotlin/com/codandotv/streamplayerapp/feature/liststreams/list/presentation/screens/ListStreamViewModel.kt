@@ -1,3 +1,5 @@
+@file:Suppress("ImportOrdering")
+
 package com.codandotv.streamplayerapp.feature.liststreams.list.presentation.screens
 
 import androidx.lifecycle.ViewModel
@@ -5,6 +7,16 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import androidx.paging.map
 import com.codandotv.streamplayerapp.core.networking.handleError.catchFailure
+import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCardContent
+import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarouselContent
+import com.codandotv.streamplayerapp.feature.liststreams.core.ContentType
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.GetGenresUseCase
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.GetTopRatedStream
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.ListStreamUseCase
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.HighlightBanner
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.IconAndTextInfo
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
@@ -17,23 +29,23 @@ import kotlinx.coroutines.launch
 import streamplayerapp_kmp.core_shared_ui.generated.resources.ic_add
 import streamplayerapp_kmp.core_shared_ui.generated.resources.ic_info
 import streamplayerapp_kmp.core_shared_ui.generated.resources.ic_play
-import streamplayerapp_kmp.feature_list_streams.generated.resources.Res
 import streamplayerapp_kmp.feature_list_streams.generated.resources.ic_top_10
-import streamplayerapp_kmp.core_shared_ui.generated.resources.Res as SharedRes
 import streamplayerapp_kmp.feature_list_streams.generated.resources.list_highlight_banner_add
 import streamplayerapp_kmp.feature_list_streams.generated.resources.list_highlight_banner_info
 import streamplayerapp_kmp.feature_list_streams.generated.resources.list_highlight_banner_stream_ranking
 import streamplayerapp_kmp.feature_list_streams.generated.resources.list_highlight_banner_watch
+import streamplayerapp_kmp.feature_list_streams.generated.resources.Res
 import kotlin.collections.map
+import streamplayerapp_kmp.core_shared_ui.generated.resources.Res as SharedRes
 
 class ListStreamViewModel(
-    private val listStreams: com.codandotv.streamplayerapp.feature.liststreams.list.domain.ListStreamUseCase,
-    private val listGenres: com.codandotv.streamplayerapp.feature.liststreams.list.domain.GetGenresUseCase,
-    private val latestStream: com.codandotv.streamplayerapp.feature.liststreams.list.domain.GetTopRatedStream
+    private val listStreams: ListStreamUseCase,
+    private val listGenres: GetGenresUseCase,
+    private val latestStream: GetTopRatedStream
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.screens.ListStreamsUIState(
+        ListStreamsUIState(
             streamsCarouselContent = emptyList(),
             isLoading = false
         )
@@ -73,41 +85,40 @@ class ListStreamViewModel(
         }
     }
 
-    private fun getHighlightBanner(latest: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream) =
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.HighlightBanner(
+    private fun getHighlightBanner(latest: Stream) =
+        HighlightBanner(
             name = latest.name,
             imageUrl = latest.posterPathUrl,
-            contentType = _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.core.ContentType.Companion.getContentName(
-                _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.core.ContentType.FILM
+            contentType = ContentType.getContentName(
+                ContentType.FILM
             ),
-            contentTypeAsPlural = _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.core.ContentType.Companion.getContentNameAsPlural(
-                _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.core.ContentType.FILM
+            contentTypeAsPlural = ContentType.getContentNameAsPlural(
+                ContentType.FILM
             ),
-            extraInfo = _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.IconAndTextInfo(
+            extraInfo = IconAndTextInfo(
                 Res.drawable.ic_top_10,
                 Res.string.list_highlight_banner_stream_ranking
             ),
-            leftButton = _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.IconAndTextInfo(
+            leftButton = IconAndTextInfo(
                 SharedRes.drawable.ic_add,
                 Res.string.list_highlight_banner_add
             ),
-            centralButton = _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.IconAndTextInfo(
+            centralButton = IconAndTextInfo(
                 SharedRes.drawable.ic_play,
                 Res.string.list_highlight_banner_watch
             ),
-            rightButton = _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.IconAndTextInfo(
+            rightButton = IconAndTextInfo(
                 SharedRes.drawable.ic_info,
                 Res.string.list_highlight_banner_info
             ),
         )
 
-
-    private fun getStreamsByGenre(genre: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre): com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarouselContent {
-        return _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarouselContent(
+    private fun getStreamsByGenre(genre: Genre): StreamsCarouselContent {
+        return StreamsCarouselContent(
             genre.name,
             listStreams(genre).map {
                 it.map { stream ->
-                    _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCardContent(
+                    StreamsCardContent(
                         contentDescription = stream.name,
                         url = stream.posterPathUrl,
                         id = stream.id

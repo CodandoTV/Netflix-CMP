@@ -5,13 +5,13 @@ import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Strea
 import kotlinx.coroutines.flow.Flow
 
 interface GetTopRatedStream {
-    suspend operator fun invoke(): Flow<com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream>
+    suspend operator fun invoke(): Flow<Stream>
 }
 
 class GetTopRatedStreamImpl(
-    private val repository: com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamRepository
-) : com.codandotv.streamplayerapp.feature.liststreams.list.domain.GetTopRatedStream {
-    override suspend operator fun invoke(): Flow<com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream> {
+    private val repository: ListStreamRepository
+) : GetTopRatedStream {
+    override suspend operator fun invoke(): Flow<Stream> {
         return repository.topRatedStream()
     }
 }

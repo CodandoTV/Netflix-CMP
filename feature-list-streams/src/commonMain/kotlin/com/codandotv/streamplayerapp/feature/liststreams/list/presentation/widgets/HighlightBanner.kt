@@ -32,6 +32,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.HighlightBanner
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -51,7 +52,10 @@ import streamplayerapp_kmp.core_shared_ui.generated.resources.Res as SharedRes
 
 @Suppress("MagicNumber")
 @Composable
-fun HighlightBanner(modifier: Modifier = Modifier, data: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.HighlightBanner?) {
+fun HighlightBanner(
+    data: HighlightBanner?,
+    modifier: Modifier = Modifier,
+) {
     data ?: return
 
     Box(
@@ -59,10 +63,10 @@ fun HighlightBanner(modifier: Modifier = Modifier, data: com.codandotv.streampla
             .fillMaxWidth()
             .height(500.dp)
     ) {
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.ContentImage(
+        ContentImage(
             imageUrl = data.imageUrl
         )
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.BackgroundGradient()
+        BackgroundGradient()
         Column(
             modifier = Modifier
                 .align(Alignment.BottomEnd)
@@ -70,17 +74,17 @@ fun HighlightBanner(modifier: Modifier = Modifier, data: com.codandotv.streampla
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Spacer(modifier = Modifier.weight(1F))
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.ContentType(
+            ContentType(
                 contentType = data.contentType
             )
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.ContentName(
+            ContentName(
                 name = data.name
             )
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.ContentRanking(
+            ContentRanking(
                 extraInfo = data.extraInfo,
                 contentTypeAsPlural = data.contentTypeAsPlural
             )
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.ActionButtons(
+            ActionButtons(
                 Modifier.weight(0.3F),
                 data
             )
@@ -90,7 +94,7 @@ fun HighlightBanner(modifier: Modifier = Modifier, data: com.codandotv.streampla
 
 @Composable
 fun ContentImage(modifier: Modifier = Modifier, imageUrl: String) {
-    _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage(
+    WebImage(
         modifier = modifier.fillMaxSize(),
         imageUrl = imageUrl,
         contentScale = ContentScale.Crop,
@@ -167,26 +171,28 @@ fun ContentType(modifier: Modifier = Modifier, contentType: StringResource) {
             letterSpacing = 4.sp
         )
     }
-
 }
 
 @Composable
-fun ActionButtons(modifier: Modifier, data: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.HighlightBanner) {
+fun ActionButtons(
+    modifier: Modifier,
+    data: HighlightBanner,
+) {
     Row(verticalAlignment = Alignment.CenterVertically, modifier = modifier) {
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.AddToListButton(
-            modifier = Modifier
-                .weight(1F)
-                .fillMaxSize(), data
+        AddToListButton(
+            modifier = Modifier.weight(1F).fillMaxSize(),
+            data
         ) {
             /* todo */
         }
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.PlayButton {
+        PlayButton {
             /* todo */
         }
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.InfoButton(
+        InfoButton(
             modifier = Modifier
                 .weight(1F)
-                .fillMaxSize(), data
+                .fillMaxSize(),
+            data
         ) {
             /* todo */
         }

@@ -10,5 +10,5 @@ data class GenreResponse(
 
 @Serializable
 data class GenresResponse(
-    val genres: List<com.codandotv.streamplayerapp.feature.liststreams.list.data.model.GenreResponse>
+    val genres: List<GenreResponse>
 )

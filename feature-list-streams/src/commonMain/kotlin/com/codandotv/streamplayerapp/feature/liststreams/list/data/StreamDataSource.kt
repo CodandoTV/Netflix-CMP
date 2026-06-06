@@ -3,17 +3,18 @@ package com.codandotv.streamplayerapp.feature.liststreams.list.data
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.codandotv.streamplayerapp.core.networking.handleError.NetworkResponse
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream
 import com.codandotv.streamplayerapp.feature.liststreams.list.domain.toListStream
 
 @Suppress("TooGenericExceptionCaught", "UseCheckOrError")
 class StreamDataSource(
-    private val service: com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamService,
+    private val service: ListStreamService,
     private val genreId: Long,
     private val genreName: String,
-) : PagingSource<Int, com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream>() {
+) : PagingSource<Int, Stream>() {
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream> {
-        val nextPageNumber = params.key ?: _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.data.StreamDataSource.Companion.START_PAGE_INDEX
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Stream> {
+        val nextPageNumber = params.key ?: START_PAGE_INDEX
 
         return try {
             val response = service.getPaginatedMovies(
@@ -35,7 +36,7 @@ class StreamDataSource(
         }
     }
 
-    override fun getRefreshKey(state: PagingState<Int, com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream>): Int? = null
+    override fun getRefreshKey(state: PagingState<Int, Stream>): Int? = null
 
     companion object {
         private const val START_PAGE_INDEX = 1

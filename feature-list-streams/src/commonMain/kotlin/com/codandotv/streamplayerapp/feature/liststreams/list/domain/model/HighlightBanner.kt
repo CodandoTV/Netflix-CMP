@@ -8,10 +8,10 @@ data class HighlightBanner(
     val imageUrl: String,
     val contentType: StringResource,
     val contentTypeAsPlural: StringResource,
-    val extraInfo: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.IconAndTextInfo,
-    val leftButton: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.IconAndTextInfo,
-    val centralButton: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.IconAndTextInfo,
-    val rightButton: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.IconAndTextInfo
+    val extraInfo: IconAndTextInfo,
+    val leftButton: IconAndTextInfo,
+    val centralButton: IconAndTextInfo,
+    val rightButton: IconAndTextInfo
 )
 
 data class IconAndTextInfo(

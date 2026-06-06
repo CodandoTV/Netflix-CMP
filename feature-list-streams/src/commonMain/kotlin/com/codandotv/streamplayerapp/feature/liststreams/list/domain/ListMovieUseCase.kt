@@ -7,13 +7,13 @@ import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Strea
 import kotlinx.coroutines.flow.Flow
 
 interface ListStreamUseCase {
-    operator fun invoke(genre: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre): Flow<PagingData<com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream>>
+    operator fun invoke(genre: Genre): Flow<PagingData<Stream>>
 }
 
 class ListStreamUseCaseImpl(
-    private val repository: com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamRepository
-) : com.codandotv.streamplayerapp.feature.liststreams.list.domain.ListStreamUseCase {
-    override operator fun invoke(genre: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre): Flow<PagingData<com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream>> {
+    private val repository: ListStreamRepository
+) : ListStreamUseCase {
+    override operator fun invoke(genre: Genre): Flow<PagingData<Stream>> {
         return repository.loadMovies(genre)
     }
 }

@@ -4,39 +4,41 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.codandotv.streamplayerapp.core.networking.handleError.toFlow
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream
 import com.codandotv.streamplayerapp.feature.liststreams.list.domain.toGenres
 import com.codandotv.streamplayerapp.feature.liststreams.list.domain.toStream
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 interface ListStreamRepository {
-    suspend fun getGenres(): Flow<List<com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre>>
+    suspend fun getGenres(): Flow<List<Genre>>
 
-    suspend fun topRatedStream(): Flow<com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream>
+    suspend fun topRatedStream(): Flow<Stream>
 
-    fun loadMovies(genre: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre): Flow<PagingData<com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream>>
+    fun loadMovies(genre: Genre): Flow<PagingData<Stream>>
 }
 
 class ListStreamRepositoryImpl(
-    private val service: com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamService,
-) : com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamRepository {
+    private val service: ListStreamService,
+) : ListStreamRepository {
 
-    override suspend fun getGenres(): Flow<List<com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre>> {
+    override suspend fun getGenres(): Flow<List<Genre>> {
         return service.getGenres().toFlow().map { it.toGenres() }
     }
 
     override suspend fun topRatedStream() = service.getTopRatedMovies().toFlow().map {
-        it.results.first { it.poster_path != null }.toStream()
+        it.results.first { it.posterPath != null }.toStream()
     }
 
-    override fun loadMovies(genre: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre): Flow<PagingData<com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream>> {
+    override fun loadMovies(genre: Genre): Flow<PagingData<Stream>> {
         return Pager(
             config = PagingConfig(
-                pageSize = _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamRepositoryImpl.Companion.PAGE_SIZE,
-                maxSize = _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamRepositoryImpl.Companion.MAX_SIZE,
+                pageSize = PAGE_SIZE,
+                maxSize = MAX_SIZE,
             ),
             pagingSourceFactory = {
-                _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.data.StreamDataSource(
+                StreamDataSource(
                     service,
                     genreName = genre.name,
                     genreId = genre.id

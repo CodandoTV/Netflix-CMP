@@ -24,13 +24,15 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.codandotv.streamplayerapp.core.navigation.bottomnavigation.StreamPlayerBottomNavigation
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.HighlightBanner
+import com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.HighlightBanner
 import org.koin.compose.viewmodel.koinViewModel
 
 @Suppress("LongParameterList")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ListStreamsScreen(
-    viewModel: com.codandotv.streamplayerapp.feature.liststreams.list.presentation.screens.ListStreamViewModel = koinViewModel(),
+    viewModel: ListStreamViewModel = koinViewModel(),
     navController: NavController,
     onNavigateDetailList: (String) -> Unit = {},
     onNavigateProfilePicker: () -> Unit = {},
@@ -76,8 +78,7 @@ fun ListStreamsScreen(
                         .align(Alignment.TopCenter)
                         .verticalScroll(baseScrollState)
                 ) {
-
-                    _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.HighlightBanner(
+                    HighlightBanner(
                         data = uiState.highlightBanner
                     )
 
@@ -93,4 +94,3 @@ fun ListStreamsScreen(
         }
     }
 }
-

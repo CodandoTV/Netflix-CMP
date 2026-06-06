@@ -19,43 +19,43 @@ import org.koin.dsl.module
 object ListStreamModule {
     val module = module {
         viewModel {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.presentation.screens.ListStreamViewModel(
+            ListStreamViewModel(
                 listStreams = get(),
                 listGenres = get(),
                 latestStream = get()
             )
         }
 
-        factory<com.codandotv.streamplayerapp.feature.liststreams.list.domain.ListStreamUseCase> {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.domain.ListStreamUseCaseImpl(
+        factory<ListStreamUseCase> {
+            ListStreamUseCaseImpl(
                 repository = get()
             )
         }
 
-        factory<com.codandotv.streamplayerapp.feature.liststreams.list.domain.GetGenresUseCase> {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.domain.GetGenresUseCaseImpl(
+        factory<GetGenresUseCase> {
+            GetGenresUseCaseImpl(
                 repository = get()
             )
         }
 
-        factory<com.codandotv.streamplayerapp.feature.liststreams.list.domain.GetTopRatedStream> {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.domain.GetTopRatedStreamImpl(
+        factory<GetTopRatedStream> {
+            GetTopRatedStreamImpl(
                 repository = get()
             )
         }
 
-        factory<com.codandotv.streamplayerapp.feature.liststreams.list.domain.ListStreamAnalytics> {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.domain.ListStreamAnalyticsImpl()
+        factory<ListStreamAnalytics> {
+            ListStreamAnalyticsImpl()
         }
 
-        factory<com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamRepository> {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamRepositoryImpl(
+        factory<ListStreamRepository> {
+            ListStreamRepositoryImpl(
                 service = get(),
             )
         }
 
-        factory<com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamService> {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamServiceImpl(
+        factory<ListStreamService> {
+            ListStreamServiceImpl(
                 client = get()
             )
         }

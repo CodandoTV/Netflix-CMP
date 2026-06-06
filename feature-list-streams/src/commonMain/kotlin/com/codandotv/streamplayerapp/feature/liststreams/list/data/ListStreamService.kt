@@ -1,9 +1,9 @@
 package com.codandotv.streamplayerapp.feature.liststreams.list.data
 
-import ListStreamResponse
 import com.codandotv.streamplayerapp.core.networking.handleError.NetworkResponse
 import com.codandotv.streamplayerapp.core.networking.handleError.safeRequest
 import com.codandotv.streamplayerapp.feature.liststreams.list.data.model.GenresResponse
+import com.codandotv.streamplayerapp.feature.liststreams.list.data.model.ListStreamResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.request.parameter
 import io.ktor.client.request.url
@@ -20,7 +20,7 @@ interface ListStreamService {
 
 class ListStreamServiceImpl(
     private val client: HttpClient
-) : com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamService {
+) : ListStreamService {
 
     override suspend fun getMovies(genres: String): NetworkResponse<ListStreamResponse> {
         return client.safeRequest<ListStreamResponse> {
