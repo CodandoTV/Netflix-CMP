@@ -1,3 +1,5 @@
+@file:Suppress("MagicNumber")
+
 package com.codandotv.streamplayerapp.core.background.work
 
 import android.content.Context
@@ -9,7 +11,8 @@ import java.util.concurrent.TimeUnit
 object WorkScheduler {
     fun scheduleSync(context: Context) {
         val workRequest = PeriodicWorkRequestBuilder<SyncWorker>(
-            15, TimeUnit.MINUTES
+            15,
+            TimeUnit.MINUTES
         ).build()
 
         WorkManager.getInstance(context).enqueueUniquePeriodicWork(

@@ -1,3 +1,5 @@
+@file:Suppress("MagicNumber")
+
 package com.codandotv.streamplayerapp.core.background.work
 
 import com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamRepository
@@ -9,7 +11,6 @@ class SyncManager(
     private val repository: ListStreamRepository
 ) {
     suspend fun syncData() {
-
         val title: Stream = repository.topRatedStream().first()
         val messageTitle = "${title.name} -Já disponível no app!"
         val messageBody = "Confira a sinopse: ${title.description}"
