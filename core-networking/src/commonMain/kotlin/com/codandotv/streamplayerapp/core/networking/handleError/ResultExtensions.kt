@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.catch
 
 inline fun <T> Result<T>.onError(action: (exception: Failure) -> Unit): Result<T> {
-    if(isFailure && exceptionOrNull() is Failure){
+    if (isFailure && exceptionOrNull() is Failure) {
         val error = exceptionOrNull() as Failure
         action(error)
     }
@@ -14,9 +14,9 @@ inline fun <T> Result<T>.onError(action: (exception: Failure) -> Unit): Result<T
 
 fun <T> Flow<T>.catchFailure(action: suspend FlowCollector<T>.(Failure) -> Unit): Flow<T> =
     catch {
-        if(it is Failure){
+        if (it is Failure) {
             action(it)
-        }else{
+        } else {
             action(Failure.GenericError())
         }
     }

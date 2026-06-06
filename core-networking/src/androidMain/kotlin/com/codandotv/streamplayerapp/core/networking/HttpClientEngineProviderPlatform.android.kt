@@ -4,4 +4,4 @@ import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.okhttp.OkHttpConfig
 import io.ktor.client.engine.okhttp.OkHttpEngine
 
-actual fun httpClientEnginePlatform() : HttpClientEngine = OkHttpEngine(OkHttpConfig())
+actual fun httpClientEnginePlatform(): HttpClientEngine = OkHttpEngine(OkHttpConfig())

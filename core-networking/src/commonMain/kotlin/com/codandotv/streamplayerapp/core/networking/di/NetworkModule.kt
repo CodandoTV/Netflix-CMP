@@ -11,7 +11,7 @@ import org.koin.core.annotation.Single
 class NetworkModule {
 
     @Single
-    fun provideHttpClient() : HttpClient {
+    fun provideHttpClient(): HttpClient {
         return HttpClientBuilder.build(
             baseUrl = BuildKonfig.HOST,
         )

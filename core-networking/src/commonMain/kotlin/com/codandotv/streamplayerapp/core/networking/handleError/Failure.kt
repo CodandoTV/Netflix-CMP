@@ -12,7 +12,6 @@ import org.koin.core.component.KoinComponent
     "TooGenericExceptionCaught",
     "MagicNumber"
 )
-
 @Serializable
 sealed class Failure(
     val code: Int? = -1,
@@ -26,38 +25,49 @@ sealed class Failure(
         Failure(codeStatus, errorMessageResKey = StringNetworking.msgServerErrorKey())
 
     data class GenericError(
-        val codeStatus: Int? = -12, private val msg: String? = StringNetworking.msgNetworkErrorKey()
+        val codeStatus: Int? = -12,
+        private val msg: String? = StringNetworking.msgNetworkErrorKey()
     ) : Failure(
         codeStatus
     )
 
     data class NetworkError(
-        val codeStatus: Int? = -13, private val throwable: Throwable
+        val codeStatus: Int? = -13,
+        private val throwable: Throwable
     ) : Failure(
-        codeStatus, errorMessageResKey = StringNetworking.msgNetworkErrorKey()
+        codeStatus,
+        errorMessageResKey = StringNetworking.msgNetworkErrorKey()
     )
 
     data class UnknownError(
-        val codeStatus: Int? = null, private val throwable: Throwable? = Exception()
+        val codeStatus: Int? = null,
+        private val throwable: Throwable? = Exception()
     ) : Failure(
-        codeStatus, throwable?.message
+        codeStatus,
+        throwable?.message
     )
 
     data class UnexpectedApiException(
-        val codeStatus: Int? = -14, private val throwable: Throwable? = Exception()
+        val codeStatus: Int? = -14,
+        private val throwable: Throwable? = Exception()
     ) : Failure(
-        codeStatus, throwable?.message
+        codeStatus,
+        throwable?.message
     )
 
     data class ClientException(
-        val codeStatus: Int? = -15, private val throwable: Throwable? = Exception()
+        val codeStatus: Int? = -15,
+        private val throwable: Throwable? = Exception()
     ) : Failure(
-        codeStatus, throwable?.message
+        codeStatus,
+        throwable?.message
     )
 
     data class UnparsableResponseException(
-        val codeStatus: Int? = -16, private val throwable: Throwable? = Exception()
+        val codeStatus: Int? = -16,
+        private val throwable: Throwable? = Exception()
     ) : Failure(
-        codeStatus, throwable?.message
+        codeStatus,
+        throwable?.message
     )
 }

@@ -1,7 +1,7 @@
 package com.codandotv.streamplayerapp.core.networking
 
-import com.codandotv.streamplayerapp.core.networking.handleError.Failure
 import com.codandotv.streamplayerapp.core.networking.di.Network
+import com.codandotv.streamplayerapp.core.networking.handleError.Failure
 import core.networking.BuildKonfig
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.ClientRequestException
@@ -24,15 +24,17 @@ import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json
 
 internal object HttpClientBuilder {
-    fun build(baseUrl: String) : HttpClient {
+    fun build(baseUrl: String): HttpClient {
         return HttpClient(engine = httpClientEnginePlatform()) {
             expectSuccess = false
 
             install(ContentNegotiation) {
-                json(Json {
-                    explicitNulls = false
-                    ignoreUnknownKeys = true
-                })
+                json(
+                    Json {
+                        explicitNulls = false
+                        ignoreUnknownKeys = true
+                    }
+                )
             }
 
             install(HttpTimeout) {
@@ -62,7 +64,7 @@ internal object HttpClientBuilder {
                 level = LogLevel.ALL
                 logger = object : Logger {
                     override fun log(message: String) {
-                        println("HttpClient${message}")
+                        println("HttpClient$message")
                     }
                 }
             }
