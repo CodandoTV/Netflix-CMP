@@ -1,3 +1,5 @@
+@file:Suppress("MagicNumber")
+
 package com.codandotv.streamplayerapp.feature.news.presentation.widget
 
 import androidx.compose.foundation.Image

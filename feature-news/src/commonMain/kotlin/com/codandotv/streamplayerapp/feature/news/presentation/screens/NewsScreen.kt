@@ -20,11 +20,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.codandotv.streamplayerapp.core.permission.PermissionDeniedDialog
 import com.codandotv.streamplayerapp.core.camera.gallery.SharedImage
 import com.codandotv.streamplayerapp.core.camera.gallery.camera.rememberCameraManager
 import com.codandotv.streamplayerapp.core.camera.gallery.gallery.rememberGalleryManager
 import com.codandotv.streamplayerapp.core.navigation.bottomnavigation.StreamPlayerBottomNavigation
+import com.codandotv.streamplayerapp.core.permission.PermissionDeniedDialog
 import com.codandotv.streamplayerapp.feature.news.presentation.NewsScreenActionTakeImage
 import com.codandotv.streamplayerapp.feature.news.presentation.NewsScreenViewModel
 import com.codandotv.streamplayerapp.feature.news.presentation.widget.ImagePickerContent
@@ -35,7 +35,6 @@ import streamplayerapp_kmp.feature_news.generated.resources.Res
 import streamplayerapp_kmp.feature_news.generated.resources.error_image_loaded
 import streamplayerapp_kmp.feature_news.generated.resources.select_image_subtitle
 import streamplayerapp_kmp.feature_news.generated.resources.select_image_title
-
 
 @Composable
 fun NewsScreenContent(
@@ -65,7 +64,7 @@ fun NewsScreenContent(
 
     LaunchedEffect(Unit) {
         viewModel.actionTakeImage.collect { action ->
-            when(action) {
+            when (action) {
                 NewsScreenActionTakeImage.Camera -> cameraManager.launch()
                 NewsScreenActionTakeImage.Gallery -> galleryManager.launch()
             }
