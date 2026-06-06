@@ -1,6 +1,6 @@
-package com.codandotv.streamplayerapp.di
+package com.codandotv.streamplayerapp.composeApp.presentation.di
 
-import com.codandotv.streamplayerapp.presentation.components.LottieViewProvider
+import com.codandotv.streamplayerapp.composeApp.presentation.components.LottieViewProvider
 import org.koin.dsl.module
 
 class KoinIosHelper {

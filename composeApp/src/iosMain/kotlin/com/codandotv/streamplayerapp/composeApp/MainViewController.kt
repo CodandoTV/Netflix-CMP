@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp
+package com.codandotv.streamplayerapp.composeApp
 
 import androidx.compose.ui.window.ComposeUIViewController
 

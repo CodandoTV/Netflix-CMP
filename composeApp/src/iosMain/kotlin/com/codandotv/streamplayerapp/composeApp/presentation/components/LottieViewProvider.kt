@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.presentation.components
+package com.codandotv.streamplayerapp.composeApp.presentation.components
 
 import platform.UIKit.UIView
 

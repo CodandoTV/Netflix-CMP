@@ -1,10 +1,13 @@
-package com.codandotv.streamplayerapp.di
+package com.codandotv.streamplayerapp.composeApp.presentation.di
 
 import com.codandotv.streamplayerapp.core.background.work.di.SyncModule
 import com.codandotv.streamplayerapp.core.local.storage.di.LocalStorageModule
 import com.codandotv.streamplayerapp.core.networking.di.NetworkModule
 import com.codandotv.streamplayerapp.core.shared.qualifier.QualifierDispatcherIO
+import com.codandotv.streamplayerapp.feature.liststreams.list.di.ListStreamModule
 import com.codandotv.streamplayerapp.feature.news.di.NewsScreenModule
+import com.codandotv.streamplayerapp.feature.profile.di.ProfilePickerStreamModule
+import com.codandotv.streamplayerapp.feature.search.di.SearchModule
 import io.kotzilla.generated.monitoring
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
@@ -30,10 +33,10 @@ fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinAppl
             SyncModule.module,
 
             // region feature_modules
-            com.codandotv.streamplayerapp.feature.liststreams.list.di.ListStreamModule.module,
-            com.codandotv.streamplayerapp.feature.search.di.SearchModule().module,
+            ListStreamModule.module,
+            SearchModule().module,
             NewsScreenModule().module,
-            com.codandotv.streamplayerapp.feature.profile.di.ProfilePickerStreamModule().module
+            ProfilePickerStreamModule().module
             // endregion
         )
 

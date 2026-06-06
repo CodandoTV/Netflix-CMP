@@ -1,4 +1,6 @@
-package com.codandotv.streamplayerapp.navigation
+@file:Suppress("MagicNumber")
+
+package com.codandotv.streamplayerapp.composeApp.presentation.navigation
 
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -17,11 +19,10 @@ import androidx.navigation.compose.composable
 import com.codandotv.streamplayerapp.core.navigation.bottomnavigation.StreamPlayerBottomNavigation
 import com.codandotv.streamplayerapp.core.navigation.routes.BottomNavRoutes
 import com.codandotv.streamplayerapp.core.navigation.routes.Routes
-import com.codandotv.streamplayerapp.feature.liststreams.list.presentation.navigation.listStreamsNavGraph
-import com.codandotv.streamplayerapp.feature.profile.presentation.navigation.profilePickerStreamNavGraph
-import com.codandotv.streamplayerapp.presentation.navigation.splashNavGraph
 import com.codandotv.streamplayerapp.feature.detail.presentation.navigation.detailStreamNavGraph
+import com.codandotv.streamplayerapp.feature.liststreams.list.presentation.navigation.listStreamsNavGraph
 import com.codandotv.streamplayerapp.feature.news.presentation.navigation.newsStreamNavGraph
+import com.codandotv.streamplayerapp.feature.profile.presentation.navigation.profilePickerStreamNavGraph
 import com.codandotv.streamplayerapp.feature.search.presentation.navigation.searchStreamsNavGraph
 
 @Composable
