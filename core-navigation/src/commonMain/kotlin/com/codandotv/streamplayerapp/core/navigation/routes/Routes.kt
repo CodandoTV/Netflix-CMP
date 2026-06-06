@@ -4,7 +4,7 @@ import com.codandotv.streamplayerapp.core.navigation.routes.Routes.PARAM.ID
 
 object Routes {
     const val DETAIL = "DetailList/"
-    const val DETAIL_COMPLETE = "$DETAIL{${ID}}"
+    const val DETAIL_COMPLETE = "$DETAIL{$ID}"
     const val Splash = "splash"
     const val SEARCH = "Search"
     const val PROFILE_PICKER = "profilePicker"

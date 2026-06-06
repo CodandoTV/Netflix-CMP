@@ -48,7 +48,10 @@ fun StreamPlayerBottomNavigation(navController: NavController) {
                     )
                 },
                 selected = currentRoute == item.screenRoute,
-                onClick = { onItemClicked(navController, item) })
+                onClick = {
+                    onItemClicked(navController, item)
+                }
+            )
         }
     }
 }
@@ -71,7 +74,8 @@ private fun NavItemIcon(
 }
 
 private fun onItemClicked(
-    navController: NavController, item: BottomNavItem
+    navController: NavController,
+    item: BottomNavItem
 ) {
     navController.navigate(item.screenRoute) {
         navController.graph.startDestinationRoute?.let { screen_route ->
