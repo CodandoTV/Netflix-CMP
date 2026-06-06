@@ -17,7 +17,7 @@ import androidx.navigation.compose.composable
 import com.codandotv.streamplayerapp.core_navigation.bottomnavigation.StreamPlayerBottomNavigation
 import com.codandotv.streamplayerapp.core_navigation.routes.BottomNavRoutes
 import com.codandotv.streamplayerapp.core_navigation.routes.Routes
-import com.codandotv.streamplayerapp.feature_list_streams.list.presentation.navigation.listStreamsNavGraph
+import com.codandotv.streamplayerapp.feature.liststreams.list.presentation.navigation.listStreamsNavGraph
 import com.codandotv.streamplayerapp.feature.profile.presentation.navigation.profilePickerStreamNavGraph
 import com.codandotv.streamplayerapp.presentation.navigation.splashNavGraph
 import com.codandotv.streamplayerapp.feature_detail.presentation.navigation.detailStreamNavGraph

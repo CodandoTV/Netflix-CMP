@@ -1,16 +1,16 @@
 package com.codandotv.streamplayerapp.core_background_work
 
-import com.codandotv.streamplayerapp.feature_list_streams.list.data.ListStreamRepository
-import com.codandotv.streamplayerapp.feature_list_streams.list.domain.model.Stream
+import com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamRepository
+import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 
 class SyncManager(
-    private val repository: ListStreamRepository
+    private val repository: com.codandotv.streamplayerapp.feature.liststreams.list.data.ListStreamRepository
 ) {
     suspend fun syncData() {
 
-        val title: Stream = repository.topRatedStream().first()
+        val title: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream = repository.topRatedStream().first()
         val messageTitle = "${title.name} -Já disponível no app!"
         val messageBody = "Confira a sinopse: ${title.description}"
         val imageUrl = title.posterPathUrl

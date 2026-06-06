@@ -4,7 +4,7 @@ import com.codandotv.streamplayerapp.core_background_work.di.SyncModule
 import com.codandotv.streamplayerapp.core_local_storage.di.LocalStorageModule
 import com.codandotv.streamplayerapp.core_networking.di.NetworkModule
 import com.codandotv.streamplayerapp.core_shared.qualifier.QualifierDispatcherIO
-import com.codandotv.streamplayerapp.feature_list_streams.list.di.ListStreamModule
+import com.codandotv.streamplayerapp.feature.liststreams.list.di.ListStreamModule
 import com.codandotv.streamplayerapp.feature.news.di.NewsScreenModule
 import io.kotzilla.generated.monitoring
 import kotlinx.coroutines.Dispatchers
@@ -31,7 +31,7 @@ fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinAppl
             SyncModule.module,
 
             // region feature_modules
-            ListStreamModule.module,
+            com.codandotv.streamplayerapp.feature.liststreams.list.di.ListStreamModule.module,
             com.codandotv.streamplayerapp.feature.search.di.SearchModule().module,
             NewsScreenModule().module,
             com.codandotv.streamplayerapp.feature.profile.di.ProfilePickerStreamModule().module
