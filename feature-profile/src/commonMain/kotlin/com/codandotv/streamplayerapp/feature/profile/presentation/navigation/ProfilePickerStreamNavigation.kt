@@ -3,10 +3,9 @@ package com.codandotv.streamplayerapp.feature.profile.presentation.navigation
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
-import com.codandotv.streamplayerapp.core_navigation.routes.BottomNavRoutes.HOME
-import com.codandotv.streamplayerapp.core_navigation.routes.BottomNavRoutes.PARAM.PROFILE_ID
-import com.codandotv.streamplayerapp.core_navigation.routes.Routes
-import com.codandotv.streamplayerapp.feature.profile.presentation.screens.ProfilePickerStreamScreen
+import com.codandotv.streamplayerapp.core.navigation.routes.BottomNavRoutes.HOME
+import com.codandotv.streamplayerapp.core.navigation.routes.BottomNavRoutes.PARAM.PROFILE_ID
+import com.codandotv.streamplayerapp.core.navigation.routes.Routes
 import org.koin.core.annotation.KoinExperimentalAPI
 
 @OptIn(KoinExperimentalAPI::class)

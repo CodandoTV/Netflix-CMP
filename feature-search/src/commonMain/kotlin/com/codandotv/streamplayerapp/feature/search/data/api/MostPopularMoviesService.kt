@@ -1,24 +1,22 @@
 package com.codandotv.streamplayerapp.feature.search.data.api
 
-import com.codandotv.streamplayerapp.core_networking.handleError.NetworkResponse
-import com.codandotv.streamplayerapp.core_networking.handleError.safeRequest
+import com.codandotv.streamplayerapp.core.networking.handleError.NetworkResponse
+import com.codandotv.streamplayerapp.core.networking.handleError.safeRequest
 import com.codandotv.streamplayerapp.feature.search.data.model.ListSearchStreamResponse
 import io.ktor.client.HttpClient
-import io.ktor.client.call.body
-import io.ktor.client.request.get
 import io.ktor.client.request.url
 import org.koin.core.annotation.Factory
 import org.koin.core.annotation.Provided
 
 interface MostPopularMoviesService {
-    suspend fun getPopular(): NetworkResponse<com.codandotv.streamplayerapp.feature.search.data.model.ListSearchStreamResponse>
+    suspend fun getPopular(): NetworkResponse<ListSearchStreamResponse>
 }
 
 @Factory(binds = [_root_ide_package_.com.codandotv.streamplayerapp.feature.search.data.api.MostPopularMoviesService::class])
 class MostPopularMoviesServiceImpl(
     @Provided private val client: HttpClient
 ) : com.codandotv.streamplayerapp.feature.search.data.api.MostPopularMoviesService {
-    override suspend fun getPopular(): NetworkResponse<com.codandotv.streamplayerapp.feature.search.data.model.ListSearchStreamResponse> =
+    override suspend fun getPopular(): NetworkResponse<ListSearchStreamResponse> =
         client.safeRequest {
             url("movie/popular")
         }

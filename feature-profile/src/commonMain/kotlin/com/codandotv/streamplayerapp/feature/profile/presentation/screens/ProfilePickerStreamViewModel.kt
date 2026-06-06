@@ -2,9 +2,7 @@ package com.codandotv.streamplayerapp.feature.profile.presentation.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.codandotv.streamplayerapp.core_networking.handleError.catchFailure
-import com.codandotv.streamplayerapp.feature.profile.domain.ProfilePickerStreamUseCase
-import com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream
+import com.codandotv.streamplayerapp.core.networking.handleError.catchFailure
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -33,7 +31,7 @@ class ProfilePickerStreamViewModel(
                 }
                 .collect { profilePickerStream ->
                     _uiState.update {
-                        _root_ide_package_.com.codandotv.streamplayerapp.feature.profile.presentation.screens.ProfilePickerStreamsUIState(
+                        ProfilePickerStreamsUIState(
                             profilesStream = profilePickerStream,
                             selectedItem = profilePickerStream.first(),
                             isLoading = false

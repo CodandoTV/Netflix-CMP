@@ -1,6 +1,6 @@
 package com.codandotv.streamplayerapp.feature.detail.fake
 
-import com.codandotv.streamplayerapp.core_networking.handleError.NetworkResponse
+import com.codandotv.streamplayerapp.core.networking.handleError.NetworkResponse
 import com.codandotv.streamplayerapp.feature.detail.data.DetailStreamService
 import com.codandotv.streamplayerapp.feature.detail.data.model.DetailStreamResponse
 import com.codandotv.streamplayerapp.feature.detail.data.model.VideoStreamsResponse

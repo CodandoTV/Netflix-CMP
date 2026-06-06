@@ -2,9 +2,7 @@ package com.codandotv.streamplayerapp.feature.search.presentation.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.codandotv.streamplayerapp.core_networking.handleError.catchFailure
-import com.codandotv.streamplayerapp.feature.search.domain.MostPopularMoviesUseCase
-import com.codandotv.streamplayerapp.feature.search.domain.SearchUseCase
+import com.codandotv.streamplayerapp.core.networking.handleError.catchFailure
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -59,9 +57,9 @@ class SearchViewModel(
             }.collect { result ->
                 _uiState.update {
                     if (result.results.isEmpty()) {
-                        _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Empty
+                        SearchUIState.Empty
                     } else {
-                        _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Success(result)
+                        SearchUIState.Success(result)
                     }
                 }
             }
@@ -79,9 +77,9 @@ class SearchViewModel(
             }.collect { result ->
                 _uiState.update {
                     if (result.results.isEmpty()) {
-                        _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Empty
+                        SearchUIState.Empty
                     } else {
-                        _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Success(result)
+                        SearchUIState.Success(result)
                     }
                 }
             }

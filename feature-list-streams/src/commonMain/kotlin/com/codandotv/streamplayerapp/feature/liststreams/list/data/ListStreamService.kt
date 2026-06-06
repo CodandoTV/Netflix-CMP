@@ -1,8 +1,8 @@
 package com.codandotv.streamplayerapp.feature.liststreams.list.data
 
 import ListStreamResponse
-import com.codandotv.streamplayerapp.core_networking.handleError.NetworkResponse
-import com.codandotv.streamplayerapp.core_networking.handleError.safeRequest
+import com.codandotv.streamplayerapp.core.networking.handleError.NetworkResponse
+import com.codandotv.streamplayerapp.core.networking.handleError.safeRequest
 import com.codandotv.streamplayerapp.feature.liststreams.list.data.model.GenresResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.request.parameter
@@ -11,7 +11,7 @@ import io.ktor.client.request.url
 interface ListStreamService {
     suspend fun getMovies(genres: String): NetworkResponse<ListStreamResponse>
     suspend fun getPaginatedMovies(genres: String, page: Int): NetworkResponse<ListStreamResponse>
-    suspend fun getGenres(): NetworkResponse<com.codandotv.streamplayerapp.feature.liststreams.list.data.model.GenresResponse>
+    suspend fun getGenres(): NetworkResponse<GenresResponse>
     suspend fun getTopRatedMovies(
         sortBy: String = "vote_average.desc",
         page: Int = 1
@@ -40,7 +40,7 @@ class ListStreamServiceImpl(
         }
     }
 
-    override suspend fun getGenres(): NetworkResponse<com.codandotv.streamplayerapp.feature.liststreams.list.data.model.GenresResponse> {
+    override suspend fun getGenres(): NetworkResponse<GenresResponse> {
         return client.safeRequest {
             url("genre/movie/list")
         }

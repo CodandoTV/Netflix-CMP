@@ -2,13 +2,8 @@ package com.codandotv.streamplayerapp.feature.detail.presentation.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.codandotv.streamplayerapp.core_networking.handleError.catchFailure
-import com.codandotv.streamplayerapp.core_networking.resources.StringNetworking
-import com.codandotv.streamplayerapp.feature.detail.domain.DetailStream
-import com.codandotv.streamplayerapp.feature.detail.domain.DetailStreamUseCase
-import com.codandotv.streamplayerapp.feature.detail.domain.VideoStreamsUseCase
-import com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState.DetailStreamsLoadedUIState
-import com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState.LoadingStreamUIState
+import com.codandotv.streamplayerapp.core.networking.handleError.catchFailure
+import com.codandotv.streamplayerapp.core.networking.resources.StringNetworking
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -43,7 +38,7 @@ class  DetailStreamViewModel(
         viewModelScope.launch {
             detailStreamUseCase.getMovie()
                 .zip(videoStreamsUseCase.getVideoStreams()) { detailStream, videoUrl ->
-                    _root_ide_package_.com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState.DetailStreamsLoadedUIState(
+                    DetailStreamsUIState.DetailStreamsLoadedUIState(
                         detailStream = detailStream,
                         videoId = videoUrl.firstOrNull()?.videoId
                     )

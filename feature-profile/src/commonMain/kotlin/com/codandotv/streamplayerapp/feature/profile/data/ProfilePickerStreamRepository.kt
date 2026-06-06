@@ -1,8 +1,7 @@
 package com.codandotv.streamplayerapp.feature.profile.data
 
-import com.codandotv.streamplayerapp.core_networking.handleError.toFlow
-import com.codandotv.streamplayerapp.core_networking.handleError.toResult
-import com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream
+import com.codandotv.streamplayerapp.core.networking.handleError.toFlow
+import com.codandotv.streamplayerapp.core.networking.handleError.toResult
 import com.codandotv.streamplayerapp.feature.profile.domain.toProfiles
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf

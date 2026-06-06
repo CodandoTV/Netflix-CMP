@@ -1,6 +1,6 @@
 package com.codandotv.streamplayerapp.feature.detail.domain
 
-import com.codandotv.streamplayerapp.core_local_storage.domain.model.MovieEntity
+import com.codandotv.streamplayerapp.core.local.storage.domain.model.MovieEntity
 import com.codandotv.streamplayerapp.core.shared.Url.IMAGE_URL_SIZE_500
 
 fun com.codandotv.streamplayerapp.feature.detail.data.model.DetailStreamResponse.toDetailStream(isFavorite: Boolean = false): com.codandotv.streamplayerapp.feature.detail.domain.DetailStream =

@@ -23,9 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.codandotv.streamplayerapp.core_navigation.bottomnavigation.StreamPlayerBottomNavigation
-import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamPlayerTopBar
-import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarousel
+import com.codandotv.streamplayerapp.core.navigation.bottomnavigation.StreamPlayerBottomNavigation
 import org.koin.compose.viewmodel.koinViewModel
 
 @Suppress("LongParameterList")

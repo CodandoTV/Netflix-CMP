@@ -1,7 +1,7 @@
 package com.codandotv.streamplayerapp.feature.detail.fake
 
-import com.codandotv.streamplayerapp.core_local_storage.data.dao.FavoriteDao
-import com.codandotv.streamplayerapp.core_local_storage.domain.model.MovieEntity
+import com.codandotv.streamplayerapp.core.local.storage.data.dao.FavoriteDao
+import com.codandotv.streamplayerapp.core.local.storage.domain.model.MovieEntity
 
 class FakeFavoriteDao : FavoriteDao {
     private val movies = mutableListOf<MovieEntity>()

@@ -4,9 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import androidx.paging.map
-import com.codandotv.streamplayerapp.core_networking.handleError.catchFailure
-import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCardContent
-import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarouselContent
+import com.codandotv.streamplayerapp.core.networking.handleError.catchFailure
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine

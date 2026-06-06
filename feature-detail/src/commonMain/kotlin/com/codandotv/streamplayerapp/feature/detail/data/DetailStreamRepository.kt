@@ -1,9 +1,7 @@
 package com.codandotv.streamplayerapp.feature.detail.data
 
-import com.codandotv.streamplayerapp.core_local_storage.data.dao.FavoriteDao
-import com.codandotv.streamplayerapp.core_networking.handleError.toFlow
-import com.codandotv.streamplayerapp.feature.detail.domain.DetailStream
-import com.codandotv.streamplayerapp.feature.detail.domain.VideoStream
+import com.codandotv.streamplayerapp.core.local.storage.data.dao.FavoriteDao
+import com.codandotv.streamplayerapp.core.networking.handleError.toFlow
 import com.codandotv.streamplayerapp.feature.detail.domain.toDetailStream
 import com.codandotv.streamplayerapp.feature.detail.domain.toDetailStreamLocal
 import com.codandotv.streamplayerapp.feature.detail.domain.toVideoStreams

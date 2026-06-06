@@ -1,8 +1,6 @@
 package com.codandotv.streamplayerapp.feature.search.data.datasource
 
-import com.codandotv.streamplayerapp.core_networking.handleError.toFlow
-import com.codandotv.streamplayerapp.feature.search.data.model.ListSearchStreamResponse
-import com.codandotv.streamplayerapp.feature.search.data.api.SearchStreamService
+import com.codandotv.streamplayerapp.core.networking.handleError.toFlow
 import kotlinx.coroutines.flow.Flow
 import org.koin.core.annotation.Factory
 

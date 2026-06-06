@@ -3,10 +3,8 @@ package com.codandotv.streamplayerapp.feature.detail.presentation.navigation
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
-import com.codandotv.streamplayerapp.core_navigation.routes.Routes.DETAIL_COMPLETE
-import com.codandotv.streamplayerapp.core_navigation.routes.Routes.PARAM.ID
-import com.codandotv.streamplayerapp.feature.detail.di.DetailStreamModule
-import com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamScreen
+import com.codandotv.streamplayerapp.core.navigation.routes.Routes.DETAIL_COMPLETE
+import com.codandotv.streamplayerapp.core.navigation.routes.Routes.PARAM.ID
 import org.koin.compose.getKoin
 import org.koin.compose.module.rememberKoinModules
 import org.koin.compose.viewmodel.koinViewModel

@@ -2,8 +2,7 @@ package com.codandotv.streamplayerapp.feature.liststreams.list.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.codandotv.streamplayerapp.core_networking.handleError.NetworkResponse
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream
+import com.codandotv.streamplayerapp.core.networking.handleError.NetworkResponse
 import com.codandotv.streamplayerapp.feature.liststreams.list.domain.toListStream
 
 @Suppress("TooGenericExceptionCaught", "UseCheckOrError")
@@ -22,7 +21,7 @@ class StreamDataSource(
                 page = nextPageNumber
             )
 
-            if (response is com.codandotv.streamplayerapp.core_networking.handleError.NetworkResponse.Success) {
+            if (response is NetworkResponse.Success) {
                 LoadResult.Page(
                     data = response.value.toListStream(genreName).streams,
                     prevKey = if (nextPageNumber > 1) nextPageNumber - 1 else null,

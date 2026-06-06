@@ -3,9 +3,7 @@ package com.codandotv.streamplayerapp.feature.liststreams.list.data
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.codandotv.streamplayerapp.core_networking.handleError.toFlow
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream
+import com.codandotv.streamplayerapp.core.networking.handleError.toFlow
 import com.codandotv.streamplayerapp.feature.liststreams.list.domain.toGenres
 import com.codandotv.streamplayerapp.feature.liststreams.list.domain.toStream
 import kotlinx.coroutines.flow.Flow
