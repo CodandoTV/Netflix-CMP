@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.core_camera_gallery.camera
+package com.codandotv.streamplayerapp.core.camera.gallery.camera
 
 import android.content.ContentResolver
 import android.net.Uri
@@ -10,7 +10,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
-import com.codandotv.streamplayerapp.core_camera_gallery.SharedImage
+import com.codandotv.streamplayerapp.core.camera.gallery.SharedImage
 
 @Composable
 actual fun rememberCameraManager(onResult: (SharedImage?) -> Unit): CameraManager {
@@ -33,7 +33,7 @@ actual fun rememberCameraManager(onResult: (SharedImage?) -> Unit): CameraManage
                 ComposeFileProvider.getImageUri(context)?.let {
                     tempPhotoUri = it
                     cameraLauncher.launch(tempPhotoUri)
-                }?: run { onResult.invoke(null) }
+                } ?: run { onResult.invoke(null) }
             }
         )
     }

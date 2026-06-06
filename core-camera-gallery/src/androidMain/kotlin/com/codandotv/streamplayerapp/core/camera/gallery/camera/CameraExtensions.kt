@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.core_camera_gallery.camera
+package com.codandotv.streamplayerapp.core.camera.gallery.camera
 
 import android.content.ContentResolver
 import android.graphics.Bitmap
@@ -11,7 +11,7 @@ import java.io.InputStream
 
 
 internal fun Uri.getBitmapFromUri(contentResolver: ContentResolver): Bitmap? {
-    return kotlin.runCatching {
+    return runCatching {
         val inputStreamForBitmap = contentResolver.openInputStream(this)
         val bitmap = inputStreamForBitmap?.use {
             BitmapFactory.decodeStream(it)
@@ -28,7 +28,7 @@ internal fun Uri.getBitmapFromUri(contentResolver: ContentResolver): Bitmap? {
 
 internal fun Bitmap.rotateImageIfRequired(inputStream: InputStream?): Bitmap {
     if (inputStream == null) return this
-    return kotlin.runCatching {
+    return runCatching {
         val exif = ExifInterface(inputStream)
         val orientation = exif.getAttributeInt(
             ExifInterface.TAG_ORIENTATION,

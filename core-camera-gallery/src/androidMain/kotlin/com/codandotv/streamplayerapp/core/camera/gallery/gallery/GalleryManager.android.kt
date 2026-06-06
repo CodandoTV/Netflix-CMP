@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.core_camera_gallery.gallery
+package com.codandotv.streamplayerapp.core.camera.gallery.gallery
 
 import android.content.ContentResolver
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -7,8 +7,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
-import com.codandotv.streamplayerapp.core_camera_gallery.SharedImage
-import com.codandotv.streamplayerapp.core_camera_gallery.camera.getBitmapFromUri
+import com.codandotv.streamplayerapp.core.camera.gallery.SharedImage
+import com.codandotv.streamplayerapp.core.camera.gallery.camera.getBitmapFromUri
 
 @Composable
 actual fun rememberGalleryManager(onImageSelected: (SharedImage?) -> Unit): GalleryManager {

@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.core_camera_gallery
+package com.codandotv.streamplayerapp.core.camera.gallery
 
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.toComposeImageBitmap

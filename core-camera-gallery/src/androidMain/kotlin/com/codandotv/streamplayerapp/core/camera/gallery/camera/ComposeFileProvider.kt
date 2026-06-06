@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.core_camera_gallery.camera
+package com.codandotv.streamplayerapp.core.camera.gallery.camera
 
 import android.content.Context
 import android.net.Uri
@@ -11,7 +11,7 @@ class ComposeFileProvider : FileProvider(
     R.xml.path_provider
 ) {
     companion object {
-        fun getImageUri(context: Context): Uri? = kotlin.runCatching {
+        fun getImageUri(context: Context): Uri? = runCatching {
             val tempFile = File.createTempFile(
                 "picture_${System.currentTimeMillis()}", ".png", context.cacheDir
             ).apply {

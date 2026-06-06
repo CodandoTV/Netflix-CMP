@@ -1,8 +1,9 @@
-package com.codandotv.streamplayerapp.core_camera_gallery.gallery
+package com.codandotv.streamplayerapp.core.camera.gallery.gallery
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import com.codandotv.streamplayerapp.core_camera_gallery.SharedImage
+import com.codandotv.streamplayerapp.core.camera.gallery.SharedImage
+import com.codandotv.streamplayerapp.core.camera.gallery.gallery.GalleryManager
 import platform.UIKit.UIApplication
 import platform.UIKit.UIImage
 import platform.UIKit.UIImagePickerController

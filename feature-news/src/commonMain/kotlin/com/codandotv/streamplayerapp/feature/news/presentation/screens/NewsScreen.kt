@@ -21,9 +21,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.codandotv.streamplayerapp.core.permission.PermissionDeniedDialog
-import com.codandotv.streamplayerapp.core_camera_gallery.SharedImage
-import com.codandotv.streamplayerapp.core_camera_gallery.camera.rememberCameraManager
-import com.codandotv.streamplayerapp.core_camera_gallery.gallery.rememberGalleryManager
+import com.codandotv.streamplayerapp.core.camera.gallery.SharedImage
+import com.codandotv.streamplayerapp.core.camera.gallery.camera.rememberCameraManager
+import com.codandotv.streamplayerapp.core.camera.gallery.gallery.rememberGalleryManager
 import com.codandotv.streamplayerapp.core.navigation.bottomnavigation.StreamPlayerBottomNavigation
 import com.codandotv.streamplayerapp.feature.news.presentation.NewsScreenActionTakeImage
 import com.codandotv.streamplayerapp.feature.news.presentation.NewsScreenViewModel

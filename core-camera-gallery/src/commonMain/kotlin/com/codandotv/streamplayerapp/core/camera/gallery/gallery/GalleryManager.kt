@@ -1,7 +1,7 @@
-package com.codandotv.streamplayerapp.core_camera_gallery.gallery
+package com.codandotv.streamplayerapp.core.camera.gallery.gallery
 
 import androidx.compose.runtime.Composable
-import com.codandotv.streamplayerapp.core_camera_gallery.SharedImage
+import com.codandotv.streamplayerapp.core.camera.gallery.SharedImage
 
 expect class GalleryManager(
     onLaunch: () -> Unit
