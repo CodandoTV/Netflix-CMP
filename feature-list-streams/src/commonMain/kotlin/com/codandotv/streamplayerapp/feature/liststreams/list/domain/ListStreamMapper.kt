@@ -2,12 +2,7 @@ package com.codandotv.streamplayerapp.feature.liststreams.list.domain
 
 import ListStreamResponse
 import StreamResponse
-import com.codandotv.streamplayerapp.core_shared.Url
-import com.codandotv.streamplayerapp.feature.liststreams.list.data.model.GenresResponse
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.ListStream
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.toStream
+import com.codandotv.streamplayerapp.core.shared.Url
 
 fun ListStreamResponse.toListStream(genre: String): com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.ListStream =
     _root_ide_package_.com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.ListStream(

@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.core_shared.qualifier
+package com.codandotv.streamplayerapp.core.shared.qualifier
 
 import org.koin.core.qualifier.Qualifier
 import org.koin.core.qualifier.QualifierValue

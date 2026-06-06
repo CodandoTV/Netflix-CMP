@@ -3,8 +3,7 @@ package com.codandotv.streamplayerapp.di
 import com.codandotv.streamplayerapp.core_background_work.di.SyncModule
 import com.codandotv.streamplayerapp.core_local_storage.di.LocalStorageModule
 import com.codandotv.streamplayerapp.core_networking.di.NetworkModule
-import com.codandotv.streamplayerapp.core_shared.qualifier.QualifierDispatcherIO
-import com.codandotv.streamplayerapp.feature.liststreams.list.di.ListStreamModule
+import com.codandotv.streamplayerapp.core.shared.qualifier.QualifierDispatcherIO
 import com.codandotv.streamplayerapp.feature.news.di.NewsScreenModule
 import io.kotzilla.generated.monitoring
 import kotlinx.coroutines.Dispatchers
