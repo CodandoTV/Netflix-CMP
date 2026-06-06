@@ -2,7 +2,7 @@ package com.codandotv.streamplayerapp.feature.search.presentation.widgets
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.codandotv.streamplayerapp.core_shared_ui.theme.ThemePreviews
+import com.codandotv.streamplayerapp.core.shared.ui.theme.ThemePreviews
 
 
 @ThemePreviews

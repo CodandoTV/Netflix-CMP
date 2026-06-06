@@ -938,6 +938,6 @@ style:
 
 formatting:
   TrailingCommaOnCallSite:
-    active: true
+    active: false
   TrailingCommaOnDeclarationSite:
-    active: true
+    active: false

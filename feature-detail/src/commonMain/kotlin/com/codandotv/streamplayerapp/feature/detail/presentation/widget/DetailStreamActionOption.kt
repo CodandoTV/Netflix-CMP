@@ -17,8 +17,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.codandotv.streamplayerapp.core_shared_ui.widget.IconWithText
-import com.codandotv.streamplayerapp.feature.detail.domain.DetailStream
+import com.codandotv.streamplayerapp.core.shared.ui.widget.IconWithText
 import org.jetbrains.compose.resources.stringResource
 import streamplayerapp_kmp.feature_detail.generated.resources.Res
 import streamplayerapp_kmp.feature_detail.generated.resources.detail_classification
@@ -45,7 +44,7 @@ fun DetailStreamActionOption(
         modifier = modifier,
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
-        IconWithText(
+        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.IconWithText(
             onClick = {
                 checked = !checked
                 onToggleToMyList(detailStream)
@@ -55,21 +54,21 @@ fun DetailStreamActionOption(
             text = stringResource(Res.string.detail_my_list),
             textColor = Color.Gray,
         )
-        IconWithText(
+        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.IconWithText(
             onClick = { TODO("Implementar mecanismo de classificação.") },
             imageVector = Icons.Filled.ThumbUp,
             imageColor = Color.White,
             text = stringResource(Res.string.detail_classification),
             textColor = Color.Gray,
         )
-        IconWithText(
+        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.IconWithText(
             onClick = { onShowSharingOptions.invoke() },
             imageVector = Icons.Filled.Share,
             imageColor = Color.White,
             text = stringResource(Res.string.detail_share),
             textColor = Color.Gray,
         )
-        IconWithText(
+        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.IconWithText(
             onClick = { TODO("Implementar mecanismo de download.") },
             imageVector = Icons.Filled.Share,
             imageColor = Color.White,

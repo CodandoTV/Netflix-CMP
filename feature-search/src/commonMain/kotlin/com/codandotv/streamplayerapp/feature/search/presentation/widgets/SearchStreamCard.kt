@@ -24,7 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.codandotv.streamplayerapp.core_shared_ui.widget.WebImage
+import com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage
 
 @Suppress("MagicNumber")
 @Composable
@@ -79,7 +79,7 @@ fun ImageStream(modifier: Modifier, url: String) {
         shape = RoundedCornerShape(4.dp),
         modifier = modifier
     ) {
-        WebImage(
+        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage(
             imageUrl = url,
             contentScale = ContentScale.FillBounds,
             contentDescription = "",

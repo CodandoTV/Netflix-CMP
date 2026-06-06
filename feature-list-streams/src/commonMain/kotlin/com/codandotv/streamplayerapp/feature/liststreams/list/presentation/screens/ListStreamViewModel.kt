@@ -5,16 +5,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import androidx.paging.map
 import com.codandotv.streamplayerapp.core_networking.handleError.catchFailure
-import com.codandotv.streamplayerapp.feature.liststreams.core.ContentType
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.GetGenresUseCase
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.GetTopRatedStream
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.ListStreamUseCase
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.HighlightBanner
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.IconAndTextInfo
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Stream
-import com.codandotv.streamplayerapp.core_shared_ui.widget.StreamsCardContent
-import com.codandotv.streamplayerapp.core_shared_ui.widget.StreamsCarouselContent
+import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCardContent
+import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarouselContent
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
@@ -112,12 +104,12 @@ class ListStreamViewModel(
         )
 
 
-    private fun getStreamsByGenre(genre: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre): StreamsCarouselContent {
-        return StreamsCarouselContent(
+    private fun getStreamsByGenre(genre: com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Genre): com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarouselContent {
+        return _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarouselContent(
             genre.name,
             listStreams(genre).map {
                 it.map { stream ->
-                    StreamsCardContent(
+                    _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCardContent(
                         contentDescription = stream.name,
                         url = stream.posterPathUrl,
                         id = stream.id

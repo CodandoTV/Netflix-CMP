@@ -29,8 +29,8 @@ import androidx.paging.PagingData
 import app.cash.paging.compose.collectAsLazyPagingItems
 import app.cash.paging.compose.itemContentType
 import app.cash.paging.compose.itemKey
-import com.codandotv.streamplayerapp.core_shared_ui.widget.StreamsCard
-import com.codandotv.streamplayerapp.core_shared_ui.widget.StreamsCardContent
+import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCard
+import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCardContent
 import kotlinx.coroutines.flow.Flow
 import org.jetbrains.compose.resources.stringResource
 import streamplayerapp_kmp.feature_search.generated.resources.Res
@@ -42,7 +42,7 @@ import streamplayerapp_kmp.feature_search.generated.resources.search_list_error
 
 data class SearchCarousel(
     val genreTitle: String,
-    val contentList: Flow<PagingData<StreamsCardContent>>
+    val contentList: Flow<PagingData<com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCardContent>>
 )
 
 @Composable
@@ -72,7 +72,7 @@ fun SearchCarouselStream(
             ) { index ->
                 val item = lazyPagingItems[index]
                 item?.let {
-                    StreamsCard(
+                    _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCard(
                         content = it,
                         onNavigateDetailList = onNavigateDetailList
                     )

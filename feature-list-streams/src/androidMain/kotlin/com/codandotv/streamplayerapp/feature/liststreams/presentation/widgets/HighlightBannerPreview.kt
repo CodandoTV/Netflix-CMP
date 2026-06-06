@@ -1,7 +1,7 @@
 package com.codandotv.streamplayerapp.feature.liststreams.presentation.widgets
 
 import androidx.compose.runtime.Composable
-import com.codandotv.streamplayerapp.core_shared_ui.theme.ThemePreviews
+import com.codandotv.streamplayerapp.core.shared.ui.theme.ThemePreviews
 import org.jetbrains.compose.resources.stringResource
 import streamplayerapp_kmp.core_shared_ui.generated.resources.Res
 import streamplayerapp_kmp.core_shared_ui.generated.resources.app_name

@@ -21,14 +21,9 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.codandotv.streamplayerapp.core_shared_ui.widget.WebImage
-import com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream
-import com.codandotv.streamplayerapp.feature.profile.presentation.screens.ProfilePickerStreamsUIState
-import com.codandotv.streamplayerapp.feature.profile.presentation.widget.dpToPx
-import org.jetbrains.compose.resources.painterResource
+import com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage
 import org.jetbrains.compose.resources.stringResource
 import streamplayerapp_kmp.feature_profile.generated.resources.Res
-import streamplayerapp_kmp.feature_profile.generated.resources.image_placeholder
 import streamplayerapp_kmp.feature_profile.generated.resources.profile_current_profile_name
 
 @Composable
@@ -97,7 +92,7 @@ private fun ProfileItem(
                     profileItemPosition
                 }
         ) {
-            WebImage(
+            _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage(
                 imageUrl = profile.imageUrl,
                 //placeholder = painterResource(Res.drawable.image_placeholder),
                 contentDescription = stringResource(

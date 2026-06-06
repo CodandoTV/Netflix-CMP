@@ -16,8 +16,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import com.codandotv.streamplayerapp.core_shared_ui.widget.WebImage
-import com.codandotv.streamplayerapp.feature.profile.presentation.screens.ProfilePickerStreamsUIState
+import com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage
 import org.jetbrains.compose.resources.stringResource
 import streamplayerapp_kmp.feature_profile.generated.resources.Res
 import streamplayerapp_kmp.feature_profile.generated.resources.profile_current_profile_name
@@ -42,8 +41,8 @@ fun ProfilePickerSelectedProfileContainer(
                         .offset { offsetSelectedProfileImage }
                 ) {
                     selectedItem?.imageUrl?.let { imageUrl ->
-                        WebImage(
-                            imageUrl =imageUrl,
+                        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage(
+                            imageUrl = imageUrl,
                             contentScale = ContentScale.Fit,
                             contentDescription = stringResource(
                                 Res.string.profile_current_profile_name,

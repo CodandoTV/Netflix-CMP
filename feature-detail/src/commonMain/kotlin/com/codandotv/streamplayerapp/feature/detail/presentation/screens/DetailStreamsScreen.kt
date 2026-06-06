@@ -30,14 +30,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.codandotv.streamplayerapp.core_shared_ui.widget.BasicToolbar
-import com.codandotv.streamplayerapp.core_shared_ui.widget.SharedHandlerPlatform
-import com.codandotv.streamplayerapp.core_shared_ui.widget.SharingStreamPlatform
-import com.codandotv.streamplayerapp.feature.detail.domain.DetailStream
-import com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamActionOption
-import com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamButtonAction
-import com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamImagePreview
-import com.codandotv.streamplayerapp.feature.detail.presentation.widget.DetailStreamRowHeader
+import com.codandotv.streamplayerapp.core.shared.ui.widget.BasicToolbar
+import com.codandotv.streamplayerapp.core.shared.ui.widget.SharedHandlerPlatform
+import com.codandotv.streamplayerapp.core.shared.ui.widget.SharingStreamPlatform
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 import streamplayerapp_kmp.feature_detail.generated.resources.Res
@@ -48,7 +43,7 @@ import streamplayerapp_kmp.feature_detail.generated.resources.detail_watch_prima
 fun DetailStreamScreen(
     viewModel: com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamViewModel = koinViewModel(),
     navController: NavController,
-    sharedHandlerPlatform: SharedHandlerPlatform,
+    sharedHandlerPlatform: com.codandotv.streamplayerapp.core.shared.ui.widget.SharedHandlerPlatform,
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
@@ -81,7 +76,7 @@ private fun SetupDetailScreen(
     onToggleToMyList: (com.codandotv.streamplayerapp.feature.detail.domain.DetailStream) -> Unit,
     uiState: com.codandotv.streamplayerapp.feature.detail.presentation.screens.DetailStreamsUIState.DetailStreamsLoadedUIState,
     navController: NavController,
-    sharedHandlerPlatform: SharedHandlerPlatform,
+    sharedHandlerPlatform: com.codandotv.streamplayerapp.core.shared.ui.widget.SharedHandlerPlatform,
 ) {
     val showDialog = remember { mutableStateOf(false) }
 
@@ -89,7 +84,7 @@ private fun SetupDetailScreen(
 
     Scaffold(
         topBar = {
-            BasicToolbar(
+            _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.BasicToolbar(
                 navController = navController,
             )
         },
@@ -165,7 +160,7 @@ private fun SetupDetailScreen(
                 }
             }
             if (showDialog.value) {
-                SharingStreamPlatform(
+                _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.SharingStreamPlatform(
                     contentTitle = uiState.detailStream.title,
                     contentUrl = uiState.detailStream.url,
                     shareHandler = sharedHandlerPlatform,

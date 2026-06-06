@@ -2,7 +2,7 @@ package com.codandotv.streamplayerapp.feature.liststreams.presentation.screen
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
-import com.codandotv.streamplayerapp.core_shared_ui.theme.ThemePreviews
+import com.codandotv.streamplayerapp.core.shared.ui.theme.ThemePreviews
 
 @ThemePreviews
 @Composable

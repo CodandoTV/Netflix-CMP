@@ -27,10 +27,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
-import com.codandotv.streamplayerapp.core_shared_ui.resources.Colors
-import com.codandotv.streamplayerapp.core_shared_ui.widget.CloseButton
-import com.codandotv.streamplayerapp.core_shared_ui.widget.MicButton
-import com.codandotv.streamplayerapp.core_shared_ui.widget.SearchIcon
+import com.codandotv.streamplayerapp.core.shared.ui.resources.Colors
+import com.codandotv.streamplayerapp.core.shared.ui.widget.CloseButton
+import com.codandotv.streamplayerapp.core.shared.ui.widget.MicButton
+import com.codandotv.streamplayerapp.core.shared.ui.widget.SearchIcon
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import streamplayerapp_kmp.core_shared_ui.generated.resources.icon_back
@@ -127,13 +127,13 @@ fun SearchTopBar(
         modifier = Modifier
             .fillMaxWidth()
             .height(56.dp)
-            .background(Colors.Gray100)
+            .background(_root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.resources.Colors.Gray100)
     ) {
         TextField(
             modifier = Modifier.fillMaxWidth(),
             value = currentSearchText,
             colors = TextFieldDefaults.colors(
-                focusedContainerColor = Colors.Gray100,
+                focusedContainerColor = _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.resources.Colors.Gray100,
                 focusedIndicatorColor = Color.Transparent,
                 disabledIndicatorColor = Color.Transparent,
                 unfocusedIndicatorColor = Color.Transparent,
@@ -155,10 +155,12 @@ fun SearchTopBar(
             singleLine = true,
             maxLines = 1,
             leadingIcon = {
-                SearchIcon(action = onSearchIconPressed)
+                _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.SearchIcon(
+                    action = onSearchIconPressed
+                )
             },
             trailingIcon = {
-                if (currentSearchText.isEmpty()) MicButton() else CloseButton(
+                if (currentSearchText.isEmpty()) _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.MicButton() else _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.CloseButton(
                     action = onCleanTextPressed
                 )
             },

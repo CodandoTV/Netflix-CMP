@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
@@ -25,9 +24,8 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.codandotv.streamplayerapp.core_navigation.bottomnavigation.StreamPlayerBottomNavigation
-import com.codandotv.streamplayerapp.core_shared_ui.widget.StreamPlayerTopBar
-import com.codandotv.streamplayerapp.feature.liststreams.list.presentation.widgets.HighlightBanner
-import com.codandotv.streamplayerapp.core_shared_ui.widget.StreamsCarousel
+import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamPlayerTopBar
+import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarousel
 import org.koin.compose.viewmodel.koinViewModel
 
 @Suppress("LongParameterList")
@@ -50,7 +48,7 @@ fun ListStreamsScreen(
         modifier = Modifier
             .nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            StreamPlayerTopBar(
+            _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamPlayerTopBar(
                 scrollBehavior = scrollBehavior,
                 onNavigateProfilePicker = onNavigateProfilePicker,
                 onNavigateSearchScreen = onNavigateSearchScreen,
@@ -86,7 +84,7 @@ fun ListStreamsScreen(
                     )
 
                     uiState.streamsCarouselContent.forEach { streamCarouselContent ->
-                        StreamsCarousel(
+                        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarousel(
                             content = streamCarouselContent,
                             onNavigateDetailList = onNavigateDetailList,
                         )

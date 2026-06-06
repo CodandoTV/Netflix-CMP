@@ -31,9 +31,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.codandotv.streamplayerapp.core_shared_ui.widget.WebImage
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.HighlightBanner
-import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.IconAndTextInfo
+import com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -92,7 +90,7 @@ fun HighlightBanner(modifier: Modifier = Modifier, data: com.codandotv.streampla
 
 @Composable
 fun ContentImage(modifier: Modifier = Modifier, imageUrl: String) {
-    WebImage(
+    _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage(
         modifier = modifier.fillMaxSize(),
         imageUrl = imageUrl,
         contentScale = ContentScale.Crop,
