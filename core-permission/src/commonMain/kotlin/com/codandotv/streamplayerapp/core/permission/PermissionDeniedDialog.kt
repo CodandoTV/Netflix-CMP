@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.core_permission.permission
+package com.codandotv.streamplayerapp.core.permission
 
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ButtonDefaults.textButtonColors

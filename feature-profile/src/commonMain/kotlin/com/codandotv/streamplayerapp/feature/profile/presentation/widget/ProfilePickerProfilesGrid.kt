@@ -55,8 +55,8 @@ fun ProfilePickerProfilesGrid(
                 val profileItemPosition = if (offsetProfiles.isNotEmpty()) {
                     with(offsetProfiles[profilesStream.indexOf(profile)]) {
                         IntOffset(
-                            _root_ide_package_.kotlin.Pair.first,
-                            _root_ide_package_.kotlin.Pair.second
+                            first,
+                            second
                         )
                     }
                 } else {
@@ -92,7 +92,7 @@ private fun ProfileItem(
                     profileItemPosition
                 }
         ) {
-            _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage(
+            WebImage(
                 imageUrl = profile.imageUrl,
                 //placeholder = painterResource(Res.drawable.image_placeholder),
                 contentDescription = stringResource(

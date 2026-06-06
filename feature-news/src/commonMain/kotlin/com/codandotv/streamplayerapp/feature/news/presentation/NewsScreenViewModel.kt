@@ -2,9 +2,9 @@ package com.codandotv.streamplayerapp.feature.news.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.codandotv.streamplayerapp.core_permission.permission.AppPermission
-import com.codandotv.streamplayerapp.core_permission.permission.PermissionStatus
-import com.codandotv.streamplayerapp.core_permission.permission.PermissionsManager
+import com.codandotv.streamplayerapp.core.permission.AppPermission
+import com.codandotv.streamplayerapp.core.permission.PermissionStatus
+import com.codandotv.streamplayerapp.core.permission.PermissionsManager
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow

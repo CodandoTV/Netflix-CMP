@@ -33,15 +33,15 @@ import kotlin.collections.indexOf
 
 @Composable
 fun ProfilePickerStreamScreen(
-    viewModel: com.codandotv.streamplayerapp.feature.profile.presentation.screens.ProfilePickerStreamViewModel = koinViewModel(),
+    viewModel: ProfilePickerStreamViewModel = koinViewModel(),
     onNavigateListStreams: (String) -> Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
     if (uiState.isLoading) {
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.profile.presentation.widget.LoadScreen()
+        LoadScreen()
     } else {
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.profile.presentation.screens.SetupProfilePickerScreen(
+        SetupProfilePickerScreen(
             uiState = uiState,
             onSetCenterImageAlpha = { viewModel.setCenterImageAlpha(it) },
             onSetLastItemPositioned = { viewModel.setLastItemPositioned(it) },
@@ -59,13 +59,13 @@ fun ProfilePickerStreamScreen(
 @Suppress("LongMethod", "LongParameterList")
 @Composable
 fun SetupProfilePickerScreen(
-    uiState: com.codandotv.streamplayerapp.feature.profile.presentation.screens.ProfilePickerStreamsUIState,
+    uiState: ProfilePickerStreamsUIState,
     onSetCenterImageAlpha: (Float) -> Unit = {},
     onSetScreenSize: (Float, Float, Int, Int) -> Unit = { _, _, _, _ -> },
     onSetLastItemPositioned: (Boolean) -> Unit = {},
     onSetHaltSizeImage: (Int) -> Unit = { },
     onSetHalfExpandedSizeImage: (Int) -> Unit = { },
-    onClickSelectedProfile: (com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream) -> Unit = {},
+    onClickSelectedProfile: (ProfileStream) -> Unit = {},
     onNavigateListStreams: (String) -> Unit = {}
 ) {
     val animatedOpacityBackground by animateColorAsState(
@@ -84,7 +84,7 @@ fun SetupProfilePickerScreen(
 
     Scaffold(
         topBar = {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.profile.presentation.widget.ProfilePickerStreamToolbar(
+            ProfilePickerStreamToolbar(
                 modifier = Modifier.background(animatedOpacityBackground)
             )
         },
@@ -120,8 +120,8 @@ fun SetupProfilePickerScreen(
                         if (uiState.profilesStream.isNotEmpty() && offsetProfiles.isNotEmpty()) {
                             with(offsetProfiles[uiState.profilesStream.indexOf(selectedItem)]) {
                                 IntOffset(
-                                    _root_ide_package_.kotlin.Pair.first,
-                                    _root_ide_package_.kotlin.Pair.second
+                                    first,
+                                    second
                                 )
                             }
                         } else {
@@ -132,7 +132,7 @@ fun SetupProfilePickerScreen(
                     animationSpec = tween(durationMillis = if (!showCenterImage) 100 else 800)
                 )
 
-                _root_ide_package_.com.codandotv.streamplayerapp.feature.profile.presentation.widget.ProfilePickerProfilesGrid(
+                ProfilePickerProfilesGrid(
                     uiState = uiState,
                     animatedProfileAlpha = animatedProfileAlpha,
                     onSetScreenSize = onSetScreenSize,
@@ -140,11 +140,11 @@ fun SetupProfilePickerScreen(
                     onSetLastItemPositioned = onSetLastItemPositioned
                 )
 
-                _root_ide_package_.com.codandotv.streamplayerapp.feature.profile.presentation.widget.ProfilePickerOpacityLayer(
+                ProfilePickerOpacityLayer(
                     animatedOpacityBackground
                 )
 
-                _root_ide_package_.com.codandotv.streamplayerapp.feature.profile.presentation.widget.ProfilePickerSelectedProfileContainer(
+                ProfilePickerSelectedProfileContainer(
                     state = uiState,
                     offsetSelectedProfileImage = animatedOffsetSelectedProfileImage,
                     animatedSizeImage = animatedSizeImage

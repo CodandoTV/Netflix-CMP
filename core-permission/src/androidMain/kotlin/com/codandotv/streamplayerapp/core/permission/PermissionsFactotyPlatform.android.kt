@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.core_permission.permission
+package com.codandotv.streamplayerapp.core.permission
 
 import android.content.Context
 import dev.icerock.moko.permissions.PermissionsController
