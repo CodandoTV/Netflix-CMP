@@ -44,4 +44,3 @@ fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinAppl
         }
     }
 }
-

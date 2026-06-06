@@ -4,10 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
-import androidx.compose.material3.Icon
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -17,8 +13,12 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -29,7 +29,7 @@ import com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage
 @Suppress("MagicNumber")
 @Composable
 fun SearchStreamCard(
-    content: com.codandotv.streamplayerapp.feature.search.presentation.widgets.SearchStreamCardModel,
+    content: SearchStreamCardModel,
     onSearchStreamPressed: (id: String) -> Unit
 ) {
     Row(
@@ -43,7 +43,7 @@ fun SearchStreamCard(
                 onSearchStreamPressed(content.id)
             }
     ) {
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.widgets.ImageStream(
+        ImageStream(
             url = content.url,
             modifier = Modifier
                 .weight(2.5f)
@@ -59,7 +59,7 @@ fun SearchStreamCard(
             fontSize = 18.sp,
             overflow = TextOverflow.Ellipsis
         )
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.widgets.PlayerIcon(
+        PlayerIcon(
             modifier = Modifier
                 .weight(2f)
                 .padding(2.dp)
@@ -79,7 +79,7 @@ fun ImageStream(modifier: Modifier, url: String) {
         shape = RoundedCornerShape(4.dp),
         modifier = modifier
     ) {
-        _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.WebImage(
+        WebImage(
             imageUrl = url,
             contentScale = ContentScale.FillBounds,
             contentDescription = "",

@@ -53,10 +53,10 @@ fun SearchableTopBar(
     modifier: Modifier = Modifier,
 ) {
     Column(modifier = modifier) {
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.widgets.StreamPlayerTopBar(
+        StreamPlayerTopBar(
             onBackPressed = onBackPressed
         )
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.widgets.SearchTopBar(
+        SearchTopBar(
             currentSearchText = currentSearchText,
             onSearchTextChanged = onSearchTextChanged,
             onSearchDispatched = onSearchDispatched,
@@ -127,13 +127,13 @@ fun SearchTopBar(
         modifier = Modifier
             .fillMaxWidth()
             .height(56.dp)
-            .background(_root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.resources.Colors.Gray100)
+            .background(Colors.Gray100)
     ) {
         TextField(
             modifier = Modifier.fillMaxWidth(),
             value = currentSearchText,
             colors = TextFieldDefaults.colors(
-                focusedContainerColor = _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.resources.Colors.Gray100,
+                focusedContainerColor = Colors.Gray100,
                 focusedIndicatorColor = Color.Transparent,
                 disabledIndicatorColor = Color.Transparent,
                 unfocusedIndicatorColor = Color.Transparent,
@@ -155,14 +155,18 @@ fun SearchTopBar(
             singleLine = true,
             maxLines = 1,
             leadingIcon = {
-                _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.SearchIcon(
+                SearchIcon(
                     action = onSearchIconPressed
                 )
             },
             trailingIcon = {
-                if (currentSearchText.isEmpty()) _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.MicButton() else _root_ide_package_.com.codandotv.streamplayerapp.core.shared.ui.widget.CloseButton(
-                    action = onCleanTextPressed
-                )
+                if (currentSearchText.isEmpty()) {
+                    MicButton()
+                } else {
+                    CloseButton(
+                        action = onCleanTextPressed
+                    )
+                }
             },
             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
             keyboardActions = KeyboardActions(onSearch = {

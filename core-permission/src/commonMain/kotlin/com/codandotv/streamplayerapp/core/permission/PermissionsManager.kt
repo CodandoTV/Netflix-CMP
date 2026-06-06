@@ -20,16 +20,18 @@ enum class PermissionStatus {
     DENIED_ALWAYS
 }
 
-interface PermissionsManager{
+interface PermissionsManager {
     suspend fun request(
         vararg permissions: AppPermission,
-        blockDenied : () -> Unit,
-        blockDeniedAlways : () -> Unit,
-        blockSuccess : (Map<AppPermission, PermissionStatus>) -> Unit
+        blockDenied: () -> Unit,
+        blockDeniedAlways: () -> Unit,
+        blockSuccess: (Map<AppPermission, PermissionStatus>) -> Unit
     )
+
     fun openSettings()
     val controller: PermissionsController
 }
+
 class PermissionsManagerImpl(
     override val controller: PermissionsController
 ) : PermissionsManager {
@@ -42,15 +44,16 @@ class PermissionsManagerImpl(
         PermissionState.Granted -> PermissionStatus.GRANTED
         PermissionState.NotGranted,
         PermissionState.Denied -> PermissionStatus.DENIED
+
         PermissionState.DeniedAlways -> PermissionStatus.DENIED_ALWAYS
         PermissionState.NotDetermined -> PermissionStatus.NOT_DETERMINED
     }
 
     override suspend fun request(
         vararg permissions: AppPermission,
-        blockDenied : () -> Unit,
-        blockDeniedAlways : () -> Unit,
-        blockSuccess : (Map<AppPermission, PermissionStatus>) -> Unit
+        blockDenied: () -> Unit,
+        blockDeniedAlways: () -> Unit,
+        blockSuccess: (Map<AppPermission, PermissionStatus>) -> Unit
     ) {
         runCatching {
             permissions.forEach {

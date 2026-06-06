@@ -12,10 +12,10 @@ interface MostPopularMoviesService {
     suspend fun getPopular(): NetworkResponse<ListSearchStreamResponse>
 }
 
-@Factory(binds = [_root_ide_package_.com.codandotv.streamplayerapp.feature.search.data.api.MostPopularMoviesService::class])
+@Factory(binds = [MostPopularMoviesService::class])
 class MostPopularMoviesServiceImpl(
     @Provided private val client: HttpClient
-) : com.codandotv.streamplayerapp.feature.search.data.api.MostPopularMoviesService {
+) : MostPopularMoviesService {
     override suspend fun getPopular(): NetworkResponse<ListSearchStreamResponse> =
         client.safeRequest {
             url("movie/popular")

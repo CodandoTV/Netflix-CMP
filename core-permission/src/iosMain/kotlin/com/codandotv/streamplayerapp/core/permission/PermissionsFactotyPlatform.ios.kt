@@ -7,5 +7,5 @@ internal actual class PermissionFactory {
     actual fun getPermissionFactory(): PermissionsControllerFactory =
         PermissionsControllerFactory {
             PermissionsController()
-    }
+        }
 }

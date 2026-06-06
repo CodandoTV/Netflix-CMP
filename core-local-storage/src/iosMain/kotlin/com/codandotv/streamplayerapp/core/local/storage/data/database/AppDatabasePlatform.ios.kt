@@ -32,4 +32,3 @@ actual fun databaseInstance(): AppDatabase {
         .setQueryCoroutineContext(Dispatchers.IO)
         .build()
 }
-

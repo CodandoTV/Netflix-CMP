@@ -12,7 +12,7 @@ fun NavGraphBuilder.searchStreamsNavGraph(navController: NavHostController) {
         _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchScreen(
             navController = navController,
             onNavigateDetailList = { id ->
-                navController.navigate("${Routes.DETAIL}${id}")
+                navController.navigate("${Routes.DETAIL}$id")
             }
         )
     }

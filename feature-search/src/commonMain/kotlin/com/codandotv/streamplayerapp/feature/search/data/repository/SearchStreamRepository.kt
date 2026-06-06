@@ -6,14 +6,13 @@ import kotlinx.coroutines.flow.Flow
 import org.koin.core.annotation.Factory
 
 interface SearchStreamRepository {
-    suspend fun getMovieSearch(query: String): Flow<com.codandotv.streamplayerapp.feature.search.data.model.ListSearchStreamResponse>
-
+    suspend fun getMovieSearch(query: String): Flow<ListSearchStreamResponse>
 }
 
-@Factory(binds = [_root_ide_package_.com.codandotv.streamplayerapp.feature.search.data.repository.SearchStreamRepository::class])
+@Factory(binds = [SearchStreamRepository::class])
 class SearchStreamRepositoryImp(
-    private val dataSource: com.codandotv.streamplayerapp.feature.search.data.datasource.SearchStreamDataSource
-) : com.codandotv.streamplayerapp.feature.search.data.repository.SearchStreamRepository {
-    override suspend fun getMovieSearch(query: String): Flow<com.codandotv.streamplayerapp.feature.search.data.model.ListSearchStreamResponse> =
+    private val dataSource: SearchStreamDataSource
+) : SearchStreamRepository {
+    override suspend fun getMovieSearch(query: String): Flow<ListSearchStreamResponse> =
         dataSource.getMovieSearch(query)
 }

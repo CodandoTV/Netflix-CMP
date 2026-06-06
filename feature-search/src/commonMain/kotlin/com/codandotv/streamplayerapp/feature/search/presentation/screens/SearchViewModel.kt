@@ -21,9 +21,10 @@ class SearchViewModel(
 
     private var tryAgain: () -> Unit = {}
 
-    private val _uiState = MutableStateFlow<com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState>(
-        _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Loading)
-    val uiState: StateFlow<com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState> = _uiState.stateIn(
+    private val _uiState = MutableStateFlow<SearchUIState>(
+        SearchUIState.Loading
+    )
+    val uiState: StateFlow<SearchUIState> = _uiState.stateIn(
         scope = viewModelScope,
         started = SharingStarted.Eagerly,
         initialValue = _uiState.value
@@ -88,13 +89,13 @@ class SearchViewModel(
 
     private fun showError(messageError: String) {
         _uiState.update {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Error(messageError = messageError)
+            SearchUIState.Error(messageError = messageError)
         }
     }
 
     private fun showLoading() {
         _uiState.update {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Loading
+            SearchUIState.Loading
         }
     }
 

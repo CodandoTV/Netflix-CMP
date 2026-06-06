@@ -22,6 +22,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.codandotv.streamplayerapp.core.navigation.extensions.goBack
 import com.codandotv.streamplayerapp.feature.search.domain.mapper.toSearchStreamCardModel
+import com.codandotv.streamplayerapp.feature.search.presentation.widgets.SearchStreamCard
+import com.codandotv.streamplayerapp.feature.search.presentation.widgets.StreamsError
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel
 import streamplayerapp_kmp.feature_search.generated.resources.Res
@@ -29,33 +31,32 @@ import streamplayerapp_kmp.feature_search.generated.resources.search_list_descri
 
 @Composable
 fun SearchScreen(
-    viewModel: com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchViewModel = koinViewModel(),
+    viewModel: SearchViewModel = koinViewModel(),
     onNavigateDetailList: (String) -> Unit = {},
     navController: NavController,
 ) {
-
     val uiState by viewModel.uiState.collectAsState()
     when (uiState) {
-        is com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Success -> {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.screens.SetupSearchScreen(
+        is SearchUIState.Success -> {
+            SetupSearchScreen(
                 navController = navController,
-                uiState = uiState as com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Success,
+                uiState = uiState as SearchUIState.Success,
                 viewModel = viewModel,
                 onNavigateDetailList = onNavigateDetailList
             )
         }
 
-        is com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Error -> {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.widgets.StreamsError(
+        is SearchUIState.Error -> {
+            StreamsError(
                 onRetry = { viewModel.onTryAgain() },
                 onCloseButton = { navController.goBack() }
             )
         }
 
-        is com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Empty -> {
-            _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.screens.SetupSearchScreen(
+        is SearchUIState.Empty -> {
+            SetupSearchScreen(
                 navController = navController,
-                uiState = uiState as com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Empty,
+                uiState = uiState as SearchUIState.Empty,
                 viewModel = viewModel,
                 onNavigateDetailList = onNavigateDetailList
             )
@@ -77,8 +78,8 @@ fun SearchScreen(
 private fun SetupSearchScreen(
     onNavigateDetailList: (String) -> Unit = {},
     navController: NavController,
-    uiState: com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState,
-    viewModel: com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchViewModel
+    uiState: SearchUIState,
+    viewModel: SearchViewModel
 ) {
     Scaffold(
         topBar = {
@@ -107,7 +108,7 @@ private fun SetupSearchScreen(
         }
     ) { paddingValues ->
 
-        if (uiState is com.codandotv.streamplayerapp.feature.search.presentation.screens.SearchUIState.Success) {
+        if (uiState is SearchUIState.Success) {
             Column(
                 modifier = Modifier
                     .padding(paddingValues)
@@ -121,7 +122,7 @@ private fun SetupSearchScreen(
                     modifier = Modifier.padding(vertical = 8.dp)
                 )
                 uiState.listCharacters.results.map {
-                    _root_ide_package_.com.codandotv.streamplayerapp.feature.search.presentation.widgets.SearchStreamCard(
+                    SearchStreamCard(
                         content = it.toSearchStreamCardModel(),
                         onSearchStreamPressed = { id ->
                             onNavigateDetailList(id)
