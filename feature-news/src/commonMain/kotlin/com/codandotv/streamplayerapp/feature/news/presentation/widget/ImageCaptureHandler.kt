@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.feature_news.presentation.widget
+package com.codandotv.streamplayerapp.feature.news.presentation.widget
 
 class ImageCaptureHandler(
     val onCameraRequest: () -> Unit,

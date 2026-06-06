@@ -21,7 +21,7 @@ import com.codandotv.streamplayerapp.feature_list_streams.list.presentation.navi
 import com.codandotv.streamplayerapp.feature.profile.presentation.navigation.profilePickerStreamNavGraph
 import com.codandotv.streamplayerapp.presentation.navigation.splashNavGraph
 import com.codandotv.streamplayerapp.feature_detail.presentation.navigation.detailStreamNavGraph
-import com.codandotv.streamplayerapp.feature_news.presentation.navigation.newsStreamNavGraph
+import com.codandotv.streamplayerapp.feature.news.presentation.navigation.newsStreamNavGraph
 import com.codandotv.streamplayerapp.feature.search.presentation.navigation.searchStreamsNavGraph
 
 @Composable

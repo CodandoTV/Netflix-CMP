@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.feature_news.presentation.widget
+package com.codandotv.streamplayerapp.feature.news.presentation.widget
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

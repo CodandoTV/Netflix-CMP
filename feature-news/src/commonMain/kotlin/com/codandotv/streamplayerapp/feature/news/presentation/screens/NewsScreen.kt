@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.feature_news.presentation.screens
+package com.codandotv.streamplayerapp.feature.news.presentation.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,9 +25,9 @@ import com.codandotv.streamplayerapp.core_camera_gallery.camera.rememberCameraMa
 import com.codandotv.streamplayerapp.core_camera_gallery.gallery.rememberGalleryManager
 import com.codandotv.streamplayerapp.core_navigation.bottomnavigation.StreamPlayerBottomNavigation
 import com.codandotv.streamplayerapp.core_permission.permission.PermissionDeniedDialog
-import com.codandotv.streamplayerapp.feature_news.presentation.NewsScreenActionTakeImage
-import com.codandotv.streamplayerapp.feature_news.presentation.NewsScreenViewModel
-import com.codandotv.streamplayerapp.feature_news.presentation.widget.ImagePickerContent
+import com.codandotv.streamplayerapp.feature.news.presentation.NewsScreenActionTakeImage
+import com.codandotv.streamplayerapp.feature.news.presentation.NewsScreenViewModel
+import com.codandotv.streamplayerapp.feature.news.presentation.widget.ImagePickerContent
 import dev.icerock.moko.permissions.compose.BindEffect
 import org.jetbrains.compose.resources.stringResource
 import org.koin.compose.viewmodel.koinViewModel

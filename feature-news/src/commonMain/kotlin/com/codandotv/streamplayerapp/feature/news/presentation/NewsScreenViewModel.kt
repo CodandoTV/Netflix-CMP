@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.feature_news.presentation
+package com.codandotv.streamplayerapp.feature.news.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

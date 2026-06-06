@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.feature_news.di
+package com.codandotv.streamplayerapp.feature.news.di
 
 import org.koin.core.annotation.ComponentScan
 import org.koin.core.annotation.Module

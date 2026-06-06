@@ -5,10 +5,7 @@ import com.codandotv.streamplayerapp.core_local_storage.di.LocalStorageModule
 import com.codandotv.streamplayerapp.core_networking.di.NetworkModule
 import com.codandotv.streamplayerapp.core_shared.qualifier.QualifierDispatcherIO
 import com.codandotv.streamplayerapp.feature_list_streams.list.di.ListStreamModule
-import com.codandotv.streamplayerapp.feature_news.di.NewsScreenModule
-import com.codandotv.streamplayerapp.feature.search.di.SearchModule
-import com.codandotv.streamplayerapp.feature.search.presentation.widgets.StreamsError
-import com.codandotv.streamplayerapp.feature.profile.di.ProfilePickerStreamModule
+import com.codandotv.streamplayerapp.feature.news.di.NewsScreenModule
 import io.kotzilla.generated.monitoring
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
