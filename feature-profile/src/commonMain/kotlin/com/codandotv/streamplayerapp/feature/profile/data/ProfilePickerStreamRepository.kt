@@ -45,17 +45,17 @@ private val mockProfiles = listOf(
         name = "Morningstar",
         imageUrl = "https://raw.githubusercontent.com/git-jr/sample-files/main/profile%20pics/netflix_profile_pic_3.png"
     ),
-   ProfileStream(
+    ProfileStream(
         id = "4",
         name = "Shelby",
         imageUrl = "https://raw.githubusercontent.com/git-jr/sample-files/main/profile%20pics/netflix_profile_pic_4.png"
     ),
-   ProfileStream(
+    ProfileStream(
         id = "5",
         name = "Mooncake",
         imageUrl = "https://raw.githubusercontent.com/git-jr/sample-files/main/profile%20pics/netflix_profile_pic_5.png"
     ),
-   ProfileStream(
+    ProfileStream(
         id = "6",
         name = "CodandoTV",
         imageUrl = "https://raw.githubusercontent.com/git-jr/sample-files/main/profile%20pics/netflix_profile_pic_6.png"
