@@ -402,6 +402,11 @@ naming:
   ClassNaming:
     active: true
     classPattern: "[A-Z][a-zA-Z0-9]*"
+  ConstructorParameterNaming:
+    active: true
+    parameterPattern: "[a-z][A-Za-z0-9]*"
+    privateParameterPattern: "[a-z][A-Za-z0-9]*"
+    excludeClassPattern: "$^"
   EnumNaming:
     active: true
     enumEntryPattern: "[A-Z][_a-zA-Z0-9]*"
@@ -435,10 +440,15 @@ naming:
     parameterPattern: "[a-z][A-Za-z0-9]*"
     excludeClassPattern: "$^"
   InvalidPackageDeclaration:
-    active: false
+    active: true
+    rootPackage: ""
+    requireRootInDeclaration: false
   LambdaParameterNaming:
     active: false
     parameterPattern: "[a-z][A-Za-z0-9]*|_"
+  MatchingDeclarationName:
+    active: true
+    mustBeFirst: true
   MemberNameEqualsClassName:
     active: true
     ignoreOverridden: true
@@ -452,7 +462,8 @@ naming:
     propertyPattern: "[A-Za-z][_A-Za-z0-9]*"
     privatePropertyPattern: "(_)?[A-Za-z][_A-Za-z0-9]*"
   PackageNaming:
-    active: false
+    active: true
+    packagePattern: '[a-z]+(\.[a-z][A-Za-z0-9]*)*'
   TopLevelPropertyNaming:
     active: true
     constantPattern: "[A-Z][_A-Z0-9]*"
@@ -738,7 +749,34 @@ style:
     active: true
     maxJumpCount: 1
   MagicNumber:
-    active: false
+    active: true
+    excludes:
+      [
+        "**/test/**",
+        "**/androidTest/**",
+        "**/commonTest/**",
+        "**/jvmTest/**",
+        "**/androidUnitTest/**",
+        "**/androidInstrumentedTest/**",
+        "**/jsTest/**",
+        "**/iosTest/**",
+        "**/*.kts",
+      ]
+    ignoreNumbers:
+      - "-1"
+      - "0"
+      - "1"
+      - "2"
+    ignoreHashCodeFunction: true
+    ignorePropertyDeclaration: false
+    ignoreLocalVariableDeclaration: false
+    ignoreConstantDeclaration: true
+    ignoreCompanionObjectPropertyDeclaration: true
+    ignoreAnnotation: false
+    ignoreNamedArgument: true
+    ignoreEnums: false
+    ignoreRanges: false
+    ignoreExtensionFunctions: true
   MandatoryBracesLoops:
     active: false
   MaxChainedCallsOnSameLine:
@@ -844,7 +882,7 @@ style:
   UntilInsteadOfRangeTo:
     active: false
   UnusedImports:
-    active: false
+    active: true
   UnusedParameter:
     active: true
     allowedNames: "ignored|expected"
@@ -897,3 +935,9 @@ style:
     active: true
     excludeImports:
       - "java.util.*"
+
+formatting:
+  TrailingCommaOnCallSite:
+    active: false
+  TrailingCommaOnDeclarationSite:
+    active: false

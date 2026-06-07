@@ -1,0 +1,26 @@
+package com.codandotv.streamplayerapp.core.shared.ui.theme
+
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.Composable
+import com.codandotv.streamplayerapp.core.shared.ui.resources.Colors
+
+@Composable
+fun StreamPlayerTheme(
+    isDarkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
+    MaterialTheme(
+        colorScheme = getColorScheme(
+            isDarkTheme
+        ),
+        content = content,
+    )
+}
+
+private fun getColorScheme(isDarkTheme: Boolean) =
+    if (isDarkTheme) {
+        Colors.DarkColors
+    } else {
+        Colors.LightColors
+    }

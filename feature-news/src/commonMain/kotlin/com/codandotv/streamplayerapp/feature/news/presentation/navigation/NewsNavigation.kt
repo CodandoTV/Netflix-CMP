@@ -1,0 +1,15 @@
+package com.codandotv.streamplayerapp.feature.news.presentation.navigation
+
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.composable
+import com.codandotv.streamplayerapp.core.navigation.routes.BottomNavRoutes
+import com.codandotv.streamplayerapp.feature.news.presentation.screens.NewsScreenContent
+import org.koin.core.annotation.KoinExperimentalAPI
+
+@OptIn(KoinExperimentalAPI::class)
+fun NavGraphBuilder.newsStreamNavGraph(navController: NavHostController) {
+    composable(BottomNavRoutes.NEWS) { _ ->
+        NewsScreenContent(navController)
+    }
+}

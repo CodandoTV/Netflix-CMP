@@ -3,7 +3,7 @@ package com.codandotv.streamplayerapp.presentation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.codandotv.streamplayerapp.StreamPlayerApp
+import com.codandotv.streamplayerapp.composeApp.StreamPlayerApp
 import com.google.firebase.Firebase
 import com.google.firebase.initialize
 import com.mmk.kmpnotifier.permission.permissionUtil
