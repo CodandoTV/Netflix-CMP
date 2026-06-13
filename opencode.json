@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "Kotzilla": {
+      "type": "remote",
+      "url": "https://mcp.kotzilla.io/mcp",
+      "oauth": {}
+    }
+  },
+  "skills": {
+    "paths": [".opencode/skills"]
+  }
+}
