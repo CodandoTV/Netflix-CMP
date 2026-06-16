@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -22,19 +21,15 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import coil3.compose.AsyncImage
 import com.codandotv.streamplayerapp.core.shared.ui.resources.Colors
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import streamplayerapp_kmp.core_shared_ui.generated.resources.Res
 import streamplayerapp_kmp.core_shared_ui.generated.resources.ic_netflix
 import streamplayerapp_kmp.core_shared_ui.generated.resources.icon_netflix
-import streamplayerapp_kmp.core_shared_ui.generated.resources.icon_profile
 import streamplayerapp_kmp.core_shared_ui.generated.resources.icon_search
-import streamplayerapp_kmp.core_shared_ui.generated.resources.perfil_fake
 import streamplayerapp_kmp.core_shared_ui.generated.resources.topbar_categories
 import streamplayerapp_kmp.core_shared_ui.generated.resources.topbar_movies
 import streamplayerapp_kmp.core_shared_ui.generated.resources.topbar_shows
