@@ -3,6 +3,9 @@ package com.codandotv.streamplayerapp.feature.profile.presentation.screens
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.codandotv.streamplayerapp.core.networking.handleError.catchFailure
+import com.codandotv.streamplayerapp.core.session.domain.SessionManager
+import com.codandotv.streamplayerapp.feature.profile.domain.ProfilePickerStreamUseCase
+import com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -10,10 +13,12 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.koin.android.annotation.KoinViewModel
+import org.koin.core.annotation.Provided
 
 @KoinViewModel
 class ProfilePickerStreamViewModel(
-    private val useCase: com.codandotv.streamplayerapp.feature.profile.domain.ProfilePickerStreamUseCase,
+    @Provided private val sessionManager: SessionManager,
+    private val useCase: ProfilePickerStreamUseCase,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(ProfilePickerStreamsUIState())
@@ -105,7 +110,7 @@ class ProfilePickerStreamViewModel(
     }
 
     @Suppress("MagicNumber")
-    fun moveSelectedProfileToCenterImage(profile: com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream) {
+    fun moveSelectedProfileToCenterImage(profile: ProfileStream) {
         viewModelScope.launch {
             with(_uiState.value) {
                 // move hide image to the position of the clicked item
@@ -132,6 +137,10 @@ class ProfilePickerStreamViewModel(
                     canMoveImageToCenter = !canMoveImageToCenter,
                     expandImage = !expandImage
                 )
+
+                viewModelScope.launch {
+                    sessionManager.openSession(profile.imageUrl)
+                }
             }
         }
     }

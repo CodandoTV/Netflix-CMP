@@ -10,6 +10,7 @@ plugins {
 kotlin {
     sourceSets {
         commonMain.dependencies {
+            implementation(projects.coreSession)
             implementation(projects.coreNetworking)
             implementation(projects.coreNavigation)
             implementation(projects.coreShared)
