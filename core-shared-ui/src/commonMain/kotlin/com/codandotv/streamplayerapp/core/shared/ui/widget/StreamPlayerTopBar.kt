@@ -104,14 +104,8 @@ private fun StreamPlayerTopBar(
             modifier = Modifier.fillMaxHeight(),
             onClick = { onNavigateProfilePicker() }
         ) {
-            AsyncImage(
-                modifier = Modifier
-                    .height(24.dp)
-                    .clip(RoundedCornerShape(4.dp)),
-                model = profilePicture,
-                error = painterResource(Res.drawable.perfil_fake),
-                placeholder = painterResource(Res.drawable.perfil_fake),
-                contentDescription = stringResource(Res.string.icon_profile)
+            AvatarImageIcon(
+                imageUrl = profilePicture,
             )
         }
     }

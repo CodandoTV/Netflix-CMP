@@ -89,6 +89,7 @@ private fun SetupSearchScreen(
             SearchableTopBar(
                 modifier = Modifier.statusBarsPadding(),
                 currentSearchText = currentText,
+                profilePictureUrl = uiState.profilePictureUrl,
                 onSearchTextChanged = { value ->
                     viewModel.setCurrentSearchText(
                         newText = value

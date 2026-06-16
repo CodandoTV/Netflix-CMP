@@ -3,6 +3,9 @@ package com.codandotv.streamplayerapp.feature.search.presentation.screens
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.codandotv.streamplayerapp.core.networking.handleError.catchFailure
+import com.codandotv.streamplayerapp.core.session.domain.SessionManager
+import com.codandotv.streamplayerapp.feature.search.domain.MostPopularMoviesUseCase
+import com.codandotv.streamplayerapp.feature.search.domain.SearchUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -12,11 +15,13 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.koin.android.annotation.KoinViewModel
+import org.koin.core.annotation.Provided
 
 @KoinViewModel
 class SearchViewModel(
-    private val searchUseCase: com.codandotv.streamplayerapp.feature.search.domain.SearchUseCase,
-    private val mostPopularMoviesUseCase: com.codandotv.streamplayerapp.feature.search.domain.MostPopularMoviesUseCase
+    private val searchUseCase: SearchUseCase,
+    private val mostPopularMoviesUseCase: MostPopularMoviesUseCase,
+    @Provided private val sessionManager: SessionManager
 ) : ViewModel() {
 
     private var tryAgain: () -> Unit = {}
@@ -45,6 +50,8 @@ class SearchViewModel(
         }
     }
 
+    private fun userProfilePictureUrl() = sessionManager.userSessionInfo()?.profileImageUrl
+
     private fun fetchMovieByQuery() {
         tryAgain = ::fetchMovieByQuery
 
@@ -60,7 +67,10 @@ class SearchViewModel(
                     if (result.results.isEmpty()) {
                         SearchUIState.Empty
                     } else {
-                        SearchUIState.Success(result)
+                        SearchUIState.Success(
+                            profilePictureUrl = userProfilePictureUrl(),
+                            listCharacters = result
+                        )
                     }
                 }
             }
@@ -80,7 +90,10 @@ class SearchViewModel(
                     if (result.results.isEmpty()) {
                         SearchUIState.Empty
                     } else {
-                        SearchUIState.Success(result)
+                        SearchUIState.Success(
+                            profilePictureUrl = userProfilePictureUrl(),
+                            listCharacters = result
+                        )
                     }
                 }
             }
@@ -89,7 +102,10 @@ class SearchViewModel(
 
     private fun showError(messageError: String) {
         _uiState.update {
-            SearchUIState.Error(messageError = messageError)
+            SearchUIState.Error(
+                messageError = messageError,
+                profilePictureUrl = userProfilePictureUrl(),
+            )
         }
     }
 
