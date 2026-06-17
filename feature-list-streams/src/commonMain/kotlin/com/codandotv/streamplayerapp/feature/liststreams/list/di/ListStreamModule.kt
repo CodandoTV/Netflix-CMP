@@ -22,7 +22,8 @@ object ListStreamModule {
             ListStreamViewModel(
                 listStreams = get(),
                 listGenres = get(),
-                latestStream = get()
+                latestStream = get(),
+                sessionManager = get(),
             )
         }
 

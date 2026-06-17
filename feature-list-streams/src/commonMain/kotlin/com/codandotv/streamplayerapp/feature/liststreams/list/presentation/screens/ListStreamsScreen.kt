@@ -39,7 +39,6 @@ fun ListStreamsScreen(
     onNavigateDetailList: (String) -> Unit = {},
     onNavigateProfilePicker: () -> Unit = {},
     onNavigateSearchScreen: () -> Unit = {},
-    profilePicture: String
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val scrollBehavior =
@@ -54,7 +53,7 @@ fun ListStreamsScreen(
                 scrollBehavior = scrollBehavior,
                 onNavigateProfilePicker = onNavigateProfilePicker,
                 onNavigateSearchScreen = onNavigateSearchScreen,
-                onSelectedProfilePicture = profilePicture
+                onSelectedProfilePicture = uiState.profilePictureUrl
             )
         },
         bottomBar = {

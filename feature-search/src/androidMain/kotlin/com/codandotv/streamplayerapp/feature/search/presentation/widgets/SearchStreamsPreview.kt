@@ -7,6 +7,7 @@ import androidx.compose.ui.tooling.preview.Preview
 @Preview
 fun SearchBarPreview() {
     StreamPlayerTopBar(
+        profilePictureUrl = null,
         onBackPressed = {}
     )
 }

@@ -14,6 +14,7 @@ kotlin {
 
             implementation(projects.coreNetworking)
             implementation(projects.coreNavigation)
+            implementation(projects.coreSession)
             implementation(projects.coreShared)
             implementation(projects.coreSharedUi)
             implementation(projects.coreLocalStorage)

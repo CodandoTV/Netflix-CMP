@@ -9,6 +9,5 @@ import com.codandotv.streamplayerapp.core.shared.ui.theme.ThemePreviews
 fun ListStreamsScreenPreview() {
     com.codandotv.streamplayerapp.feature.liststreams.list.presentation.screens.ListStreamsScreen(
         navController = rememberNavController(),
-        profilePicture = ""
     )
 }
