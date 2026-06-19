@@ -10,6 +10,11 @@
       "url": "https://mcp.kotzilla.io/mcp",
       "enabled": true,
       "oauth": {}
+    },
+    "maestro": {
+      "type": "local",
+      "command": ["maestro", "mcp"],
+      "enabled": true
     }
   }
 }
