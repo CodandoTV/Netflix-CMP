@@ -4,7 +4,6 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.codandotv.streamplayerapp.core.navigation.routes.BottomNavRoutes.HOME_COMPLETE
-import com.codandotv.streamplayerapp.core.navigation.routes.BottomNavRoutes.PARAM.PROFILE_ID
 import com.codandotv.streamplayerapp.core.navigation.routes.Routes
 import com.codandotv.streamplayerapp.core.navigation.routes.Routes.DETAIL
 import com.codandotv.streamplayerapp.core.navigation.routes.Routes.PROFILE_PICKER
@@ -13,11 +12,9 @@ import com.codandotv.streamplayerapp.feature.liststreams.list.presentation.scree
 import org.koin.compose.module.rememberKoinModules
 import org.koin.core.annotation.KoinExperimentalAPI
 
-internal const val DEFAULT_ID = ""
-
 @OptIn(KoinExperimentalAPI::class)
 fun NavGraphBuilder.listStreamsNavGraph(navController: NavHostController) {
-    composable(HOME_COMPLETE) { nav ->
+    composable(HOME_COMPLETE) {
         rememberKoinModules {
             listOf(ListStreamModule.module)
         }
@@ -33,8 +30,6 @@ fun NavGraphBuilder.listStreamsNavGraph(navController: NavHostController) {
             onNavigateSearchScreen = {
                 navController.navigate(Routes.SEARCH)
             },
-            profilePicture = nav.savedStateHandle.get<String>(PROFILE_ID)
-                ?: DEFAULT_ID
         )
     }
 }

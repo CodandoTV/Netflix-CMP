@@ -6,5 +6,6 @@ import com.codandotv.streamplayerapp.feature.liststreams.list.domain.model.Highl
 data class ListStreamsUIState(
     val highlightBanner: HighlightBanner? = null,
     val streamsCarouselContent: List<StreamsCarouselContent>,
-    val isLoading: Boolean
+    val isLoading: Boolean,
+    val profilePictureUrl: String
 )

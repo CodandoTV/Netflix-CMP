@@ -39,6 +39,7 @@ include(":feature-news")
 include(":core-camera-gallery")
 include(":core-permission")
 include(":core-background-work")
+include(":core-session")
 
 kover {
     enableCoverage()

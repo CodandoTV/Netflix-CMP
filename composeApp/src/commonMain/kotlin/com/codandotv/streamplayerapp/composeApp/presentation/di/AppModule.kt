@@ -3,6 +3,7 @@ package com.codandotv.streamplayerapp.composeApp.presentation.di
 import com.codandotv.streamplayerapp.core.background.work.di.SyncModule
 import com.codandotv.streamplayerapp.core.local.storage.di.LocalStorageModule
 import com.codandotv.streamplayerapp.core.networking.di.NetworkModule
+import com.codandotv.streamplayerapp.core.session.di.coreSessionModule
 import com.codandotv.streamplayerapp.core.shared.qualifier.QualifierDispatcherIO
 import com.codandotv.streamplayerapp.feature.liststreams.list.di.ListStreamModule
 import com.codandotv.streamplayerapp.feature.news.di.NewsScreenModule
@@ -28,6 +29,7 @@ fun streamPlayerApplication(platformBlock: KoinApplication.() -> Unit): KoinAppl
                     Dispatchers.IO
                 }
             },
+            coreSessionModule,
             NetworkModule().module,
             LocalStorageModule.module,
             SyncModule.module,

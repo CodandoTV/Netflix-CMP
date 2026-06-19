@@ -24,6 +24,7 @@ kotlin {
             implementation(projects.featureProfile)
             implementation(projects.featureNews)
             implementation(projects.coreShared)
+            implementation(projects.coreSession)
             api(projects.coreSharedUi)
             api(projects.coreCameraGallery)
             api(projects.coreBackgroundWork)

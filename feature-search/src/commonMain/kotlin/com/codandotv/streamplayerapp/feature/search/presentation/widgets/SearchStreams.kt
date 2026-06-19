@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -22,21 +21,18 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import com.codandotv.streamplayerapp.core.shared.ui.resources.Colors
+import com.codandotv.streamplayerapp.core.shared.ui.widget.AvatarImageIcon
 import com.codandotv.streamplayerapp.core.shared.ui.widget.CloseButton
 import com.codandotv.streamplayerapp.core.shared.ui.widget.MicButton
 import com.codandotv.streamplayerapp.core.shared.ui.widget.SearchIcon
-import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import streamplayerapp_kmp.core_shared_ui.generated.resources.icon_back
 import streamplayerapp_kmp.core_shared_ui.generated.resources.icon_cast
-import streamplayerapp_kmp.core_shared_ui.generated.resources.icon_profile
-import streamplayerapp_kmp.core_shared_ui.generated.resources.perfil_fake
 import streamplayerapp_kmp.feature_search.generated.resources.Res
 import streamplayerapp_kmp.feature_search.generated.resources.search_list_main_search
 import streamplayerapp_kmp.core_shared_ui.generated.resources.Res as SharedRes
@@ -45,6 +41,7 @@ import streamplayerapp_kmp.core_shared_ui.generated.resources.Res as SharedRes
 @Composable
 fun SearchableTopBar(
     currentSearchText: String,
+    profilePictureUrl: String?,
     onSearchTextChanged: (String) -> Unit,
     onSearchDispatched: () -> Unit,
     onSearchIconPressed: () -> Unit,
@@ -54,7 +51,8 @@ fun SearchableTopBar(
 ) {
     Column(modifier = modifier) {
         StreamPlayerTopBar(
-            onBackPressed = onBackPressed
+            onBackPressed = onBackPressed,
+            profilePictureUrl = profilePictureUrl,
         )
         SearchTopBar(
             currentSearchText = currentSearchText,
@@ -68,6 +66,7 @@ fun SearchableTopBar(
 
 @Composable
 internal fun StreamPlayerTopBar(
+    profilePictureUrl: String?,
     onBackPressed: () -> Unit
 ) {
     Row(
@@ -103,13 +102,8 @@ internal fun StreamPlayerTopBar(
             modifier = Modifier.fillMaxHeight(),
             onClick = { /* todo */ }
         ) {
-            Icon(
-                modifier = Modifier
-                    .height(24.dp)
-                    .clip(RoundedCornerShape(4.dp)),
-                painter = painterResource(SharedRes.drawable.perfil_fake),
-                contentDescription = stringResource(SharedRes.string.icon_profile),
-                tint = Color.Unspecified,
+            AvatarImageIcon(
+                imageUrl = profilePictureUrl,
             )
         }
     }

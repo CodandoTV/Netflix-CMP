@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import androidx.paging.map
 import com.codandotv.streamplayerapp.core.networking.handleError.catchFailure
+import com.codandotv.streamplayerapp.core.session.domain.SessionManager
 import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCardContent
 import com.codandotv.streamplayerapp.core.shared.ui.widget.StreamsCarouselContent
 import com.codandotv.streamplayerapp.feature.liststreams.core.ContentType
@@ -41,13 +42,17 @@ import streamplayerapp_kmp.core_shared_ui.generated.resources.Res as SharedRes
 class ListStreamViewModel(
     private val listStreams: ListStreamUseCase,
     private val listGenres: GetGenresUseCase,
-    private val latestStream: GetTopRatedStream
+    private val latestStream: GetTopRatedStream,
+    private val sessionManager: SessionManager,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(
         ListStreamsUIState(
             streamsCarouselContent = emptyList(),
-            isLoading = false
+            isLoading = false,
+            profilePictureUrl = sessionManager
+                .userSessionInfo()
+                ?.profileImageUrl.orEmpty()
         )
     )
     val uiState = _uiState.stateIn(

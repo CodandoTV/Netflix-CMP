@@ -14,6 +14,7 @@ kotlin {
             implementation(projects.coreShared)
             implementation(projects.coreSharedUi)
             implementation(projects.coreLocalStorage)
+            implementation(projects.coreSession)
 
             implementation(libs.bundles.compose)
             implementation(libs.paging.compose)
