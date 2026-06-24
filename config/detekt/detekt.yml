@@ -941,3 +941,6 @@ formatting:
     active: false
   TrailingCommaOnDeclarationSite:
     active: false
+
+popcorn_guineapig_rules:
+  config: "config/detekt/popcorngp-config.json"

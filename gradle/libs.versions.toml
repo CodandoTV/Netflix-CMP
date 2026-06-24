@@ -25,6 +25,7 @@ cameraCore = "1.4.2"
 moko-permissions = "0.19.1"
 
 #Test
+popcornguineapigDetektRule = "1.0.0"
 test_junit = "4.13.2"
 androidx_core_testing = "2.2.0"
 mockk = "1.13.7"
@@ -64,6 +65,7 @@ kotlin_gradle_plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-p
 android_gradle_plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "android_gradle_plugin" }
 detekt-gradle-plugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+popcornguineapig-detekt-rule = { module = "io.github.codandotv:popcornguineapig-detekt-rule", version.ref = "popcornguineapigDetektRule" }
 serialization = { module = "org.jetbrains.kotlin.plugin.serialization:org.jetbrains.kotlin.plugin.serialization.gradle.plugin", version.ref = "kotlin" }
 
 com-google-devtools-ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
