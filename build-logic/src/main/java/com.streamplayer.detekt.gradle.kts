@@ -20,5 +20,6 @@ detekt {
 
     dependencies {
         detektPlugins(libs.detekt.formatting)
+        detektPlugins(libs.popcornguineapig.detekt.rule)
     }
 }

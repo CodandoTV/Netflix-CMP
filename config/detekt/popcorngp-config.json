@@ -1,0 +1,22 @@
+{
+  "packagePrefix": "com.codandotv.streamplayerapp",
+  "rules": [
+    {
+      "filePattern": "^.*/data/.+\\.kt$",
+      "forbiddenDependencies": [
+        "^.*/domain/.+\\.kt$",
+        "^.*/presentation/.+\\.kt$"
+      ]
+    },
+    {
+      "filePattern": "^.*/domain/.+\\.kt$",
+      "forbiddenDependencies": [
+        "^.*/presentation/.+\\.kt$"
+      ]
+    },
+    {
+      "filePattern": "^.*/.+Handler\\.kt$",
+      "dependenciesAllowed": false
+    }
+  ]
+}
