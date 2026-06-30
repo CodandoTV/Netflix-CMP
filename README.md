@@ -94,6 +94,38 @@ We have a section called `discussions`, this is hosted in our repository, so we 
 This project exists thanks to all the people who contribute.
 <a href="https://github.com/CodandoTV/StreamPlayerApp"><img src="https://opencollective.com/stremplayerapp/contributors.svg?width=890&button=false" /></a>
 
+## 🤖 AI-Assisted Development
+
+This project uses [opencode](https://opencode.ai) as the AI coding assistant. The configuration is centralized in the following files:
+
+### AGENTS.md
+
+Referenced by `opencode.json` as the instructions file (`"instructions": ["AGENTS.md"]`), it provides the AI agent with comprehensive project context — including project overview, build system (Gradle 9.3.1, Kotlin 2.3.20), module structure, key dependencies, version management, CI workflow, and contribution conventions.
+
+### opencode.json
+
+The root configuration file that orchestrates AI assistance:
+
+| Setting | Value |
+|---|---|
+| Instructions | `AGENTS.md` |
+| Skills path | `.opencode/skills/` |
+
+### Skills
+
+Custom skills are located in `.opencode/skills/`. Currently available:
+
+- **open-pr** — Automates GitHub PR creation comparing the current feature branch against `master`, generating the PR description in Brazilian Portuguese (pt-br).
+
+### MCPs (Model Context Protocol)
+
+MCPs extend the AI's capabilities with external tools. Currently configured:
+
+| MCP | Type | Purpose |
+|---|---|---|
+| [Kotzilla](https://kotzilla.io) | Remote | Performance monitoring, dependency diagnosis (Koin), startup/ANR/crash analysis |
+| [Maestro](https://maestro.mobile.dev) | Local (`maestro mcp`) | Mobile UI test automation and device interaction |
+
 ## License
 
     Copyright 2023 Rodrigo Vianna

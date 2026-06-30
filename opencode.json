@@ -3,5 +3,18 @@
   "instructions": ["AGENTS.md"],
   "skills": {
     "paths": [".opencode/skills"]
+  },
+  "mcp": {
+    "kotzilla": {
+      "type": "remote",
+      "url": "https://mcp.kotzilla.io/mcp",
+      "enabled": true,
+      "oauth": {}
+    },
+    "maestro": {
+      "type": "local",
+      "command": ["maestro", "mcp"],
+      "enabled": true
+    }
   }
 }

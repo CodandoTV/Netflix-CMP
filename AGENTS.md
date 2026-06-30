@@ -16,6 +16,7 @@
 | Kotlin | 2.3.20 |
 | AGP | 9.1.0 |
 | JDK | 21 |
+| Kover | 0.9.1 |
 | Version Catalog | `gradle/libs.versions.toml` |
 | Convention Plugins | `build-logic/` (precompiled script plugins) |
 | Application ID | `com.codandotv.streamplayerapp` |
@@ -38,6 +39,7 @@
 - Navigation Compose 2.9.2
 - Kotlinx Datetime 0.8.0
 - Firebase (BOM 33.14.0, Crashlytics, Analytics)
+- Kotzilla SDK 2.1.3
 - Detekt 1.23.6
 - Dokka 1.9.10
 
@@ -88,12 +90,22 @@
 - Kotlinx Coroutines Test 1.8.1
 - Koin Test
 - Popcorn Guinea Pig (test fixtures)
+- Kover 0.9.1 (coverage reporting)
 
 ### Documentation
 
 - **Generator:** Dokka 1.9.10
 - **Source:** API docs generated via `dokka` task
 - **Project docs:** README.md, README_pt-br.md
+
+## MCP Tools
+
+| Tool | Type | Purpose |
+|---|---|---|
+| Kotzilla | Remote (`https://mcp.kotzilla.io/mcp`) | Performance monitoring, Koin diagnostics, app health reports |
+| Maestro | Local (`maestro mcp`) | Mobile UI automation testing via Maestro flows |
+
+Configured in `opencode.json`.
 
 ## Version Management
 
@@ -115,6 +127,7 @@ This is an application project and is **not** published as a library. No Maven C
 |---|---|
 | Default Branch | `main` |
 | CI | GitHub Actions (`build.yml`, `linter.yaml`, `popcorn.yaml`) |
+| Coverage | Kover HTML report deployed to GitHub Pages via `build.yml` |
 | Versioning | SemVer (current: 3.2) |
 | Tags | Standard Git tags |
 | PR Language | pt-br |
