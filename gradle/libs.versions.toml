@@ -25,7 +25,7 @@ cameraCore = "1.4.2"
 moko-permissions = "0.19.1"
 
 #Test
-popcornguineapigDetektRule = "1.0.0"
+popcornguineapigDetektRule = "1.0.1"
 test_junit = "4.13.2"
 androidx_core_testing = "2.2.0"
 mockk = "1.13.7"
