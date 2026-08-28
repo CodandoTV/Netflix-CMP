@@ -1,10 +1,10 @@
 package com.codandotv.streamplayerapp.feature.detail.di
 
 import com.codandotv.streamplayerapp.core.shared.ui.widget.getSharedHandlerPlatform
-import com.codandotv.streamplayerapp.feature.detail.domain.DetailStreamRepository
 import com.codandotv.streamplayerapp.feature.detail.data.DetailStreamRepositoryImpl
 import com.codandotv.streamplayerapp.feature.detail.data.DetailStreamService
 import com.codandotv.streamplayerapp.feature.detail.data.DetailStreamServiceImpl
+import com.codandotv.streamplayerapp.feature.detail.domain.DetailStreamRepository
 import com.codandotv.streamplayerapp.feature.detail.domain.DetailStreamUseCase
 import com.codandotv.streamplayerapp.feature.detail.domain.DetailStreamUseCaseImpl
 import com.codandotv.streamplayerapp.feature.detail.domain.VideoStreamsUseCase
