@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.codandotv.streamplayerapp.core.navigation.extensions.goBack
-import com.codandotv.streamplayerapp.feature.search.domain.mapper.toSearchStreamCardModel
+import com.codandotv.streamplayerapp.feature.search.presentation.mapper.toSearchStreamCardModel
 import com.codandotv.streamplayerapp.feature.search.presentation.widgets.SearchStreamCard
 import com.codandotv.streamplayerapp.feature.search.presentation.widgets.SearchableTopBar
 import com.codandotv.streamplayerapp.feature.search.presentation.widgets.StreamsEmpty

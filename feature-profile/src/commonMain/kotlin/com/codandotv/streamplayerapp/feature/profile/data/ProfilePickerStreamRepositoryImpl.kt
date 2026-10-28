@@ -2,6 +2,7 @@ package com.codandotv.streamplayerapp.feature.profile.data
 
 import com.codandotv.streamplayerapp.core.networking.handleError.toFlow
 import com.codandotv.streamplayerapp.core.networking.handleError.toResult
+import com.codandotv.streamplayerapp.feature.profile.domain.ProfilePickerStreamRepository
 import com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream
 import com.codandotv.streamplayerapp.feature.profile.domain.toProfiles
 import kotlinx.coroutines.flow.Flow
@@ -9,16 +10,12 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import org.koin.core.annotation.Factory
 
-interface ProfilePickerStreamRepository {
-    suspend fun getProfiles(): Flow<List<com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream>>
-}
-
 @Factory
 class ProfilePickerStreamRepositoryImpl(
     private val service: ProfilePickerStreamService
 ) : ProfilePickerStreamRepository {
 
-    override suspend fun getProfiles(): Flow<List<com.codandotv.streamplayerapp.feature.profile.domain.ProfileStream>> {
+    override suspend fun getProfiles(): Flow<List<ProfileStream>> {
         with(service.getProfiles()) {
             if (this.toResult().isFailure || this.toResult().getOrNull() == null) {
                 return flowOf(mockProfiles)

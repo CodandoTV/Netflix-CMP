@@ -1,6 +1,5 @@
 package com.codandotv.streamplayerapp.feature.detail.domain
 
-import com.codandotv.streamplayerapp.feature.detail.data.DetailStreamRepository
 import kotlinx.coroutines.flow.Flow
 
 interface DetailStreamUseCase {

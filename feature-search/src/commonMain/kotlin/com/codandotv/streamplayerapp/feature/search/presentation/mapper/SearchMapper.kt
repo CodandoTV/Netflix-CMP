@@ -1,4 +1,4 @@
-package com.codandotv.streamplayerapp.feature.search.domain.mapper
+package com.codandotv.streamplayerapp.feature.search.presentation.mapper
 
 import com.codandotv.streamplayerapp.core.shared.Url
 import com.codandotv.streamplayerapp.feature.search.data.model.ListSearchStreamResponse
