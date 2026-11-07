@@ -6,7 +6,6 @@ import com.codandotv.streamplayerapp.feature.search.data.model.ListSearchStreamR
 import io.ktor.client.HttpClient
 import io.ktor.client.request.url
 import org.koin.core.annotation.Factory
-import org.koin.core.annotation.Provided
 
 interface MostPopularMoviesService {
     suspend fun getPopular(): NetworkResponse<ListSearchStreamResponse>
@@ -14,7 +13,7 @@ interface MostPopularMoviesService {
 
 @Factory(binds = [MostPopularMoviesService::class])
 class MostPopularMoviesServiceImpl(
-    @Provided private val client: HttpClient
+    private val client: HttpClient
 ) : MostPopularMoviesService {
     override suspend fun getPopular(): NetworkResponse<ListSearchStreamResponse> =
         client.safeRequest {

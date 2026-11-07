@@ -6,7 +6,6 @@ import com.codandotv.streamplayerapp.feature.profile.data.model.ProfilesResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.request.url
 import org.koin.core.annotation.Factory
-import org.koin.core.annotation.Provided
 
 interface ProfilePickerStreamService {
     suspend fun getProfiles(): NetworkResponse<ProfilesResponse>
@@ -14,7 +13,7 @@ interface ProfilePickerStreamService {
 
 @Factory
 class ProfilePickerStreamServiceImpl(
-    @Provided private val client: HttpClient
+    private val client: HttpClient
 ) : ProfilePickerStreamService {
     override suspend fun getProfiles(): NetworkResponse<ProfilesResponse> =
         client.safeRequest {

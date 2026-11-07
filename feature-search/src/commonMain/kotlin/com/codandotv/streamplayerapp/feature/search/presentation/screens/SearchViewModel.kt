@@ -14,14 +14,13 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import org.koin.android.annotation.KoinViewModel
-import org.koin.core.annotation.Provided
+import org.koin.core.annotation.KoinViewModel
 
 @KoinViewModel
 class SearchViewModel(
     private val searchUseCase: SearchUseCase,
     private val mostPopularMoviesUseCase: MostPopularMoviesUseCase,
-    @Provided private val sessionManager: SessionManager
+    private val sessionManager: SessionManager
 ) : ViewModel() {
 
     private var tryAgain: () -> Unit = {}

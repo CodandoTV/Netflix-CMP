@@ -13,8 +13,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import org.koin.android.annotation.KoinViewModel
-import org.koin.core.annotation.Provided
+import org.koin.core.annotation.KoinViewModel
 
 data class NewsScreenUiState(
     val showPermissionDialog: Boolean = false,
@@ -27,7 +26,7 @@ sealed class NewsScreenActionTakeImage {
 
 @KoinViewModel
 class NewsScreenViewModel(
-    @Provided val permissionsManager: PermissionsManager
+    val permissionsManager: PermissionsManager
 ) : ViewModel() {
     private val _actionTakeImage = MutableSharedFlow<NewsScreenActionTakeImage>()
     val actionTakeImage: SharedFlow<NewsScreenActionTakeImage> = _actionTakeImage

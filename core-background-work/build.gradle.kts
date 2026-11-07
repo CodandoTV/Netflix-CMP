@@ -2,7 +2,6 @@
 
 plugins {
     id("com.streamplayer.kmp-library")
-    id("com.google.devtools.ksp")
 }
 
 kotlin {

@@ -26,13 +26,13 @@
 - `com.streamplayer.kmp-library` — base KMP module setup (multiplatform, serialization, parcelize, dokka, detekt)
 - `com.streamplayer.dokka` — documentation generation
 - `com.streamplayer.detekt` — static analysis
-- `com.streamplayer.koin-annotations-setup` — Koin annotation processing
+- `com.streamplayer.koin-annotations-setup` — Koin Annotations artifacts (the Koin Compiler Plugin is applied by `com.streamplayer.kmp-library`)
 - `popcorngp-setup-plugin` — Popcorn Guinea Pig test setup
 
 ### Key Dependencies
 
 - Compose Multiplatform 1.10.0
-- Koin 4.2.0 / Koin Annotations 2.3.1
+- Koin 4.2.2 / Koin Compiler Plugin 1.2.3 (Koin Annotations, no KSP)
 - Ktor 3.0.1 / OkHttp 4.12.0
 - Room 2.7.0-alpha13
 - Coil 3.1.0

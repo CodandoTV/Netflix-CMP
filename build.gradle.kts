@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.jetbrains.compose) apply false
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.koin.compiler) apply false
     alias(libs.plugins.dokka) apply false
     alias(libs.plugins.buildkonfig.plugin) apply false
     id("popcorngp-setup-plugin")
