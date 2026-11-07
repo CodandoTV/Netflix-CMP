@@ -3,6 +3,7 @@
 import extensions.iosTarget
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.the
+import org.koin.compiler.plugin.KoinGradleExtension
 
 val libs = the<LibrariesForLibs>()
 
@@ -13,6 +14,11 @@ plugins {
     id("kotlin-parcelize")
     id("com.streamplayer.dokka")
     id("com.streamplayer.detekt")
+    id("io.insert-koin.compiler.plugin")
+}
+
+configure<KoinGradleExtension> {
+    compileSafety = true
 }
 
 kotlin {
